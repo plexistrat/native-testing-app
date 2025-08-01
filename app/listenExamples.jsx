@@ -11,8 +11,8 @@ const listenExamples = () => {
 
           <View style={styles.welcomeSection}>
             <Text style={styles.welcomeText}>
-              Welcome to the Listening Examples Channel for the RGT Electric
-              Guitar Grades App
+              Welcome to the Listening Examples You Tube Channel for the RGT
+              Electric Guitar Grades App
             </Text>
           </View>
 
