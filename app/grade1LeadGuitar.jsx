@@ -1,6 +1,7 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
+import YouTubePlayer from "./components/YouTubePlayer";
 
 const grade1LeadGuitar = () => {
   return (
@@ -12,36 +13,27 @@ const grade1LeadGuitar = () => {
           suitable for Grade 1 Lead Guitar
         </Text>
         <View style={styles.linksContainer}>
-          <Link
-            href="https://www.youtube.com/watch?v=oB3T1409YCM"
-            style={styles.link}
-          >
-            <Text style={styles.linkText}>Grade 1, Lead guitar, A major</Text>
-          </Link>
-          <Link
-            href="https://www.youtube.com/watch?v=w9bhc4yO_mo&ab_channel=SakisStaikos"
-            style={styles.link}
-          >
-            <Text style={styles.linkText}>Grade 1, Lead guitar, A minor</Text>
-          </Link>
-          <Link
-            href="https://www.youtube.com/watch?v=9zfKh_Pm8T4&ab_channel=SakisStaikos"
-            style={styles.link}
-          >
-            <Text style={styles.linkText}>Grade 1, Lead guitar, E dom 7th</Text>
-          </Link>
-          <Link
-            href="https://www.youtube.com/watch?v=23TNMzsB1DU&ab_channel=SakisStaikos"
-            style={styles.link}
-          >
-            <Text style={styles.linkText}>Grade 1, Lead guitar, E minor</Text>
-          </Link>
-          <Link
-            href="https://www.youtube.com/watch?v=B3tR1EtXpdE&ab_channel=SakisStaikos"
-            style={styles.link}
-          >
-            <Text style={styles.linkText}>Grade 1, Lead guitar, G major</Text>
-          </Link>
+          <YouTubePlayer
+            videoId="oB3T1409YCM"
+            title="Grade 1, Lead guitar, A major"
+          />
+          <YouTubePlayer
+            videoId="B3tR1EtXpdE"
+            title="Grade 1, Lead guitar, G major"
+          />
+          <YouTubePlayer
+            videoId="w9bhc4yO_mo"
+            title="Grade 1, Lead guitar, A minor"
+          />
+
+          <YouTubePlayer
+            videoId="9zfKh_Pm8T4"
+            title="Grade 1, Lead guitar, E dom 7th"
+          />
+          <YouTubePlayer
+            videoId="23TNMzsB1DU"
+            title="Grade 1, Lead guitar, E minor"
+          />
         </View>
 
         <View style={styles.studySection}>
