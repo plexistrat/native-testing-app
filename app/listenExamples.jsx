@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
-
+import YouTubePlayer from "./components/YouTubePlayer";
 const listenExamples = () => {
   return (
     <ScrollView style={styles.scrollContainer}>
@@ -44,7 +44,24 @@ const listenExamples = () => {
             </View>
           </View>
 
+          <View>
+            <YouTubePlayer
+              videoId="H8FB6jAv-xY"
+              title="Grade 1,Aural tests, repetition of rhythm examples"
+            />
+            <YouTubePlayer
+              videoId="opHgVSe3UFE"
+              title="Grade 1, Aural tests, repetition of melodic phrase, A minor pentatonic scale"
+            />
+            <YouTubePlayer
+              videoId="L2UwQYt443E"
+              title="Grade 1, Aural tests, repetition of melodic phrase, G major pentatonic scale"
+            />
+          </View>
           <View style={styles.ctaSection}>
+            <Text style={styles.ctbText}>
+              You will find more examples to my YouTube Channel
+            </Text>
             <Text style={styles.ctaText}>
               Subscribe & start your journey today!
             </Text>
@@ -135,6 +152,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 25,
+  },
+  ctbText: {
+    fontSize: 16,
+    color: "#DEE3E4",
+    textAlign: "center",
+    marginBottom: 15,
   },
   youtubeLink: {
     marginBottom: 20,
