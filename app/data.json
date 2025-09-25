@@ -3,28 +3,42 @@
     "grade": "Grade 1",
     "sections": {
       "scales": {
-        "A minor pentatonic": { "notes": ["A", "C", "D", "E", "G"] },
-        "G major pentatonic": { "notes": ["G", "B", "D", "E", "A"] },
+        "A minor pentatonic scale": { "notes": ["A", "C", "D", "E", "G"] },
+        "G major pentatonic scale": { "notes": ["G", "A", "B", "D", "E"] },
         "E blues scale": { "notes": ["E", "G", "A", "Bb", "B", "D"] },
-        "E natural minor": { "notes": ["E", "F#", "G", "A", "B", "C", "D"] },
-        "A major": { "notes": ["A", "B", "C#", "D", "E", "F#", "G#"] }
+        "E natural minor scale": {
+          "notes": ["E", "F#", "G", "A", "B", "C", "D"]
+        },
+        "A major scale": { "notes": ["A", "B", "C#", "D", "E", "F#", "G#"] }
       },
       "chords": {
-        "A": { "type": "Major", "notes": ["A", "C#", "E"] },
-        "D": { "type": "Major", "notes": ["D", "F#", "A"] },
-        "E": { "type": "Major", "notes": ["E", "G#", "B"] },
-        "C": { "type": "Major", "notes": ["C", "E", "G"] },
-        "G": { "type": "Major", "notes": ["G", "B", "D"] },
-        "Em": { "type": "Minor", "notes": ["E", "G", "B"] },
-        "Dm": { "type": "Minor", "notes": ["D", "F", "A"] },
-        "Am": { "type": "Minor", "notes": ["A", "C", "E"] },
-        "A7": { "type": "Dominant seventh", "notes": ["A", "C#", "E", "G"] },
-        "D7": { "type": "Dominant seventh", "notes": ["D", "F#", "A", "C"] },
-        "E7": { "type": "Dominant seventh", "notes": ["E", "G#", "B", "D"] },
-        "B7": { "type": "Dominant seventh", "notes": ["B", "D#", "F#", "A"] },
-        "Amaj7": { "type": "Major seventh", "notes": ["A", "C#", "E", "G#"] },
-        "Dmaj7": { "type": "Major seventh", "notes": ["D", "F#", "A", "C#"] },
-        "Cmaj7": { "type": "Major seventh", "notes": ["C", "E", "G", "B"] }
+        "A": { "type": "Major", "notes": ["A", "E", "C#", "E"] },
+        "D": { "type": "Major", "notes": ["D", "A", "D", "F#"] },
+        "E": { "type": "Major", "notes": ["E", "B", "E", "G#", "B", "E"] },
+        "C": { "type": "Major", "notes": ["C", "E", "G", "C", "E"] },
+        "G": { "type": "Major", "notes": ["G", "B", "D", "G", "B", "G"] },
+        "Em": { "type": "Minor", "notes": ["E", "B", "E", "G", "B", "E"] },
+        "Dm": { "type": "Minor", "notes": ["D", "A", "D", "F"] },
+        "Am": { "type": "Minor", "notes": ["A", "E", "A", "C", "E"] },
+        "A7": {
+          "type": "Dominant seventh",
+          "notes": ["A", "E", "A", "C#", "E"]
+        },
+        "D7": { "type": "Dominant seventh", "notes": ["D", "A", "C", "F#"] },
+        "E7": {
+          "type": "Dominant seventh",
+          "notes": ["E", "B", "D", "G#", "B", "E"]
+        },
+        "B7": {
+          "type": "Dominant seventh",
+          "notes": ["B", "D#", "A", "B", "F#"]
+        },
+        "Amaj7": {
+          "type": "Major seventh",
+          "notes": ["A", "E", "G#", "C#", "E"]
+        },
+        "Dmaj7": { "type": "Major seventh", "notes": ["D", "A", "C#", "F#"] },
+        "Cmaj7": { "type": "Major seventh", "notes": ["C", "E", "G", "B", "E"] }
       },
       "rhythmGuitar": {},
       "leadGuitar": {},
@@ -32,8 +46,80 @@
       "auralTests": {}
     }
   },
-  { "grade": "Grade 2", "sections": {} },
-  { "grade": "Grade 3", "sections": {} },
+  {
+    "grade": "Grade 2",
+    "sections": {
+      "scales": {
+        "A blues scale": { "notes": ["A", "C", "D", "Eb", "E", "G"] },
+        "G blues scale": { "notes": ["G", "Bb", "C", "Db", "D", "F"] },
+        "B minor pentatonic scale": { "notes": ["B", "D", "E", "F#", "A"] },
+        "D major pentatonic scale": { "notes": ["D", "E", "F#", "A", "B"] },
+        "A natural minor scale": {
+          "notes": ["A", "B", "C", "D", "E", "F", "G"]
+        },
+        "C major scale": { "notes": ["C", "D", "E", "F", "G", "A", "B"] },
+        "G major scale": { "notes": ["G", "A", "B", "C", "D", "E", "F#"] }
+      },
+      "chords": {
+        "F": { "type": "Major", "notes": ["F", "A", "C"] },
+        "Bm": { "type": "Minor", "notes": ["B", "D", "F#"] },
+        "C7": { "type": "Dominant seventh", "notes": ["C", "E", "G", "Bb"] },
+        "G7": { "type": "Dominant seventh", "notes": ["G", "B", "D", "F"] },
+        "Fmaj7": { "type": "Major seventh", "notes": ["F", "A", "C", "E"] },
+        "Gmaj7": { "type": "Major seventh", "notes": ["G", "B", "D", "F#"] },
+        "Em7": { "type": "Minor seventh", "notes": ["E", "G", "B", "D"] },
+        "Am7": { "type": "Minor seventh", "notes": ["A", "C", "E", "G"] },
+        "Dm7": { "type": "Minor seventh", "notes": ["D", "F", "A", "C"] },
+        "F#m7": { "type": "Minor seventh", "notes": ["F#", "A", "C#", "E"] }
+      },
+      "rhythmGuitar": {},
+      "leadGuitar": {},
+      "spokenTests": {},
+      "auralTests": {}
+    }
+  },
+  {
+    "grade": "Grade 3",
+    "sections": {
+      "scales": {
+        "A major scale": { "notes": ["A", "B", "C#", "D", "E", "F#", "G#"] },
+        "A natural minor scale": {
+          "notes": ["A", "B", "C", "D", "E", "F", "G"]
+        },
+        "A minor pentatonic scale": { "notes": ["A", "C", "D", "E", "G"] },
+        "A blues scale": { "notes": ["A", "C", "D", "Eb", "E", "G"] },
+        "A major pentatonic scale": { "notes": ["A", "B", "C#", "D", "E"] }
+      },
+      "chords": {
+        "C major (6th string root)": {
+          "type": "Major",
+          "notes": ["C", "G", "C", "E", "G", "C"]
+        },
+        "C minor (6th string root)": {
+          "type": "Minor",
+          "notes": ["C", "G", "C", "Eb", "G", "C"]
+        },
+        "C major (5th string root)": {
+          "type": "Major",
+          "notes": ["C", "G", "C", "E", "G"]
+        },
+        "C minor (5th string root)": {
+          "type": "Minor",
+          "notes": ["C", "G", "C", "Eb", "G"]
+        }
+      },
+      "arpeggios": {
+        "C major (6th string root)": {
+          "type": "Major",
+          "notes": ["C", "G", "C", "Eb", "G", "C"]
+        },
+        "C minor (6th string root)": {
+          "type": "Minor",
+          "notes": ["C", "G", "C", "Eb", "G", "C"]
+        }
+      }
+    }
+  },
   { "grade": "Grade 4", "sections": {} },
   { "grade": "Grade 5", "sections": {} },
   { "grade": "Grade 6", "sections": {} },
