@@ -3,42 +3,220 @@
     "grade": "Grade 1",
     "sections": {
       "scales": {
-        "A minor pentatonic scale": { "notes": ["A", "C", "D", "E", "G"] },
-        "G major pentatonic scale": { "notes": ["G", "A", "B", "D", "E"] },
-        "E blues scale": { "notes": ["E", "G", "A", "Bb", "B", "D"] },
-        "E natural minor scale": {
-          "notes": ["E", "F#", "G", "A", "B", "C", "D"]
+        "A minor pentatonic scale": {
+          "notes": ["A", "C", "D", "E", "G"],
+          "positions": [
+            { "string": 6, "fret": 5, "note": "A" },
+            { "string": 6, "fret": 8, "note": "C" },
+            { "string": 5, "fret": 5, "note": "D" },
+            { "string": 5, "fret": 7, "note": "E" },
+            { "string": 4, "fret": 5, "note": "G" },
+            { "string": 4, "fret": 7, "note": "A" },
+            { "string": 3, "fret": 5, "note": "C" },
+            { "string": 3, "fret": 7, "note": "D" },
+            { "string": 2, "fret": 5, "note": "E" },
+            { "string": 2, "fret": 8, "note": "G" },
+            { "string": 1, "fret": 5, "note": "A" },
+            { "string": 1, "fret": 8, "note": "C" }
+          ]
         },
-        "A major scale": { "notes": ["A", "B", "C#", "D", "E", "F#", "G#"] }
+        "G major pentatonic scale": {
+          "notes": ["G", "A", "B", "D", "E"],
+          "positions": [
+            { "string": 6, "fret": 3, "note": "G" },
+            { "string": 5, "fret": 0, "note": "A" },
+            { "string": 5, "fret": 2, "note": "B" },
+            { "string": 4, "fret": 0, "note": "D" },
+            { "string": 4, "fret": 2, "note": "E" },
+            { "string": 3, "fret": 0, "note": "G" },
+            { "string": 3, "fret": 2, "note": "A" },
+            { "string": 2, "fret": 0, "note": "B" },
+            { "string": 2, "fret": 3, "note": "D" },
+            { "string": 1, "fret": 0, "note": "E" },
+            { "string": 1, "fret": 3, "note": "G" }
+          ]
+        },
+        "E blues scale": {
+          "notes": ["E", "G", "A", "Bb", "B", "D"],
+          "positions": [
+            { "string": 6, "fret": 0, "note": "E" },
+            { "string": 6, "fret": 3, "note": "G" },
+            { "string": 5, "fret": 0, "note": "A" },
+            { "string": 5, "fret": 1, "note": "Bb" },
+            { "string": 5, "fret": 2, "note": "B" },
+            { "string": 4, "fret": 0, "note": "D" },
+            { "string": 4, "fret": 2, "note": "E" },
+            { "string": 3, "fret": 0, "note": "G" },
+            { "string": 3, "fret": 2, "note": "A" },
+            { "string": 3, "fret": 3, "note": "Bb" },
+            { "string": 2, "fret": 0, "note": "B" },
+            { "string": 2, "fret": 3, "note": "D" },
+            { "string": 1, "fret": 0, "note": "E" },
+            { "string": 1, "fret": 3, "note": "G" }
+          ]
+        },
+        "E natural minor scale": {
+          "notes": ["E", "F#", "G", "A", "B", "C", "D"],
+          "positions": [
+            { "string": 6, "fret": 0, "note": "E" },
+            { "string": 6, "fret": 2, "note": "F#" },
+            { "string": 6, "fret": 3, "note": "G" },
+            { "string": 5, "fret": 0, "note": "A" },
+            { "string": 5, "fret": 2, "note": "B" },
+            { "string": 5, "fret": 3, "note": "C" },
+            { "string": 4, "fret": 0, "note": "D" },
+            { "string": 4, "fret": 2, "note": "E" },
+            { "string": 4, "fret": 4, "note": "F#" },
+            { "string": 3, "fret": 0, "note": "G" },
+            { "string": 3, "fret": 2, "note": "A" },
+            { "string": 2, "fret": 0, "note": "B" },
+            { "string": 2, "fret": 1, "note": "C" },
+            { "string": 2, "fret": 3, "note": "D" },
+            { "string": 1, "fret": 0, "note": "E" }
+          ]
+        },
+        "A major scale": {
+          "notes": ["A", "B", "C#", "D", "E", "F#", "G#"],
+          "positions": [
+            { "string": 6, "fret": 5, "note": "A" },
+            { "string": 6, "fret": 7, "note": "B" },
+            { "string": 5, "fret": 4, "note": "C#" },
+            { "string": 5, "fret": 5, "note": "D" },
+            { "string": 5, "fret": 7, "note": "E" },
+            { "string": 4, "fret": 4, "note": "F#" },
+            { "string": 4, "fret": 5, "note": "G#" },
+            { "string": 4, "fret": 7, "note": "A" },
+            { "string": 3, "fret": 4, "note": "B" },
+            { "string": 3, "fret": 5, "note": "C#" },
+            { "string": 3, "fret": 7, "note": "D" },
+            { "string": 2, "fret": 5, "note": "E" },
+            { "string": 2, "fret": 7, "note": "F#" },
+            { "string": 1, "fret": 4, "note": "G#" },
+            { "string": 1, "fret": 5, "note": "A" }
+          ]
+        }
       },
       "chords": {
-        "A": { "type": "Major", "notes": ["A", "E", "C#", "E"] },
-        "D": { "type": "Major", "notes": ["D", "A", "D", "F#"] },
-        "E": { "type": "Major", "notes": ["E", "B", "E", "G#", "B", "E"] },
-        "C": { "type": "Major", "notes": ["C", "E", "G", "C", "E"] },
-        "G": { "type": "Major", "notes": ["G", "B", "D", "G", "B", "G"] },
-        "Em": { "type": "Minor", "notes": ["E", "B", "E", "G", "B", "E"] },
-        "Dm": { "type": "Minor", "notes": ["D", "A", "D", "F"] },
-        "Am": { "type": "Minor", "notes": ["A", "E", "A", "C", "E"] },
-        "A7": {
-          "type": "Dominant seventh",
-          "notes": ["A", "E", "A", "C#", "E"]
+        "A": {
+          "type": "Major",
+          "notes": ["A", "C#", "E"],
+          "color": "#4CAF50",
+          "frets": [0, 2, 2, 2, 0, 0],
+          "fingers": [null, 3, 2, 1, null, null],
+          "muted": [false, false, false, false, false, true]
         },
-        "D7": { "type": "Dominant seventh", "notes": ["D", "A", "C", "F#"] },
+        "D": {
+          "type": "Major",
+          "notes": ["D", "F#", "A"],
+          "color": "#4CAF50",
+          "frets": [2, 3, 2, 0, -1, -1],
+          "fingers": [2, 3, 1, null, null, null],
+          "muted": [false, false, false, false, true, true]
+        },
+        "E": {
+          "type": "Major",
+          "notes": ["E", "G#", "B"],
+          "color": "#4CAF50",
+          "frets": [0, 0, 1, 2, 2, 0],
+          "fingers": [null, null, 1, 3, 2, null],
+          "muted": [false, false, false, false, false, false]
+        },
+        "C": {
+          "type": "Major",
+          "notes": ["C", "E", "G"],
+          "color": "#4CAF50",
+          "frets": [0, 1, 0, 2, 3, -1],
+          "fingers": [null, 1, null, 2, 3, null],
+          "muted": [false, false, false, false, false, true]
+        },
+        "G": {
+          "type": "Major",
+          "notes": ["G", "B", "D"],
+          "color": "#4CAF50",
+          "frets": [3, 0, 0, 0, 2, 3],
+          "fingers": [3, null, null, null, 1, 2],
+          "muted": [false, false, false, false, false, false]
+        },
+        "Em": {
+          "type": "Minor",
+          "notes": ["E", "G", "B"],
+          "color": "#2196F3",
+          "frets": [0, 0, 0, 2, 2, 0],
+          "fingers": [null, null, null, 3, 2, null],
+          "muted": [false, false, false, false, false, false]
+        },
+        "Dm": {
+          "type": "Minor",
+          "notes": ["D", "F", "A"],
+          "color": "#2196F3",
+          "frets": [1, 3, 2, 0, -1, -1],
+          "fingers": [1, 3, 2, null, null, null],
+          "muted": [false, false, false, false, true, true]
+        },
+        "Am": {
+          "type": "Minor",
+          "notes": ["A", "C", "E"],
+          "color": "#2196F3",
+          "frets": [0, 1, 2, 2, 0, -1],
+          "fingers": [null, 1, 3, 2, null, null],
+          "muted": [false, false, false, false, false, true]
+        },
+        "A7": {
+          "type": "Dominant 7th",
+          "notes": ["A", "C#", "E", "G"],
+          "color": "#FF9800",
+          "frets": [0, 2, 0, 2, 0, -1],
+          "fingers": [null, 2, null, 1, null, null],
+          "muted": [false, false, false, false, false, true]
+        },
+        "D7": {
+          "type": "Dominant 7th",
+          "notes": ["D", "F#", "A", "C"],
+          "color": "#FF9800",
+          "frets": [2, 1, 2, 0, -1, -1],
+          "fingers": [3, 2, 1, null, null, null],
+          "muted": [false, false, false, false, true, true]
+        },
         "E7": {
-          "type": "Dominant seventh",
-          "notes": ["E", "B", "D", "G#", "B", "E"]
+          "type": "Dominant 7th",
+          "notes": ["E", "G#", "B", "D"],
+          "color": "#FF9800",
+          "frets": [0, 0, 1, 0, 2, 0],
+          "fingers": [null, null, 1, null, 2, null],
+          "muted": [false, false, false, false, false, false]
         },
         "B7": {
-          "type": "Dominant seventh",
-          "notes": ["B", "D#", "A", "B", "F#"]
+          "type": "Dominant 7th",
+          "notes": ["B", "D#", "F#", "A"],
+          "color": "#FF9800",
+          "frets": [2, 0, 2, 1, 2, -1],
+          "fingers": [4, null, 3, 1, 2, null],
+          "muted": [false, false, false, false, false, true]
         },
         "Amaj7": {
-          "type": "Major seventh",
-          "notes": ["A", "E", "G#", "C#", "E"]
+          "type": "Major 7th",
+          "notes": ["A", "C#", "E", "G#"],
+          "color": "#9C27B0",
+          "frets": [0, 2, 1, 2, 0, -1],
+          "fingers": [null, 3, 1, 2, 0, -1],
+          "muted": [false, false, false, false, false, true]
         },
-        "Dmaj7": { "type": "Major seventh", "notes": ["D", "A", "C#", "F#"] },
-        "Cmaj7": { "type": "Major seventh", "notes": ["C", "E", "G", "B", "E"] }
+        "Dmaj7": {
+          "type": "Major 7th",
+          "notes": ["D", "F#", "A", "C#"],
+          "color": "#9C27B0",
+          "frets": [2, 2, 2, 0, -1, -1],
+          "fingers": [1, 1, 1, null, null, null],
+          "muted": [false, false, false, false, true, true]
+        },
+        "Cmaj7": {
+          "type": "Major 7th",
+          "notes": ["C", "E", "G", "B"],
+          "color": "#9C27B0",
+          "frets": [0, 0, 0, 2, 3, 0],
+          "fingers": [null, null, null, 2, 3, null],
+          "muted": [false, false, false, false, false, true]
+        }
       },
       "rhythmGuitar": {},
       "leadGuitar": {},
@@ -120,7 +298,52 @@
       }
     }
   },
-  { "grade": "Grade 4", "sections": {} },
+  {
+    "grade": "Grade 4",
+    "sections": {
+      "scales": {},
+      "chords": {
+        "C major 7th (6th string root)": {
+          "type": "Major seventh",
+          "notes": ["C", "B", "E", "G"]
+        },
+        "C minor 7th (6th string root)": {
+          "type": "Minor seventh",
+          "notes": ["C", "G", "Bb", "Eb", "G", "C"]
+        },
+        "C major 7th (5th string root)": {
+          "type": "Major seventh",
+          "notes": ["C", "G", "B", "E", "G"]
+        },
+        "C minor 7th (5th string root)": {
+          "type": "Minor seventh",
+          "notes": ["C", "G", "Bb", "Eb", "G"]
+        },
+        "C dominant 7th (6th string root)": {
+          "type": "Dominant seventh",
+          "notes": ["C", "G", "Bb", "E", "G", "C"]
+        },
+        "C dominant 7th (5th string root)": {
+          "type": "Dominant seventh",
+          "notes": ["C", "G", "Bb", "E", "G"]
+        }
+      },
+      "arpeggios": {
+        "C major 7th (6th string root)": {
+          "type": "Major seventh",
+          "notes": ["C", "E", "G", "B", "C", "E", "G", "B", "C"]
+        },
+        "C minor 7th (6th string root)": {
+          "type": "Minor seventh",
+          "notes": ["C", "Eb", "G", "Bb", "C", "Eb", "G", "Bb", "C"]
+        },
+        "C dominant 7th (6th string root)": {
+          "type": "Dominant seventh",
+          "notes": ["C", "E", "G", "Bb", "C", "E", "G", "Bb", "C"]
+        }
+      }
+    }
+  },
   { "grade": "Grade 5", "sections": {} },
   { "grade": "Grade 6", "sections": {} },
   { "grade": "Grade 7", "sections": {} },
