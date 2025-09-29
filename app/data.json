@@ -358,7 +358,13 @@
         }
       },
       "chords": {
-        "F": { "type": "Major", "notes": ["F", "A", "C"] },
+        "F": {
+          "type": "Major",
+          "notes": ["F", "A", "C"],
+          "frets": [0, 0, 0, 3, 2, 1, 0],
+          "fingers": [null, null, null, 3, 2, 1, null],
+          "muted": [false, false, true, true, true, true, true]
+        },
         "Bm": { "type": "Minor", "notes": ["B", "D", "F#"] },
         "C7": { "type": "Dominant seventh", "notes": ["C", "E", "G", "Bb"] },
         "G7": { "type": "Dominant seventh", "notes": ["G", "B", "D", "F"] },
