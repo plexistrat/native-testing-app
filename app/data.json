@@ -361,8 +361,8 @@
         "F": {
           "type": "Major",
           "notes": ["F", "A", "C"],
-          "frets": [0, 0, 0, 3, 2, 1, 0],
-          "fingers": [null, null, null, 3, 2, 1, null],
+          "frets": [0, 0, 0, 3, 2, 1, 1],
+          "fingers": [null, null, null, 3, 2, 1, 1],
           "muted": [false, false, true, true, true, true, true]
         },
         "Bm": { "type": "Minor", "notes": ["B", "D", "F#"] },
