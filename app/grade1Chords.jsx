@@ -123,7 +123,7 @@ const grade1Chords = () => {
       notes: ["A", "C#", "E", "G#"],
       color: "#9C27B0",
       frets: [0, 2, 1, 2, 0, -1],
-      fingers: [null, 3, 1, 2, 0, -1],
+      fingers: [null, 3, 1, 2, 0, null],
       muted: [false, false, false, false, false, true],
     },
     Dmaj7: {
