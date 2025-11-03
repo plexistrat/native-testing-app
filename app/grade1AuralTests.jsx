@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
+import YouTubePlayer from "./components/YouTubePlayer";
 
 const Grade1AuralTests = () => {
   const testSections = [
@@ -99,7 +100,11 @@ const Grade1AuralTests = () => {
     },
   ];
 
-  const practiceProgressions = ["C - G7 - Am - Fmaj7", "Dm - E - A7 - Cmaj7"];
+  const practiceProgressions = [
+    "Am - Dm - Am - Em",
+    "Amaj7 - Dmaj7 - Amaj7",
+    "A7 - D7 - A7 - E7",
+  ];
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -127,6 +132,7 @@ const Grade1AuralTests = () => {
             {testSections[0].description}
           </Text>
         </View>
+        <YouTubePlayer videoId="H8FB6jAv-xY" title="Clap Back Rhythm" />
       </View>
 
       {/* Test 2: Melodic Phrases */}
@@ -183,6 +189,13 @@ const Grade1AuralTests = () => {
                 </Text>
               </View>
             ))}
+            <YouTubePlayer
+              videoId="opHgVSe3UFE"
+              title="More examples of Melodic Phrases"
+            />
+            <YouTubePlayer videoId="L2UwQYt443E" />
+            <YouTubePlayer videoId="bcczAsu6VjU" />
+            <YouTubePlayer videoId="4JR4FJBPfNA" />
           </View>
 
           <View style={styles.practiceSection}>
