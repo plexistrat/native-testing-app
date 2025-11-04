@@ -14,18 +14,18 @@ const grade1Scales = () => {
     "E minor pentatonic": {
       notes: ["E", "G", "A", "B", "D"],
       positions: [
-        { string: 6, fret: 0, note: "E" }, // 6th string open
-        { string: 6, fret: 3, note: "G" }, // 6th string 3rd fret
-        { string: 5, fret: 0, note: "A" }, // 5th string open
-        { string: 5, fret: 2, note: "B" }, // 5th string 2nd fret
-        { string: 4, fret: 0, note: "D" }, // 4th string open
-        { string: 4, fret: 2, note: "E" }, // 4th string 2nd fret
-        { string: 3, fret: 0, note: "G" }, // 3rd string open
-        { string: 3, fret: 2, note: "A" }, // 3rd string 2nd fret
-        { string: 2, fret: 0, note: "B" }, // 2nd string open
-        { string: 2, fret: 3, note: "D" }, // 2nd string 3rd fret
-        { string: 1, fret: 0, note: "E" }, // 1st string open
-        { string: 1, fret: 3, note: "G" }, // 1st string 3rd fret
+        { string: 6, fret: 0, note: "E" },
+        { string: 6, fret: 3, note: "G" },
+        { string: 5, fret: 0, note: "A" },
+        { string: 5, fret: 2, note: "B" },
+        { string: 4, fret: 0, note: "D" },
+        { string: 4, fret: 2, note: "E" },
+        { string: 3, fret: 0, note: "G" },
+        { string: 3, fret: 2, note: "A" },
+        { string: 2, fret: 0, note: "B" },
+        { string: 2, fret: 3, note: "D" },
+        { string: 1, fret: 0, note: "E" },
+        { string: 1, fret: 3, note: "G" },
       ],
     },
     "E blues scale": {
@@ -100,6 +100,26 @@ const grade1Scales = () => {
         { string: 1, fret: 5, note: "A" },
       ],
     },
+    "E natural minor scale": {
+      notes: ["E", "F#", "G", "A", "B", "C", "D"],
+      positions: [
+        { string: 6, fret: 0, note: "E" },
+        { string: 6, fret: 2, note: "F#" },
+        { string: 6, fret: 3, note: "G" },
+        { string: 5, fret: 0, note: "A" },
+        { string: 5, fret: 2, note: "B" },
+        { string: 5, fret: 3, note: "C" },
+        { string: 4, fret: 0, note: "D" },
+        { string: 4, fret: 2, note: "E" },
+        { string: 4, fret: 4, note: "F#" },
+        { string: 3, fret: 0, note: "G" },
+        { string: 3, fret: 2, note: "A" },
+        { string: 2, fret: 0, note: "B" },
+        { string: 2, fret: 1, note: "C" },
+        { string: 2, fret: 3, note: "D" },
+        { string: 1, fret: 0, note: "E" },
+      ],
+    },
   };
 
   const stringNames = ["E", "B", "G", "D", "A", "E"];
@@ -132,7 +152,7 @@ const grade1Scales = () => {
         {/* Fret numbers */}
         <View style={styles.fretNumbersRow}>
           <View style={styles.stringLabel}>
-            <Text style={styles.stringLabelText}>Χορδή</Text>
+            <Text style={styles.stringLabelText}>String</Text>
           </View>
           {frets.map((fret) => (
             <View key={fret} style={styles.fretNumber}>
@@ -190,7 +210,7 @@ const grade1Scales = () => {
       <View style={styles.header}>
         <Text style={styles.title}>Grade 1 Guitar Scales</Text>
         <Text style={styles.subtitle}>
-          Επιλέξτε μια κλίμακα για να δείτε τις θέσεις στο grid
+          Select a scale and view it on the fretboard grid
         </Text>
       </View>
 
@@ -221,7 +241,7 @@ const grade1Scales = () => {
       <View style={styles.scaleInfo}>
         <Text style={styles.scaleTitle}>{selectedScale}</Text>
         <View style={styles.notesContainer}>
-          <Text style={styles.notesLabel}>Νότες κλίμακας: </Text>
+          <Text style={styles.notesLabel}>Scale notes: </Text>
           <Text style={styles.notesText}>
             {scales[selectedScale].notes.join(" - ")}
           </Text>
@@ -241,40 +261,39 @@ const grade1Scales = () => {
       <View style={styles.legend}>
         <View style={styles.legendItem}>
           <View style={[styles.legendDot, styles.rootNoteDot]} />
-          <Text style={styles.legendText}>Root Note (Βασική νότα)</Text>
+          <Text style={styles.legendText}>Root Note</Text>
         </View>
         <View style={styles.legendItem}>
           <View style={[styles.legendDot, styles.scaleNoteDot]} />
-          <Text style={styles.legendText}>Scale Notes (Νότες κλίμακας)</Text>
+          <Text style={styles.legendText}>Scale Notes</Text>
         </View>
       </View>
       <View>
         <Text style={styles.practiceTitle}>Scale practice</Text>
         <View style={styles.practiceInstructions}>
+          <Text style={styles.practiceDescription}>Slow Practice</Text>
           <Text style={styles.practiceDescription}>
-            Αργά & Σωστά (Slow Practice)
+            Start with a slow tempo (50–60 BPM on the metronome ).
           </Text>
           <Text style={styles.practiceDescription}>
-            Ξεκίνα πολύ αργά με μετρονόμο (π.χ. 50–60 BPM).
+            Focus on the correct fingering and clear sound.
           </Text>
           <Text style={styles.practiceDescription}>
-            Εστίασε στη σωστή δακτυλοθεσία και καθαρό ήχο.
+            Once you fell comfortable, increase the tempo.
           </Text>
           <Text style={styles.practiceDescription}>
-            Μόλις νιώσεις άνετα, αύξησε σταδιακά την ταχύτητα.
-          </Text>
-          <Text style={styles.practiceDescription}>Με Ρυθμικά Patterns</Text>
-          <Text style={styles.practiceDescription}>
-            Παίξε την κλίμακα σε ρυθμούς (π.χ. δύο νότες ανά χτύπο, τρεις ανά
-            χτύπο – triplets).
-          </Text>
-          <Text style={styles.practiceDescription}>Διαστήματα & Sequences</Text>
-          <Text style={styles.practiceDescription}>
-            Αντί να παίζεις απλά ανιούσα/κατιούσα, παίξε διαστήματα (π.χ. 1-3,
-            2-4, 3-5).
+            Play the scale with rhythm patterns (for example eights, triplets,
+            sixteenths).
           </Text>
           <Text style={styles.practiceDescription}>
-            Παίξε σπασμένα μοτίβα (π.χ. 1-2-3/2-3-4…).
+            Intervals and sequences
+          </Text>
+          <Text style={styles.practiceDescription}>
+            Instead of playing the whole scale up and down, play intervals (for
+            example 1-3, 2-4, 3-5).
+          </Text>
+          <Text style={styles.practiceDescription}>
+            Play sequences (for example 1-2-3/2-3-4…).
           </Text>
         </View>
       </View>

@@ -5,11 +5,10 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
-  SafeAreaView,
   Dimensions,
 } from "react-native";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const grade1Chords = () => {
   const [selectedChord, setSelectedChord] = useState("A");
@@ -20,8 +19,8 @@ const grade1Chords = () => {
       type: "Major",
       notes: ["A", "C#", "E"],
       color: "#4CAF50",
-      frets: [0, 2, 2, 2, 0, 0], // E B G D A E (1st-6th strings)
-      fingers: [null, 3, 2, 1, null, null], // null = open string
+      frets: [0, 2, 2, 2, 0, 0],
+      fingers: [null, 3, 2, 1, null, null],
       muted: [false, false, false, false, false, true],
     },
     D: {
@@ -157,7 +156,6 @@ const grade1Chords = () => {
         </Text>
 
         <View style={styles.fretboard}>
-          {/* Strings and frets */}
           <View style={styles.stringsContainer}>
             {[0, 1, 2, 3, 4, 5].map((stringIndex) => (
               <View key={stringIndex} style={styles.stringLine}>
@@ -165,18 +163,15 @@ const grade1Chords = () => {
                   {stringNames[stringIndex]}
                 </Text>
 
-                {/* Muted indicator */}
                 {chord.muted[stringIndex] && (
                   <Text style={styles.mutedIndicator}>✕</Text>
                 )}
 
-                {/* Open string indicator */}
                 {!chord.muted[stringIndex] &&
                   chord.frets[stringIndex] === 0 && (
                     <Text style={styles.openIndicator}>○</Text>
                   )}
 
-                {/* Frets 1-4 */}
                 <View style={styles.fretPositions}>
                   {[1, 2, 3, 4].map((fretNum) => (
                     <View key={fretNum} style={styles.fretPosition}>
@@ -196,13 +191,11 @@ const grade1Chords = () => {
                   ))}
                 </View>
 
-                {/* String line */}
                 <View style={styles.stringWire} />
               </View>
             ))}
           </View>
 
-          {/* Fret numbers */}
           <View style={styles.fretNumbers}>
             <View style={styles.fretNumberSpace} />
             {[1, 2, 3, 4].map((num) => (
@@ -263,16 +256,16 @@ const grade1Chords = () => {
         <Text style={[styles.chordTitle, { color: chord.color }]}>
           {selectedChord}
         </Text>
-        <Text style={styles.chordType}>Τύπος: {chord.type}</Text>
-        <Text style={styles.chordNotes}>Νότες: {chord.notes.join(" - ")}</Text>
+        <Text style={styles.chordType}>Type: {chord.type}</Text>
+        <Text style={styles.chordNotes}>Notes: {chord.notes.join(" - ")}</Text>
 
         <View style={styles.fingeringGuide}>
-          <Text style={styles.fingeringTitle}>Οδηγίες Δακτυλισμού:</Text>
-          <Text style={styles.fingeringTips}>○ = Ανοιχτή χορδή</Text>
-          <Text style={styles.fingeringTips}>✕ = Σίγηση χορδής</Text>
-          <Text style={styles.fingeringTips}>1,2,3,4 = Αριθμοί δακτύλων</Text>
+          <Text style={styles.fingeringTitle}>Fingering Guide:</Text>
+          <Text style={styles.fingeringTips}>○ = Open string</Text>
+          <Text style={styles.fingeringTips}>✕ = Muted string</Text>
+          <Text style={styles.fingeringTips}>1,2,3,4 = Finger numbers</Text>
           <Text style={styles.fingeringTips}>
-            1=Δείκτης, 2=Μέσος, 3=Παράμεσος, 4=Μικρός
+            1=Index, 2=Middle, 3=Ring, 4=Pinky
           </Text>
         </View>
       </View>
@@ -280,95 +273,90 @@ const grade1Chords = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={styles.title}>🎸 Guitar Chords</Text>
-        <Text style={styles.subtitle}>Ανοιχτές Χορδές - 1η Θέση</Text>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <Text style={styles.title}>🎸 Guitar Chords</Text>
+      <Text style={styles.subtitle}>Open Chords – 1st Position</Text>
 
-        {renderChordButtons()}
-        {renderChordInfo()}
-        {renderChordDiagram()}
-        <View style={styles.practiceContainer}>
-          <Text style={styles.title}>Chords Practice</Text>
-          <Text style={styles.subtitle}>1. Μάθε τα Σχήματα σταδιακά</Text>
-          <Text style={styles.description}>
-            Ξεκίνα με Major (A, D, E) Μετά πρόσθεσε Minor (Am, Dm, Em) Τέλος
-            Dominant7 & Major7
-          </Text>
-          <Text style={styles.tip}>
-            ( Μην προσπαθήσεις να τα μάθεις όλα μαζί , μια ομοδα συγχορδίων ανά
-            εβδομάδα είναι ιδανικό. ) SOS!Μαθε να "βαζεις" τα δαχτυλα απο πάνω
-            προς τα κάτω(σε σχέση με την ταστιέρα)
-          </Text>
-          <Text style={styles.subtitle}>2. Παίξε με Slow Changes</Text>
-          <Text style={styles.description}>
-            Διάλεξε 2 συγχορδίες (π.χ. A → D) Παίξε τες αργά, με μετρονόμο στα
-            50-60 BPM Στόχος: καθαρός ήχος και σωστή τοποθέτηση δαχτύλων
-          </Text>
-          <Text style={styles.subtitle}>3. Chord Transitions (Αλλαγές)</Text>
-          <Text style={styles.description}>
-            Όταν μάθεις τα σχήματα, δούλεψε αλλαγές (π.χ. A → D → E).
-            Χρησιμοποίησε ρυθμικό pattern (π.χ. down-down-up-up-down). Μπορείς
-            να αλλάζεις συχγορδία κάθε ολόκληρο,μισό,τέταρτο.
-          </Text>
-          <Text style={styles.subtitle}>4. Μάθε Progressions</Text>
-          <Text style={styles.description}>
-            Χρησιμοποίησε απλά progressions όπως: I-IV-V → A - D - E και ii-V-I
-            → Dm - G7 - C. Αυτό βοηθάει να δεις πώς συνδυάζονται μουσικά.
-          </Text>
-          <Text style={styles.subtitle}>
-            5. Άκου & Παίξε Πάνω από Τραγούδια
-          </Text>
-          <Text style={styles.description}>
-            Διάλεξε απλά τραγούδια που χρησιμοποιούν μόνο τις Grade 1 συγχορδίες
-            Π.χ. Knockin’ On Heaven’s Door (G - D - Am - G - D - C) Θα συνδέσεις
-            τις συγχορδίες με πραγματική μουσική
-          </Text>
-          <Text style={styles.subtitle}>6. Ακουστική Εκπαίδευση</Text>
-          <Text style={styles.description}>
-            Παίξε ένα ακόρντο και άκου πώς ακούγεται (χαρούμενο → Major, πιο
-            “λυπητερό” → Minor). Βοηθάει να ξεχωρίζεις το χρώμα κάθε συγχορδίας
-          </Text>
-          <Text style={styles.subtitle}>7. Καθημερινή Ρουτίνα 10’</Text>
-          <Text style={styles.description}>
-            Ζέσταμα → Παίξε τις συγχορδίες μία φορά αργά Αλλαγές → 2 λεπτά
-            αλλαγές π.χ. A↔D Progression → Παίξε ένα μικρό ρυθμικό μοτίβο (4
-            ακόρντα) Παίξε πάνω σε backing track
-            <View></View>
-          </Text>
-          <Text style={styles.subtitle1}>Tip:</Text>
-          <Text style={styles.description1}>
-            Μην κοιτάς συνέχεια το χέρι, προσπάθησε να τις νιώθεις με το άγγιγμα
-            Σταδιακά θα βελτιωθεί η μνήμη μυών και θα αλλάζεις γρήγορα
-          </Text>
-          <Text style={styles.subtitle1}>Song List</Text>
-          <Text style={styles.description1}>
-            Knockin’ On Heaven’s Door – Bob Dylan G – D – Am – G – D – C
-          </Text>
-          <Text style={styles.description1}>
-            Leaving On A Jet Plane – John Denver G – C – D
-          </Text>
-          <Text style={styles.description1}>
-            Sweet Home Alabama – Lynyrd Skynyrd D – C – G
-          </Text>
-          <Text style={styles.description1}>
-            Horse With No Name – America Em – D6add9 (αντικατάσταση με D)
-          </Text>
-          <Text style={styles.description1}>
-            Twist And Shout – The Beatles D – G – A7
-          </Text>
-          <Text style={styles.description1}>
-            Folsom Prison Blues – Johnny Cash E – A – B7
-          </Text>
-          <Text style={styles.description1}>
-            Blue Suede Shoes – Elvis Presley A7 – D7 – E7
-          </Text>
-          <Text style={styles.description1}>
-            Wonderful Tonight – Eric Clapton G – D – C – D – Cmaj7
-          </Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+      {renderChordButtons()}
+      {renderChordInfo()}
+      {renderChordDiagram()}
+      <View style={styles.practiceContainer}>
+        <Text style={styles.title}>Chords Practice</Text>
+        <Text style={styles.subtitle}>1. Learn the shapes gradually</Text>
+        <Text style={styles.description}>
+          Start with Major chords (A, D, E), then add Minor (Am, Dm, Em), and
+          finally Dominant7 & Major7.
+        </Text>
+        <Text style={styles.tip}>
+          Don’t try to learn all at once — one chord group per week is ideal.
+          Tip: place your fingers from top to bottom (in relation to the
+          fretboard).
+        </Text>
+        <Text style={styles.subtitle}>2. Practice Slow Changes</Text>
+        <Text style={styles.description}>
+          Pick 2 chords (e.g., A → D). Play slowly with a metronome at 50–60
+          BPM. Goal: clean sound and correct finger placement.
+        </Text>
+        <Text style={styles.subtitle}>3. Chord Transitions</Text>
+        <Text style={styles.description}>
+          Once you know the shapes, practice transitions (e.g., A → D → E). Use
+          a strumming pattern (like down-down-up-up-down). Try switching chords
+          every bar, half, or quarter note.
+        </Text>
+        <Text style={styles.subtitle}>4. Learn Progressions</Text>
+        <Text style={styles.description}>
+          Use simple progressions like: I-IV-V → A - D - E and ii-V-I → Dm - G7
+          - C. This helps you understand musical relationships.
+        </Text>
+        <Text style={styles.subtitle}>5. Play Along With Songs</Text>
+        <Text style={styles.description}>
+          Choose simple songs that use these Grade 1 chords, e.g. Knockin’ On
+          Heaven’s Door (G - D - Am - G - D - C). This connects chords to real
+          music.
+        </Text>
+        <Text style={styles.subtitle}>6. Ear Training</Text>
+        <Text style={styles.description}>
+          Play a chord and listen: Major sounds bright, Minor sounds sad.
+          Training your ear helps recognize chord “colors”.
+        </Text>
+        <Text style={styles.subtitle}>7. 10-Minute Daily Routine</Text>
+        <Text style={styles.description}>
+          Warm-up → Play all chords slowly once. Changes → 2 minutes switching
+          (e.g., A↔D). Progression → Play a small rhythm (4 chords). Then jam
+          over a backing track.
+        </Text>
+        <Text style={styles.subtitle1}>Tip:</Text>
+        <Text style={styles.description1}>
+          Don’t always look at your hand — try to *feel* the shapes. Your muscle
+          memory will improve and transitions will get faster.
+        </Text>
+        <Text style={styles.subtitle1}>Song List</Text>
+        <Text style={styles.description1}>
+          Knockin’ On Heaven’s Door – Bob Dylan (G – D – Am – G – D – C)
+        </Text>
+        <Text style={styles.description1}>
+          Leaving On A Jet Plane – John Denver (G – C – D)
+        </Text>
+        <Text style={styles.description1}>
+          Sweet Home Alabama – Lynyrd Skynyrd (D – C – G)
+        </Text>
+        <Text style={styles.description1}>
+          Horse With No Name – America (Em – D6add9, replace with D)
+        </Text>
+        <Text style={styles.description1}>
+          Twist And Shout – The Beatles (D – G – A7)
+        </Text>
+        <Text style={styles.description1}>
+          Folsom Prison Blues – Johnny Cash (E – A – B7)
+        </Text>
+        <Text style={styles.description1}>
+          Blue Suede Shoes – Elvis Presley (A7 – D7 – E7)
+        </Text>
+        <Text style={styles.description1}>
+          Wonderful Tonight – Eric Clapton (G – D – C – D – Cmaj7)
+        </Text>
+      </View>
+    </ScrollView>
   );
 };
 

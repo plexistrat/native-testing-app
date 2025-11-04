@@ -355,6 +355,7 @@ const Grade1AuralTests = () => {
             </View>
           </View>
         </View>
+        <YouTubePlayer videoId="XyLSlkmHOsQ" />
       </View>
 
       {/* Test 5: Harmony Test */}
@@ -419,6 +420,10 @@ const Grade1AuralTests = () => {
             </View>
           </View>
         </View>
+        <YouTubePlayer videoId="YOEdlketf0c" />
+        <YouTubePlayer videoId="FRWeUm8RHSU" />
+        <YouTubePlayer videoId="Slf1c0gzfCY" />
+        <YouTubePlayer videoId="uETmAHe2oJo" />
       </View>
     </ScrollView>
   );
