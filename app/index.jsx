@@ -164,9 +164,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     width: "100%",
     letterSpacing: 2,
-    // textShadowColor: "rgba(32, 201, 151, 0.5)",
-    // textShadowOffset: { width: 0, height: 3 },
-    // textShadowRadius: 6,
   },
   title4: {
     fontSize: 24,
