@@ -648,7 +648,7 @@
           "fingers": [1, 1, 2, null, null, null],
           "muted": [true, true, true, true, false, false]
         },
-        "F#m7": {
+        "F#m": {
           "type": "Minor seventh",
           "notes": ["F#", "A", "C#", "E"],
           "color": "lightblue",

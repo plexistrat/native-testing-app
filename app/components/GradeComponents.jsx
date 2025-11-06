@@ -2,13 +2,13 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { linkTo } from "expo-router/build/global-state/routing";
 
-const GradeComponents = ({ title }) => {
+const GradeComponents = ({ title, num }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          linkTo(`/grade1${title}`);
+          linkTo(`/grade${num}${title}`);
         }}
       >
         <View style={styles.titleContainer}>

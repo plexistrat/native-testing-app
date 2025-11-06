@@ -8,12 +8,12 @@ export default function grade2() {
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView style={styles.scrollContainer}>
         <View style={styles.container}>
-          <GradeComponents title="Scales" />
-          <GradeComponents title="Chords" />
-          <GradeComponents title="RhythmGuitar" />
-          <GradeComponents title="LeadGuitar" />
-          <GradeComponents title="SpokenTests" />
-          <GradeComponents title="AuralTests" />
+          <GradeComponents title="Scales" num="2" />
+          <GradeComponents title="Chords" num="2" />
+          <GradeComponents title="RhythmGuitar" num="2" />
+          <GradeComponents title="LeadGuitar" num="2" />
+          <GradeComponents title="SpokenTests" num="2" />
+          <GradeComponents title="AuralTests" num="2" />
           <View style={styles.titleContainer}>
             <Text style={styles.title}>
               For more details go to

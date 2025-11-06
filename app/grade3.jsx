@@ -7,12 +7,12 @@ export default function grade1() {
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView style={styles.scrollContainer}>
         <View style={styles.container}>
-          <GradeComponents title="Scales" />
-          <GradeComponents title="Chords" />
-          <GradeComponents title="RhythmGuitar" />
-          <GradeComponents title="LeadGuitar" />
-          <GradeComponents title="SpokenTests" />
-          <GradeComponents title="AuralTests" />
+          <GradeComponents title="Scales" num="3" />
+          <GradeComponents title="Chords" num="3" />
+          <GradeComponents title="RhythmGuitar" num="3" />
+          <GradeComponents title="LeadGuitar" num="3" />
+          <GradeComponents title="SpokenTests" num="3" />
+          <GradeComponents title="AuralTests" num="3" />
           <View style={styles.titleContainer}>
             <Text style={styles.title}>
               For more details go to
