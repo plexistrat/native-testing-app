@@ -10,100 +10,44 @@ import {
 
 const { width } = Dimensions.get("window");
 
-const grade2Chords = () => {
-  const [selectedChord, setSelectedChord] = useState("F");
+const grade3Chords = () => {
+  const [selectedChord, setSelectedChord] = useState(
+    "C major (6th string root)"
+  );
 
   const chords = {
-    F: {
+    "C major (6th string root)": {
       type: "Major",
-      notes: ["F", "A", "C"],
-      color: "#4CAF50",
-      frets: [1, 1, 2, 3, 0, 0],
-      fingers: [1, 1, 2, 3, null, null],
-      muted: [true, true, true, true, false, false],
-    },
-    Bm: {
-      type: "Minor",
-      notes: ["B", "D", "F#"],
-      color: "#2196F3",
-      frets: [2, 3, 4, 4, -1, -1],
-      fingers: [1, 2, 4, 3, null, null],
-      muted: [true, true, true, true, false, false],
-    },
-    C7: {
-      type: "Dominant 7th",
-      notes: ["C", "E", "G", "Bb"],
-      color: "#FF9800",
-      frets: [0, 1, 3, 2, 3, -1],
-      fingers: [null, 1, 4, 2, 3, null],
-      muted: [true, true, true, true, true, false],
-    },
-    G7: {
-      type: "Dominant 7th",
-      notes: ["G", "B", "D", "F"],
-      color: "#FF9800",
-      frets: [1, 0, 0, 0, 2, 3],
-      fingers: [1, null, null, null, 3, 2],
+      notes: ["C", "E", "G"],
+      frets: [8, 8, 9, 10, 10, 8],
+      fingers: [1, 1, 3, 4, 2, 1],
       muted: [true, true, true, true, true, true],
     },
-    Fmaj7: {
-      type: "Major 7th",
-      notes: ["F", "A", "C", "E"],
-      color: "#9C27B0",
-      frets: [0, 1, 2, 3, -1, -1],
-      fingers: [null, 1, 2, 3, null, null],
-      muted: [true, true, true, true, false, false],
-    },
-    Gmaj7: {
-      type: "Major 7th",
-      notes: ["G", "B", "D", "F#"],
-      color: "#9C27B0",
-      frets: [2, 0, 0, 0, 2, 3],
-      fingers: [2, null, null, null, 3, 2],
+    "C minor (6th string root)": {
+      type: "Minor",
+      notes: ["C", "Eb", "G"],
+      frets: [8, 8, 8, 10, 10, 8],
+      fingers: [1, 1, 1, 4, 2, 1],
       muted: [true, true, true, true, true, true],
     },
-    Em7: {
-      type: "Minor 7th",
-      notes: ["E", "G", "B", "D"],
-      color: "#bb6551ff",
-      frets: [0, 0, 0, 0, 0, 2, 0],
-      fingers: [null, null, null, null, null, 1, null],
-      muted: [true, true, true, true, true, true, true],
-    },
-    Am7: {
-      type: "Minor 7th",
-      notes: ["A", "C", "E", "G"],
-      color: "#bb6551ff",
-      frets: [0, 1, 0, 2, 0, -1],
-      fingers: [null, 1, null, 2, null, null],
+    "C major (5th string root)": {
+      type: "Major",
+      notes: ["C", "E", "G"],
+      frets: [3, 5, 5, 5, 3, -1],
+      fingers: [1, 3, 4, 2, 1, null],
       muted: [true, true, true, true, true, false],
     },
-    Dm7: {
-      type: "Minor 7th",
-      notes: ["D", "F", "A", "C"],
-      color: "#bb6551ff",
-      frets: [1, 1, 2, 0, -1, -1],
-      fingers: [1, 1, 2, null, null, null],
-      muted: [true, true, true, true, false, false],
-    },
-    "F#m": {
+    "C minor (5th string root)": {
       type: "Minor",
-      notes: ["F#", "A", "C#", "E"],
-      color: "#2196F3",
-      frets: [2, 2, 2, 4, -1, -1],
-      fingers: [1, 1, 1, 3, null, null],
-      muted: [true, true, true, true, false, false],
+      notes: ["C", "Eb", "G"],
+      frets: [3, 4, 5, 5, 3, -1],
+      fingers: [1, 2, 4, 3, 1, null],
+      muted: [true, true, true, true, true, false],
     },
   };
 
   const stringNames = ["E", "B", "G", "D", "A", "E"];
-  const chordTypes = [
-    "Major",
-    "Minor",
-    "Dominant 7th",
-    "Major 7th",
-    "Minor 7th",
-  ];
+  const chordTypes = ["Major", "Minor"];
 
   const renderChordDiagram = () => {
     const chord = chords[selectedChord];
@@ -576,4 +520,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default grade2Chords;
+export default grade3Chords;

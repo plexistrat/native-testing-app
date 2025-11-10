@@ -579,8 +579,8 @@
         "F": {
           "type": "Major",
           "notes": ["F", "A", "C"],
-          "color": "lightblue",
-          "frets": [1, 1, 2, 3, -1, -1],
+          "color": "#4CAF50",
+          "frets": [1, 1, 2, 3, 0, 0],
           "fingers": [1, 1, 2, 3, null, null],
           "muted": [true, true, true, true, false, false]
         },

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",
+    "expo": "54.0.23",
     "expo-constants": "~18.0.10",
     "expo-linear-gradient": "~15.0.7",
     "expo-linking": "~8.0.8",
@@ -27,7 +28,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "expo": "^54.0.22"
+    "expo": "^54.0.23"
   },
   "private": true
 }
