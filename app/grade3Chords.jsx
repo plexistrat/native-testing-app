@@ -12,37 +12,41 @@ const { width } = Dimensions.get("window");
 
 const grade3Chords = () => {
   const [selectedChord, setSelectedChord] = useState(
-    "C major (6th string root)"
+    "F major (6th string root)"
   );
 
   const chords = {
-    "C major (6th string root)": {
+    "F major (6th string root)": {
       type: "Major",
-      notes: ["C", "E", "G"],
-      frets: [8, 8, 9, 10, 10, 8],
+      notes: ["F", "A", "C"],
+      color: "#4CAF50",
+      frets: [1, 1, 2, 3, 3, 1],
       fingers: [1, 1, 3, 4, 2, 1],
-      muted: [true, true, true, true, true, true],
+      muted: [false, false, false, false, false, false],
     },
-    "C minor (6th string root)": {
+    "F minor (6th string root)": {
       type: "Minor",
-      notes: ["C", "Eb", "G"],
-      frets: [8, 8, 8, 10, 10, 8],
+      notes: ["F", "Ab", "C"],
+      color: "#2196F3",
+      frets: [1, 1, 1, 3, 3, 1],
       fingers: [1, 1, 1, 4, 2, 1],
-      muted: [true, true, true, true, true, true],
+      muted: [false, false, false, false, false, false],
     },
-    "C major (5th string root)": {
+    "Bb major (5th string root)": {
       type: "Major",
-      notes: ["C", "E", "G"],
-      frets: [3, 5, 5, 5, 3, -1],
+      notes: ["Bb", "D", "F"],
+      color: "#4CAF50",
+      frets: [1, 3, 3, 3, 1, -1],
       fingers: [1, 3, 4, 2, 1, null],
-      muted: [true, true, true, true, true, false],
+      muted: [false, false, false, false, false, true],
     },
-    "C minor (5th string root)": {
+    "Bb minor (5th string root)": {
       type: "Minor",
-      notes: ["C", "Eb", "G"],
-      frets: [3, 4, 5, 5, 3, -1],
+      notes: ["Bb", "Db", "F"],
+      color: "#2196F3",
+      frets: [1, 2, 3, 3, 1, -1],
       fingers: [1, 2, 4, 3, 1, null],
-      muted: [true, true, true, true, true, false],
+      muted: [false, false, false, false, false, true],
     },
   };
 
@@ -177,86 +181,64 @@ const grade3Chords = () => {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <Text style={styles.title}>🎸 Guitar Chords</Text>
-      <Text style={styles.subtitle}>Open Chords – 1st Position</Text>
+      <Text style={styles.title}>🎸 Guitar Chords — Grade 3</Text>
+      <Text style={styles.subtitle}>Barre Chords (5th & 6th String Roots)</Text>
 
       {renderChordButtons()}
       {renderChordInfo()}
       {renderChordDiagram()}
       <View style={styles.practiceContainer}>
         <Text style={styles.title}>Chords Practice</Text>
-        <Text style={styles.subtitle}>1. Learn the shapes gradually</Text>
+        <Text style={styles.subtitle}>1. Build Finger Strength</Text>
         <Text style={styles.description}>
-          Start with Major chords (A, D, E), then add Minor (Am, Dm, Em), and
-          finally Dominant7 & Major7.
+          Start with clean pressure across the barre. Play each string slowly.
+          If a note is buzzing, adjust finger angle and thumb placement.
         </Text>
-        <Text style={styles.tip}>
-          Don’t try to learn all at once — one chord group per week is ideal.
-          Tip: place your fingers from top to bottom (in relation to the
-          fretboard).
-        </Text>
-        <Text style={styles.subtitle}>2. Practice Slow Changes</Text>
+        <Text style={styles.subtitle}>2. Control Your Barre</Text>
         <Text style={styles.description}>
-          Pick 2 chords (e.g., A → D). Play slowly with a metronome at 50–60
-          BPM. Goal: clean sound and correct finger placement.
+          Practice lifting and placing the barre on its own. Goal: smooth, quiet
+          movement between shapes without squeezing too hard.
         </Text>
-        <Text style={styles.subtitle}>3. Chord Transitions</Text>
+        <Text style={styles.subtitle}>3. Major & Minor Shapes</Text>
         <Text style={styles.description}>
-          Once you know the shapes, practice transitions (e.g., A → D → E). Use
-          a strumming pattern (like down-down-up-up-down). Try switching chords
-          every bar, half, or quarter note.
+          The root stays the same. Switch between major and minor by only
+          adjusting the middle and ring fingers. Example: F major ↔ F minor.
         </Text>
-        <Text style={styles.subtitle}>4. Learn Progressions</Text>
+        <Text style={styles.subtitle}>4. Move the Shape Along the Neck</Text>
         <Text style={styles.description}>
-          Use simple progressions like: I-IV-V → A - D - E and ii-V-I → Dm - G7
-          - C. This helps you understand musical relationships.
+          Pick one shape and slide it to 3 different frets. This shows how one
+          shape becomes many chords.
         </Text>
-        <Text style={styles.subtitle}>5. Play Along With Songs</Text>
+        <Text style={styles.subtitle}>5. Simple Grade 3 Progressions</Text>
         <Text style={styles.description}>
-          Choose simple songs that use these Grade 1 chords, e.g. Knockin’ On
-          Heaven’s Door (G - D - Am - G - D - C). This connects chords to real
-          music.
+          F – Bb – C{"\n"}G – C – D{"\n"}
+          Am – F – G{"\n"}
+          Dm – Bb – C
         </Text>
-        <Text style={styles.subtitle}>6. Ear Training</Text>
+        <Text style={styles.subtitle}>6. Right-Hand Consistency</Text>
         <Text style={styles.description}>
-          Play a chord and listen: Major sounds bright, Minor sounds sad.
-          Training your ear helps recognize chord “colors”.
+          Use one steady strumming pattern. Focus on keeping volume even while
+          your left hand is working hard.
         </Text>
-        <Text style={styles.subtitle}>7. 10-Minute Daily Routine</Text>
+        <Text style={styles.subtitle}>7. 10-Minute Routine</Text>
         <Text style={styles.description}>
-          Warm-up → Play all chords slowly once. Changes → 2 minutes switching
-          (e.g., A↔D). Progression → Play a small rhythm (4 chords). Then jam
-          over a backing track.
+          Warm-up → Play 3 barre shapes slowly.{"\n"}
+          Changes → Move between two chords for 2 minutes.{"\n"}
+          Progression → Pick one pattern and loop it.{"\n"}
+          Finish → Play along with a slow backing track.
         </Text>
         <Text style={styles.subtitle1}>Tip:</Text>
         <Text style={styles.description1}>
-          Don’t always look at your hand — try to *feel* the shapes. Your muscle
-          memory will improve and transitions will get faster.
+          Keep your thumb behind the center of the neck, not wrapped over the
+          top. This gives power and keeps your hand relaxed.
         </Text>
-        <Text style={styles.subtitle1}>Song List</Text>
+        <Text style={styles.subtitle1}>Song Suggestions</Text>
         <Text style={styles.description1}>
-          Knockin’ On Heaven’s Door – Bob Dylan (G – D – Am – G – D – C)
-        </Text>
-        <Text style={styles.description1}>
-          Leaving On A Jet Plane – John Denver (G – C – D)
-        </Text>
-        <Text style={styles.description1}>
-          Sweet Home Alabama – Lynyrd Skynyrd (D – C – G)
-        </Text>
-        <Text style={styles.description1}>
-          Horse With No Name – America (Em – D6add9, replace with D)
-        </Text>
-        <Text style={styles.description1}>
-          Twist And Shout – The Beatles (D – G – A7)
-        </Text>
-        <Text style={styles.description1}>
-          Folsom Prison Blues – Johnny Cash (E – A – B7)
-        </Text>
-        <Text style={styles.description1}>
-          Blue Suede Shoes – Elvis Presley (A7 – D7 – E7)
-        </Text>
-        <Text style={styles.description1}>
-          Wonderful Tonight – Eric Clapton (G – D – C – D – Cmaj7)
+          Zombie – The Cranberries{"\n"}
+          Creep – Radiohead{"\n"}
+          Thrill is Gone – BB King{"\n"}
+          Layla – Eric Clapton {"\n"}
+          Boulevard of Broken Dreams – Green Day
         </Text>
       </View>
     </ScrollView>

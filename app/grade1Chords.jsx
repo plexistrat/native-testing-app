@@ -60,7 +60,6 @@ const grade1Chords = () => {
     Am: {
       type: "Minor",
       notes: ["A", "C", "E"],
-      color: "#2196F3",
       frets: [0, 1, 2, 2, 0, -1],
       fingers: [null, 1, 3, 2, null, null],
       muted: [false, false, false, false, false, true],

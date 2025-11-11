@@ -20,7 +20,7 @@ const grade2Chords = () => {
       color: "#4CAF50",
       frets: [1, 1, 2, 3, 0, 0],
       fingers: [1, 1, 2, 3, null, null],
-      muted: [true, true, true, true, false, false],
+      muted: [false, false, false, false, true, true],
     },
     Bm: {
       type: "Minor",
@@ -28,7 +28,7 @@ const grade2Chords = () => {
       color: "#2196F3",
       frets: [2, 3, 4, 4, -1, -1],
       fingers: [1, 2, 4, 3, null, null],
-      muted: [true, true, true, true, false, false],
+      muted: [false, false, false, false, true, true],
     },
     C7: {
       type: "Dominant 7th",
@@ -36,7 +36,7 @@ const grade2Chords = () => {
       color: "#FF9800",
       frets: [0, 1, 3, 2, 3, -1],
       fingers: [null, 1, 4, 2, 3, null],
-      muted: [true, true, true, true, true, false],
+      muted: [false, false, false, false, false, true],
     },
     G7: {
       type: "Dominant 7th",
@@ -44,7 +44,7 @@ const grade2Chords = () => {
       color: "#FF9800",
       frets: [1, 0, 0, 0, 2, 3],
       fingers: [1, null, null, null, 3, 2],
-      muted: [true, true, true, true, true, true],
+      muted: [false, false, false, false, false, false],
     },
     Fmaj7: {
       type: "Major 7th",
@@ -52,7 +52,7 @@ const grade2Chords = () => {
       color: "#9C27B0",
       frets: [0, 1, 2, 3, -1, -1],
       fingers: [null, 1, 2, 3, null, null],
-      muted: [true, true, true, true, false, false],
+      muted: [false, false, false, false, true, true],
     },
     Gmaj7: {
       type: "Major 7th",
@@ -60,7 +60,7 @@ const grade2Chords = () => {
       color: "#9C27B0",
       frets: [2, 0, 0, 0, 2, 3],
       fingers: [2, null, null, null, 3, 2],
-      muted: [true, true, true, true, true, true],
+      muted: [false, false, false, false, false, false],
     },
     Em7: {
       type: "Minor 7th",
@@ -68,7 +68,7 @@ const grade2Chords = () => {
       color: "#bb6551ff",
       frets: [0, 0, 0, 0, 0, 2, 0],
       fingers: [null, null, null, null, null, 1, null],
-      muted: [true, true, true, true, true, true, true],
+      muted: [false, false, false, false, false, false],
     },
     Am7: {
       type: "Minor 7th",
@@ -76,7 +76,7 @@ const grade2Chords = () => {
       color: "#bb6551ff",
       frets: [0, 1, 0, 2, 0, -1],
       fingers: [null, 1, null, 2, null, null],
-      muted: [true, true, true, true, true, false],
+      muted: [false, false, false, false, false, true],
     },
     Dm7: {
       type: "Minor 7th",
@@ -84,7 +84,7 @@ const grade2Chords = () => {
       color: "#bb6551ff",
       frets: [1, 1, 2, 0, -1, -1],
       fingers: [1, 1, 2, null, null, null],
-      muted: [true, true, true, true, false, false],
+      muted: [false, false, false, false, true, true],
     },
     "F#m": {
       type: "Minor",
@@ -92,7 +92,7 @@ const grade2Chords = () => {
       color: "#2196F3",
       frets: [2, 2, 2, 4, -1, -1],
       fingers: [1, 1, 1, 3, null, null],
-      muted: [true, true, true, true, false, false],
+      muted: [false, false, false, false, true, true],
     },
   };
 
@@ -233,86 +233,94 @@ const grade2Chords = () => {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <Text style={styles.title}>🎸 Guitar Chords</Text>
-      <Text style={styles.subtitle}>Open Chords – 1st Position</Text>
+      <Text style={styles.title}>🎸 Guitar Chords — Grade 2</Text>
+      <Text style={styles.subtitle}>
+        Grade 2: Barre Prep, 7th Chords, Shape Control
+      </Text>
 
       {renderChordButtons()}
       {renderChordInfo()}
       {renderChordDiagram()}
       <View style={styles.practiceContainer}>
-        <Text style={styles.title}>Chords Practice</Text>
-        <Text style={styles.subtitle}>1. Learn the shapes gradually</Text>
+        <Text style={styles.title}>Practice Section</Text>
+        <Text style={styles.subtitle}>1. Strengthen Finger Independence</Text>
         <Text style={styles.description}>
-          Start with Major chords (A, D, E), then add Minor (Am, Dm, Em), and
-          finally Dominant7 & Major7.
+          Start by pressing two-note shapes (dyads) cleanly:{"\n"}1 + 2{"\n"} 1
+          + 3{"\n"} 2 + 4{"\n"}
+          These small shapes make barre and 7th chords easier later.
         </Text>
-        <Text style={styles.tip}>
-          Don’t try to learn all at once — one chord group per week is ideal.
-          Tip: place your fingers from top to bottom (in relation to the
-          fretboard).
-        </Text>
-        <Text style={styles.subtitle}>2. Practice Slow Changes</Text>
+
+        <Text style={styles.subtitle}>2. Smooth Shape Placement</Text>
         <Text style={styles.description}>
-          Pick 2 chords (e.g., A → D). Play slowly with a metronome at 50–60
-          BPM. Goal: clean sound and correct finger placement.
+          Pick one chord (like Bm). Place fingers all together, not one at a
+          time. Aim for clean sound using slow, steady strumming.
         </Text>
-        <Text style={styles.subtitle}>3. Chord Transitions</Text>
+        <Text style={styles.subtitle}>3. Expand Your Chord Library</Text>
         <Text style={styles.description}>
-          Once you know the shapes, practice transitions (e.g., A → D → E). Use
-          a strumming pattern (like down-down-up-up-down). Try switching chords
-          every bar, half, or quarter note.
+          Minor shapes (Bm, F#m) {"\n"} Dominant 7 (C7, G7) {"\n"} Major 7
+          (Fmaj7, Gmaj7){"\n"} These teach tension, color, and smoother
+          transitions.
         </Text>
-        <Text style={styles.subtitle}>4. Learn Progressions</Text>
+        <Text style={styles.subtitle}>4. Change Between Chords</Text>
         <Text style={styles.description}>
-          Use simple progressions like: I-IV-V → A - D - E and ii-V-I → Dm - G7
-          - C. This helps you understand musical relationships.
+          Bm → C7{"\n"} Am7 → Dm7{"\n"} G → Gmaj7{"\n"} Use a metronome at 55–65
+          BPM.{"\n"}
         </Text>
-        <Text style={styles.subtitle}>5. Play Along With Songs</Text>
+        <Text style={styles.subtitle}>5. Learn Basic Progressions</Text>
         <Text style={styles.description}>
-          Choose simple songs that use these Grade 1 chords, e.g. Knockin’ On
-          Heaven’s Door (G - D - Am - G - D - C). This connects chords to real
-          music.
+          Great Grade 2 progressions: {"\n"} ii → V → I: Dm → G7 → C{"\n"} vi →
+          IV → I → V: Am → F → C → G {"\n"} I → vi → IV → V: C → Am → Fmaj7 → G7{" "}
+          {"\n"}.
         </Text>
-        <Text style={styles.subtitle}>6. Ear Training</Text>
+        <Text style={styles.subtitle}>6. Add Simple Rhythm Patterns</Text>
         <Text style={styles.description}>
-          Play a chord and listen: Major sounds bright, Minor sounds sad.
-          Training your ear helps recognize chord “colors”.
+          Use these patterns: {"\n"} Down Down Up Up Down {"\n"} Down Miss Down
+          Up Miss Up{"\n"} Keep the rhythm steady even when the chord changes
+          feel slow.
         </Text>
-        <Text style={styles.subtitle}>7. 10-Minute Daily Routine</Text>
+        <Text style={styles.subtitle}>7. Ear Training</Text>
         <Text style={styles.description}>
-          Warm-up → Play all chords slowly once. Changes → 2 minutes switching
-          (e.g., A↔D). Progression → Play a small rhythm (4 chords). Then jam
-          over a backing track.
+          Play two chords back to back and listen:{"\n"} Major = bright {"\n"}
+          Minor = dark{"\n"} 7th chords = colorful and slightly tense{"\n"}
+          Start predicting the sound before playing it.
         </Text>
-        <Text style={styles.subtitle1}>Tip:</Text>
+        <Text style={styles.subtitle1}>8. 10-Minute Daily Routine</Text>
         <Text style={styles.description1}>
-          Don’t always look at your hand — try to *feel* the shapes. Your muscle
-          memory will improve and transitions will get faster.
+          Warm-up → light finger stretching{"\n"} Shapes → play 3 chords slowly
+          {"\n"}
+          Changes → 2 minutes switching between any two{"\n"} Progression → loop
+          one pattern{"\n"} Play-along → slow track with 4–8 chords
         </Text>
+        <Text style={styles.subtitle1}>Tip</Text>
+        <Text style={styles.description1}>
+          Relax your fingertips and keep your thumb behind the neck. If a chord
+          buzzes, reduce pressure slightly and adjust finger angle.
+        </Text>
+
         <Text style={styles.subtitle1}>Song List</Text>
         <Text style={styles.description1}>
-          Knockin’ On Heaven’s Door – Bob Dylan (G – D – Am – G – D – C)
+          Stand By Me – Ben E. King (G – Em – C – D – G7)
         </Text>
         <Text style={styles.description1}>
-          Leaving On A Jet Plane – John Denver (G – C – D)
+          No Woman No Cry – Bob Marley (C – G – Am – F)
         </Text>
         <Text style={styles.description1}>
-          Sweet Home Alabama – Lynyrd Skynyrd (D – C – G)
+          Wish You Were Here – Pink Floyd (G – C – D – Am7)s
         </Text>
         <Text style={styles.description1}>
-          Horse With No Name – America (Em – D6add9, replace with D)
+          Let It Be – The Beatles (C – G – Am – F – C – G – Fmaj7)
         </Text>
         <Text style={styles.description1}>
-          Twist And Shout – The Beatles (D – G – A7)
+          Redemption Song – Bob Marley (G – Em – C – D)
         </Text>
         <Text style={styles.description1}>
-          Folsom Prison Blues – Johnny Cash (E – A – B7)
+          Time of Your Life – Green Day (G – C – D – Em)
         </Text>
         <Text style={styles.description1}>
           Blue Suede Shoes – Elvis Presley (A7 – D7 – E7)
         </Text>
         <Text style={styles.description1}>
-          Wonderful Tonight – Eric Clapton (G – D – C – D – Cmaj7)
+          House of the Rising Sun – Traditional (Am – C – D – F – E7)
         </Text>
       </View>
     </ScrollView>
