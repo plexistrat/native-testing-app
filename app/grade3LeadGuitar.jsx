@@ -1,38 +1,32 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-// import React from "react";
-// import { Link } from "expo-router";
 import YouTubePlayer from "./components/YouTubePlayer";
 
-const grade1LeadGuitar = () => {
+const grade3LeadGuitar = () => {
   return (
     <ScrollView style={styles.scrollContainer}>
       <View style={styles.container}>
-        <Text style={styles.title}>Grade 1 Lead Guitar</Text>
+        <Text style={styles.title}>Grade 3 Lead Guitar</Text>
         <Text style={styles.description}>
-          In this section you will find URL's with chord progressions that are
-          suitable for Grade 1 Lead Guitar
+          In this section you will find backing track videos, from my YouTube
+          channel with chord progressions that are suitable for Grade 3 Lead
+          Guitar
         </Text>
         <View style={styles.linksContainer}>
           <YouTubePlayer
-            videoId="oB3T1409YCM"
-            title="Grade 1, Lead guitar, A major"
+            videoId="W3Y-jkUDpWY"
+            title="Grade 3, lead guitar in C minor"
           />
           <YouTubePlayer
-            videoId="B3tR1EtXpdE"
-            title="Grade 1, Lead guitar, G major"
+            videoId="ZHsWCgSRNes"
+            title="Grade 3, lead in D flat major"
           />
           <YouTubePlayer
-            videoId="w9bhc4yO_mo"
-            title="Grade 1, Lead guitar, A minor"
-          />
-
-          <YouTubePlayer
-            videoId="9zfKh_Pm8T4"
-            title="Grade 1, Lead guitar, E dom 7th"
+            videoId="LX9Z99qQxs0"
+            title="Grade 3, lead in E major"
           />
           <YouTubePlayer
-            videoId="23TNMzsB1DU"
-            title="Grade 1, Lead guitar, E minor"
+            videoId="NSyVfTtx6HM"
+            title="Grade 3, lead in G minor"
           />
         </View>
 
@@ -42,91 +36,84 @@ const grade1LeadGuitar = () => {
           </Text>
 
           <View style={styles.studyItem}>
-            <Text style={styles.studyHeader}>
-              🎯 1. Scale Mastery (Daily Practice)
+            <Text style={styles.studyHeader}>🎯 1. Scale Practice</Text>
+            <Text style={styles.studyText}>
+              Practice major, minor, and pentatonic scales across the fretboard.
             </Text>
             <Text style={styles.studyText}>
-              Practice your different type of scales
+              Use different rhythms: quarter notes, eighth notes, triplets, and
+              sixteenths.
             </Text>
             <Text style={styles.studyText}>
-              Use rhythmic variations: quarter notes, eighth notes, triplets,
-              sixteenths, etc.
-            </Text>
-            <Text style={styles.studyText}>
-              Play with and without a metronome.
+              Play with a metronome to develop timing, control, and consistency.
             </Text>
           </View>
 
           <View style={styles.studyItem}>
-            <Text style={styles.studyHeader}>
-              🎼 2. Backing Track Practice with Intent
+            <Text style={styles.studyHeader}>🎼 2. Backing Track Jamming</Text>
+            <Text style={styles.studyText}>
+              Jam along with simple chord progressions in different keys.
             </Text>
             <Text style={styles.studyText}>
-              Choose a key (e.g., Em) and jam over simple chord progressions.
+              Focus on smooth phrasing and staying in the key.
             </Text>
             <Text style={styles.studyText}>
-              Use focused limitations: "Improvise using only 3 notes", Use only
-              slide or vibrato
-            </Text>
-            <Text style={styles.studyText}>
-              Record yourself and review your playing critically.
+              Experiment using only 2–3 notes at a time to build musical ideas.
             </Text>
           </View>
 
           <View style={styles.studyItem}>
-            <Text style={styles.studyHeader}>🎸 3. Lick Vocabulary</Text>
+            <Text style={styles.studyHeader}>🎸 3. Short Lick Development</Text>
             <Text style={styles.studyText}>
-              Learn short phrases (licks) from guitarists you admire: e.g., B.B.
-              King, Hendrix, Gilmour, Slash, Frusciante.
+              Learn short guitar licks from songs or admired players.
             </Text>
             <Text style={styles.studyText}>
-              Modify the lick: change rhythm, phrasing, or key to make it your
+              Play slowly at first, then increase speed while maintaining
+              clarity.
+            </Text>
+            <Text style={styles.studyText}>
+              Modify rhythm, phrasing, or starting note to make the lick your
               own.
-            </Text>
-            <Text style={styles.studyText}>
-              Practice call & response: play a phrase, then try to answer it
-              musically.
             </Text>
           </View>
 
           <View style={styles.studyItem}>
             <Text style={styles.studyHeader}>🌀 4. Rhythmic Improvisation</Text>
             <Text style={styles.studyText}>
-              Focus only on rhythm, using just 1 or 2 notes.
+              Focus on rhythm patterns using a few notes, emphasizing timing.
             </Text>
             <Text style={styles.studyText}>
-              Try to "say something" rhythmically before worrying about note
-              choice.
+              Clap or tap the rhythm first, then apply it on the guitar.
             </Text>
             <Text style={styles.studyText}>
-              Play with metronome only, no chords or backing track.
+              Challenge yourself with different note groupings and accents.
             </Text>
           </View>
 
           <View style={styles.studyItem}>
-            <Text style={styles.studyHeader}>🎥 5. Record & Review</Text>
+            <Text style={styles.studyHeader}>🎥 5. Record & Reflect</Text>
             <Text style={styles.studyText}>
-              Frequently record your improvisations (video or audio).
+              Record your improvisations over backing tracks or scales.
             </Text>
             <Text style={styles.studyText}>
-              Watch back to observe technique, tone, phrasing, and expression.
-            </Text>
-            <Text style={styles.studyText}>
-              Keep a progress log: what you practiced, what worked, what to
+              Listen critically to tone, timing, and phrasing, noting areas to
               improve.
             </Text>
+            <Text style={styles.studyText}>
+              Repeat and refine your ideas to develop consistency and
+              musicality.
+            </Text>
           </View>
 
           <View style={styles.studyItem}>
-            <Text style={styles.studyHeader}>
-              📘 6. Create a Personal "Lick Book"
+            <Text style={styles.studyHeader}>📘 6. Guitar Journal</Text>
+            <Text style={styles.studyText}>
+              Maintain a notebook with favorite licks, scale patterns, and chord
+              shapes.
             </Text>
             <Text style={styles.studyText}>
-              Maintain a notebook or digital file of: Favorite licks, Tab ideas,
-              chord progressions, theory tips.
-            </Text>
-            <Text style={styles.studyText}>
-              This becomes your personal improvisation vocabulary.
+              Use it to track progress and build your personal improvisation
+              vocabulary.
             </Text>
           </View>
         </View>
@@ -135,7 +122,7 @@ const grade1LeadGuitar = () => {
   );
 };
 
-export default grade1LeadGuitar;
+export default grade3LeadGuitar;
 
 const styles = StyleSheet.create({
   scrollContainer: {

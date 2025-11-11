@@ -658,7 +658,30 @@
         }
       },
       "rhythmGuitar": {},
-      "leadGuitar": {},
+      "leadGuitar": {
+        "videos": [
+          {
+            "videoId": "W3Y-jkUDpWY",
+            "title": "Grade 3, lead guitar in C minor"
+          },
+          {
+            "videoId": "ZHsWCgSRNes",
+            "title": "Grade 3, lead in D flat major"
+          },
+          {
+            "videoId": "LX9Z99qQxs0",
+            "title": "Grade 3, lead in E major"
+          },
+          {
+            "videoId": "NSyVfTtx6HM",
+            "title": "Grade 1, Lead guitar, E dom 7th"
+          },
+          {
+            "videoId": "23TNMzsB1DU",
+            "title": "Grade 3, lead in G minor"
+          }
+        ]
+      },
       "spokenTests": {},
       "auralTests": {}
     }
@@ -820,7 +843,30 @@
         }
       },
       "rhythmGuitar": {},
-      "leadGuitar": {},
+      "leadGuitar": {
+        "videos": [
+          {
+            "videoId": "W3Y-jkUDpWY",
+            "title": "Grade 3, lead guitar in C minor"
+          },
+          {
+            "videoId": "ZHsWCgSRNes",
+            "title": "Grade 3, lead in D flat major"
+          },
+          {
+            "videoId": "LX9Z99qQxs0",
+            "title": "Grade 3, lead in E major"
+          },
+          {
+            "videoId": "NSyVfTtx6HM",
+            "title": "Grade 1, Lead guitar, E dom 7th"
+          },
+          {
+            "videoId": "23TNMzsB1DU",
+            "title": "Grade 3, lead in G minor"
+          }
+        ]
+      },
       "spokenTests": {},
       "auralTests": {}
     }

@@ -9,6 +9,7 @@ export default function grade1() {
         <View style={styles.container}>
           <GradeComponents title="Scales" num="3" />
           <GradeComponents title="Chords" num="3" />
+          <GradeComponents title="Arpeggios" num="3" />
           <GradeComponents title="RhythmGuitar" num="3" />
           <GradeComponents title="LeadGuitar" num="3" />
           <GradeComponents title="SpokenTests" num="3" />
@@ -19,7 +20,6 @@ export default function grade1() {
               <Link href="/listenExamples" style={{ color: "#DEE3E4" }}>
                 <Text> Listen examples</Text>
               </Link>
-              .
             </Text>
             <Text style={styles.title}>
               There you can find many audio examples
