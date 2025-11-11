@@ -1,30 +1,30 @@
 import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
-import React from "react";
+// import React from "react";
 
-const grade1RhythmGuitar = () => {
+const grade2RhythmGuitar = () => {
   const rhythmSections = [
     {
-      title: "Ballad",
-      image: require("../assets/img/ballad.jpeg"),
-      description: "Slow, emotional tempo with gentle strumming patterns",
+      title: "Bright And Lively",
+      image: require("../assets/img/grade2BrightAndLively.jpg"),
+      description: "Smooth, steady strumming with simple accents",
       color: "#4CAF50",
     },
     {
-      title: "Mid Tempo",
-      image: require("../assets/img/midTempo.jpeg"),
-      description: "Moderate pace with balanced rhythm patterns",
+      title: "Not Too Slow",
+      image: require("../assets/img/grade2NotTooSlow.jpg"),
+      description: "Comfortable pace with down-up patterns",
       color: "#2196F3",
     },
     {
-      title: "Slow Tempo",
-      image: require("../assets/img/slowTempo.jpeg"),
-      description: "Relaxed tempo focusing on chord transitions",
+      title: "Tenderly",
+      image: require("../assets/img/grade2Tenderly.jpg"),
+      description: "Relaxed strumming focusing on clean chord changes",
       color: "#FF9800",
     },
     {
-      title: "Up Tempo",
-      image: require("../assets/img/upTempo.jpeg"),
-      description: "Fast-paced energetic strumming patterns",
+      title: "Moderate Tempo",
+      image: require("../assets/img/grade2ModerateTempo.jpg"),
+      description: "Energetic rhythm using consistent down-up motion",
       color: "#F44336",
     },
   ];
@@ -57,8 +57,20 @@ const grade1RhythmGuitar = () => {
     {
       symbol: ":",
       name: "repeat",
-      description: "repeat the same section",
+      description: "repeat the previous section",
       color: "#4CAF50",
+    },
+    {
+      symbol: "Γ1",
+      name: "First Ending",
+      description: "play this measure the first time only",
+      color: "#9C27B0",
+    },
+    {
+      symbol: "Γ2",
+      name: "Second Ending",
+      description: "skip Γ1 and play this ending the second time",
+      color: "#00BCD4",
     },
   ];
 
@@ -71,7 +83,7 @@ const grade1RhythmGuitar = () => {
       <View style={styles.container}>
         {/* Header Section */}
         <View style={styles.headerSection}>
-          <Text style={styles.mainTitle}> Grade 1 Rhythm Guitar</Text>
+          <Text style={styles.mainTitle}> Grade 2 Rhythm Guitar</Text>
         </View>
 
         {/* Rhythm Sections */}
@@ -159,12 +171,11 @@ const grade1RhythmGuitar = () => {
           </View>
         </View>
       </View>
-      {/* </FloatingNotesBackground> */}
     </ScrollView>
   );
 };
 
-export default grade1RhythmGuitar;
+export default grade2RhythmGuitar;
 
 const styles = StyleSheet.create({
   scrollContainer: {

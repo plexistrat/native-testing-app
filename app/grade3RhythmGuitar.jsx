@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 
-const grade1RhythmGuitar = () => {
+const grade3RhythmGuitar = () => {
   const rhythmSections = [
     {
       title: "Ballad",
@@ -164,7 +164,7 @@ const grade1RhythmGuitar = () => {
   );
 };
 
-export default grade1RhythmGuitar;
+export default grade3RhythmGuitar;
 
 const styles = StyleSheet.create({
   scrollContainer: {
