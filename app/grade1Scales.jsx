@@ -208,7 +208,7 @@ const grade1Scales = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Grade 1 Guitar Scales</Text>
+        <Text style={styles.title}>Grade 1 Scales</Text>
         <Text style={styles.subtitle}>
           Select a scale and view it on the fretboard grid
         </Text>

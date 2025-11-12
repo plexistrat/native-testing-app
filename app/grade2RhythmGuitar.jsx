@@ -61,13 +61,13 @@ const grade2RhythmGuitar = () => {
       color: "#4CAF50",
     },
     {
-      symbol: "Γ1",
+      symbol: "Γ1.",
       name: "First Ending",
       description: "play this measure the first time only",
       color: "#9C27B0",
     },
     {
-      symbol: "Γ2",
+      symbol: "Γ2.",
       name: "Second Ending",
       description: "skip Γ1 and play this ending the second time",
       color: "#00BCD4",

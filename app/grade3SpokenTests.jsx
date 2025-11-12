@@ -5,12 +5,12 @@ import {
   FontAwesome5,
 } from "@expo/vector-icons";
 
-const Grade1SpokenTests = () => {
+const Grade3SpokenTests = () => {
   const spokenSections = [
     {
       title: "1. Fingerboard Knowledge",
       description:
-        "You will be asked to name notes on specific strings and frets.\n\nLearn the natural notes (A–G) up to the 5th fret on each string.\nBe confident in identifying open strings and simple fretted notes.",
+        "You will be asked to name notes on particular strings and frets taken from scales in Component 1.\n\nContinue expanding your knowledge of the entire fretboard. Be confident naming all natural notes up to the 12th fret on each string.",
       icon: <Ionicons name="musical-notes" size={28} color="#4FC3F7" />,
       color: "#4FC3F720",
       borderColor: "#4FC3F7",
@@ -18,7 +18,7 @@ const Grade1SpokenTests = () => {
     {
       title: "2. Clarity and Fluency",
       description:
-        "Focus on producing clear and even notes.\n\nKeep your fretting-hand fingers close to the frets using the tips of your fingers. Avoid unwanted string noise by muting unplayed strings.\n\nWhen picking, use smooth downstrokes and consistent motion.",
+        "You may be asked about optimum hand positioning and fluency when playing:\n\n• Keep fingers close to the frets, pressing with fingertips.\n• Maintain relaxed wrist and thumb placement.\n• Use alternate picking for consistent tone.\n• Control unwanted noise by muting unused strings.\n\nFluency develops through even tone and rhythm—accuracy is more important than speed.",
       icon: (
         <MaterialCommunityIcons name="hand-clap" size={28} color="#81C784" />
       ),
@@ -28,20 +28,18 @@ const Grade1SpokenTests = () => {
     {
       title: "3. Knowledge of the Instrument",
       description:
-        "Understand basic parts of the guitar:\n• Headstock – holds tuning pegs\n• Neck and fingerboard – where notes are fretted\n• Body – resonates the sound\n• Frets – divide the neck into semitone steps\n• Bridge – anchors strings to the body\n\nKnow how to tune your guitar and identify marker dots.",
+        "You may be asked about key parts of the guitar and their functions:\n• Headstock – holds the tuning machines\n• Nut – spaces the strings evenly\n• Frets – divide the fingerboard into semitones\n• Bridge and saddle – support the strings and define vibration length\n• Marker dots – guide visual positioning at frets 3, 5, 7, 9, and 12\n\nAlso understand how string tension and action affect playability.",
       icon: <FontAwesome5 name="guitar" size={26} color="#FFB74D" />,
       color: "#FFB74D20",
       borderColor: "#FFB74D",
     },
     {
-      title: "4. Basic Functions on an Amplifier",
+      title: "4. Types of Effects Pedals",
       description:
-        "You should know what each basic control does:\n• Volume – controls loudness\n• Tone – adjusts brightness or warmth\n• Gain – adds drive or distortion\n\nExample questions:\n• What happens when you increase the gain?\n• What does the tone knob do?",
-      icon: (
-        <MaterialCommunityIcons name="amplifier" size={28} color="#F06292" />
-      ),
-      color: "#F0629220",
-      borderColor: "#F06292",
+        "You should understand the main categories of effects pedals and their functions:\n\n🎸 **Overdrive / Distortion / Fuzz** – Add gain and saturation for more aggressive tones.\n🎚️ **Filter Effects** – Wah or envelope filter alter tone by emphasizing frequency ranges.\n🎛️ **Modulation Effects** – Chorus, flanger, phaser; add movement and depth.\n⏱️ **Delay & Reverb** – Create echo or spatial ambience, making the sound larger or more atmospheric.\n\nYou may be asked to describe how each affects the tone or to identify the type of sound they produce.",
+      icon: <MaterialCommunityIcons name="tune" size={28} color="#BA68C8" />,
+      color: "#BA68C820",
+      borderColor: "#BA68C8",
     },
   ];
 
@@ -52,9 +50,10 @@ const Grade1SpokenTests = () => {
     >
       <View style={styles.container}>
         <View style={styles.headerSection}>
-          <Text style={styles.mainTitle}>Grade 1 Spoken Tests</Text>
+          <Text style={styles.mainTitle}>Grade 3 Spoken Tests</Text>
           <Text style={styles.subtitle}>
-            Introducing guitar knowledge and essential technique
+            Building tone control and deeper understanding of the guitar and its
+            sound
           </Text>
         </View>
 
@@ -78,18 +77,19 @@ const Grade1SpokenTests = () => {
         ))}
 
         <View style={styles.tipsSection}>
-          <Text style={styles.tipsTitle}>💡 Practice Tips</Text>
+          <Text style={styles.tipsTitle}>💡 Study & Practice Tips</Text>
           <Text style={styles.tipText}>
-            • Say note names out loud as you play them.
+            • Practice describing what each pedal type does in simple terms.
           </Text>
           <Text style={styles.tipText}>
-            • Keep your fingers curved and close to the strings.
+            • Experiment with how your picking and fretting hand affect clarity.
           </Text>
           <Text style={styles.tipText}>
-            • Practice with both clean and slightly overdriven tones.
+            • Record your playing with and without effects to hear tonal
+            differences.
           </Text>
           <Text style={styles.tipText}>
-            • Record yourself to check clarity and consistency.
+            • Continue naming notes up to the 12th fret daily.
           </Text>
         </View>
       </View>
@@ -97,7 +97,7 @@ const Grade1SpokenTests = () => {
   );
 };
 
-export default Grade1SpokenTests;
+export default Grade3SpokenTests;
 
 const styles = StyleSheet.create({
   scrollContainer: {
@@ -152,23 +152,23 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   tipsSection: {
-    backgroundColor: "rgba(79, 195, 247, 0.1)",
+    backgroundColor: "rgba(186, 104, 200, 0.1)",
     padding: 18,
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: "rgba(79, 195, 247, 0.3)",
+    borderColor: "rgba(186, 104, 200, 0.3)",
     marginTop: 20,
   },
   tipsTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#4FC3F7",
+    color: "#BA68C8",
     marginBottom: 12,
     textAlign: "center",
   },
   tipText: {
     fontSize: 15,
-    color: "#E1F5FE",
+    color: "#E1BEE7",
     marginBottom: 6,
     lineHeight: 22,
   },

@@ -5,22 +5,22 @@ import {
   FontAwesome5,
 } from "@expo/vector-icons";
 
-const Grade1SpokenTests = () => {
+const Grade2SpokenTests = () => {
   const spokenSections = [
     {
       title: "1. Fingerboard Knowledge",
       description:
-        "You will be asked to name notes on specific strings and frets.\n\nLearn the natural notes (A–G) up to the 5th fret on each string.\nBe confident in identifying open strings and simple fretted notes.",
+        "The examiner names a string and fret — you must name the note. Be familiar with the scales used in Component 1.",
       icon: <Ionicons name="musical-notes" size={28} color="#4FC3F7" />,
       color: "#4FC3F720",
       borderColor: "#4FC3F7",
     },
     {
-      title: "2. Clarity and Fluency",
+      title: "2. Clarity & Fluency",
       description:
-        "Focus on producing clear and even notes.\n\nKeep your fretting-hand fingers close to the frets using the tips of your fingers. Avoid unwanted string noise by muting unplayed strings.\n\nWhen picking, use smooth downstrokes and consistent motion.",
+        "Fretting-hand positioning: keep fingers close to frets using fingertips.\n\nFluency when picking: use alternate picking (down-up) smoothly, avoid too much or too little pick showing.",
       icon: (
-        <MaterialCommunityIcons name="hand-clap" size={28} color="#81C784" />
+        <MaterialCommunityIcons name="guitar-pick" size={28} color="#81C784" />
       ),
       color: "#81C78420",
       borderColor: "#81C784",
@@ -28,15 +28,15 @@ const Grade1SpokenTests = () => {
     {
       title: "3. Knowledge of the Instrument",
       description:
-        "Understand basic parts of the guitar:\n• Headstock – holds tuning pegs\n• Neck and fingerboard – where notes are fretted\n• Body – resonates the sound\n• Frets – divide the neck into semitone steps\n• Bridge – anchors strings to the body\n\nKnow how to tune your guitar and identify marker dots.",
+        "Understand how tone changes with hand position or pickup selection.\n\nKnow the machine heads (tuners), action (string height), marker dots (position guides), nut, and saddle.",
       icon: <FontAwesome5 name="guitar" size={26} color="#FFB74D" />,
       color: "#FFB74D20",
       borderColor: "#FFB74D",
     },
     {
-      title: "4. Basic Functions on an Amplifier",
+      title: "4. Controls on an Amplifier",
       description:
-        "You should know what each basic control does:\n• Volume – controls loudness\n• Tone – adjusts brightness or warmth\n• Gain – adds drive or distortion\n\nExample questions:\n• What happens when you increase the gain?\n• What does the tone knob do?",
+        "Understand volume vs gain relationship, and bass/mid/treble controls.\n\nKnow what the standby switch does (valve amps).\n\nExample questions:\n• How to set gain high but volume low.\n• Name two types of amp (valve, transistor, modelling, hybrid).",
       icon: (
         <MaterialCommunityIcons name="amplifier" size={28} color="#F06292" />
       ),
@@ -52,9 +52,9 @@ const Grade1SpokenTests = () => {
     >
       <View style={styles.container}>
         <View style={styles.headerSection}>
-          <Text style={styles.mainTitle}>Grade 1 Spoken Tests</Text>
+          <Text style={styles.mainTitle}>Grade 2 Spoken Tests</Text>
           <Text style={styles.subtitle}>
-            Introducing guitar knowledge and essential technique
+            Expanding your guitar understanding and awareness
           </Text>
         </View>
 
@@ -80,16 +80,16 @@ const Grade1SpokenTests = () => {
         <View style={styles.tipsSection}>
           <Text style={styles.tipsTitle}>💡 Practice Tips</Text>
           <Text style={styles.tipText}>
-            • Say note names out loud as you play them.
+            • Revise scale notes regularly to strengthen fretboard knowledge.
           </Text>
           <Text style={styles.tipText}>
-            • Keep your fingers curved and close to the strings.
+            • Practice picking patterns slowly, increasing speed gradually.
           </Text>
           <Text style={styles.tipText}>
-            • Practice with both clean and slightly overdriven tones.
+            • Experiment with amp settings to hear tone changes.
           </Text>
           <Text style={styles.tipText}>
-            • Record yourself to check clarity and consistency.
+            • Record short clips to monitor tone and technique consistency.
           </Text>
         </View>
       </View>
@@ -97,7 +97,7 @@ const Grade1SpokenTests = () => {
   );
 };
 
-export default Grade1SpokenTests;
+export default Grade2SpokenTests;
 
 const styles = StyleSheet.create({
   scrollContainer: {

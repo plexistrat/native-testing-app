@@ -305,32 +305,36 @@
       "spokenTests": {
         "tests": [
           {
-            "title": "Fingerboard Knowledge",
-            "icon": "🎯",
-            "color": "#4CAF50",
-            "requirements": [
-              "Name notes on all the strings (up to the 8th fret)",
-              "Understand fret and string numbering"
-            ]
+            "title": "1. Fingerboard Knowledge",
+            "description": "You will be asked to name notes on specific strings and frets.\n\nLearn the natural notes (A–G) up to the 5th fret on each string.\nBe confident in identifying open strings and simple fretted notes.",
+            "icon": "<Ionicons name=\"musical-notes\" size={28} color=\"#4FC3F7\" />",
+            "color": "#4FC3F720",
+            "borderColor": "#4FC3F7"
           },
           {
-            "title": "Clarity & Fluency",
-            "icon": "🗣️",
-            "color": "#2196F3",
-            "requirements": [
-              "Demonstrate awareness of finger positions and hand placement",
-              "Use correct terminology (e.g., \"frets\", \"strings\", \"open string\")"
-            ]
+            "title": "2. Clarity and Fluency",
+            "description": "Focus on producing clear and even notes.\n\nKeep your fretting-hand fingers close to the frets using the tips of your fingers. Avoid unwanted string noise by muting unplayed strings.\n\nWhen picking, use smooth downstrokes and consistent motion.",
+            "icon": "<MaterialCommunityIcons name=\"hand-clap\" size={28} color=\"#81C784\" />",
+            "color": "#81C78420",
+            "borderColor": "#81C784"
           },
           {
-            "title": "Instrument Knowledge",
-            "icon": "🎸",
-            "color": "#FF9800",
-            "requirements": [
-              "Identify basic guitar parts (body, neck, frets, strings, headstock, tuners)",
-              "Understand the function of key components (e.g., how tuners affect pitch)",
-              "Explain how to tune the guitar (basic idea, not full demonstration)"
-            ]
+            "title": "3. Knowledge of the Instrument",
+            "description": "Understand basic parts of the guitar:\n• Headstock – holds tuning pegs\n• Neck and fingerboard – where notes are fretted\n• Body – resonates the sound\n• Frets – divide the neck into semitone steps\n• Bridge – anchors strings to the body\n\nKnow how to tune your guitar and identify marker dots.",
+            "icon": "<FontAwesome5 name=\"guitar\" size={26} color=\"#FFB74D\" />",
+            "color": "#FFB74D20",
+            "borderColor": "#FFB74D"
+          },
+          {
+            "title": "4. Basic Functions on an Amplifier",
+            "description": "You should know what each basic control does:\n• Volume – controls loudness\n• Tone – adjusts brightness or warmth\n• Gain – adds drive or distortion\n\nExample questions:\n• What happens when you increase the gain?\n• What does the tone knob do?",
+            "icon": {
+              "name": "amplifier",
+              "size": 28,
+              "color": "#F06292"
+            },
+            "color": "#F0629220",
+            "borderColor": "#F06292"
           }
         ]
       },
@@ -657,32 +661,144 @@
           "muted": [true, true, true, true, false, false]
         }
       },
-      "rhythmGuitar": {},
-      "leadGuitar": {
-        "videos": [
+      "rhythmGuitar": {
+        "rhythmSections": [
           {
-            "videoId": "W3Y-jkUDpWY",
-            "title": "Grade 3, lead guitar in C minor"
+            "title": "Bright And Lively",
+            "image": "../assets/img/grade2BrightAndLively.jpg",
+            "description": "Smooth, steady strumming with simple accents",
+            "color": "#4CAF50"
           },
           {
-            "videoId": "ZHsWCgSRNes",
-            "title": "Grade 3, lead in D flat major"
+            "title": "Not Too Slow",
+            "image": "../assets/img/grade2NotTooSlow.jpg",
+            "description": "Comfortable pace with down-up patterns",
+            "color": "#2196F3"
           },
           {
-            "videoId": "LX9Z99qQxs0",
-            "title": "Grade 3, lead in E major"
+            "title": "Tenderly",
+            "image": "../assets/img/grade2Tenderly.jpg",
+            "description": "Relaxed strumming focusing on clean chord changes",
+            "color": "#FF9800"
           },
           {
-            "videoId": "NSyVfTtx6HM",
-            "title": "Grade 1, Lead guitar, E dom 7th"
+            "title": "Moderate Tempo",
+            "image": "../assets/img/grade2ModerateTempo.jpg",
+            "description": "Energetic rhythm using consistent down-up motion",
+            "color": "#F44336"
+          }
+        ],
+        "dynamicsAndRepeatInfo": [
+          {
+            "symbol": "p",
+            "name": "piano",
+            "description": "play softly",
+            "color": "#4CAF50"
           },
           {
-            "videoId": "23TNMzsB1DU",
-            "title": "Grade 3, lead in G minor"
+            "symbol": "f",
+            "name": "forte",
+            "description": "play loudly",
+            "color": "#F44336"
+          },
+          {
+            "symbol": "<",
+            "name": "crescendo",
+            "description": "gradually louder",
+            "color": "#2196F3"
+          },
+          {
+            "symbol": ">",
+            "name": "decrescendo",
+            "description": "gradually quieter",
+            "color": "#FF9800"
+          },
+          {
+            "symbol": ":",
+            "name": "repeat",
+            "description": "repeat the same section",
+            "color": "#4CAF50"
+          },
+          {
+            "symbol": "Γ1.",
+            "name": "First Ending",
+            "description": "play this measure the first time only",
+            "color": "#9C27B0"
+          },
+          {
+            "symbol": "Γ2.",
+            "name": "Second Ending",
+            "description": "skip Γ1 and play this ending the second time",
+            "color": "#00BCD4"
           }
         ]
       },
-      "spokenTests": {},
+      "leadGuitar": {
+        "videos": [
+          {
+            "videoId": "vYpKlHDFat4",
+            "title": "Grade 2, lead guitar , C major 7th"
+          },
+          {
+            "videoId": "4oERmHtpoy8",
+            "title": "Grade 2, lead guitar, A minor 7th"
+          },
+          {
+            "videoId": "Krhutwkt558",
+            "title": "Grade 2, lead guitar, D major"
+          },
+          {
+            "videoId": "FWrewaqWScU",
+            "title": "Grade 2, lead guitar, G dom 7th"
+          }
+        ]
+      },
+      "spokenTests": {
+        "tests": [
+          {
+            "title": "1. Fingerboard Knowledge",
+            "description": "The examiner names a string and fret — you must name the note. Be familiar with the scales used in Component 1.",
+            "icon": "<Ionicons name=\"musical-notes\" size={28} color=\"#4FC3F7\" />",
+            "color": "#4FC3F720",
+            "borderColor": "#4FC3F7"
+          },
+          {
+            "2. Clarity & Fluency": {
+              "title": "2. Clarity & Fluency",
+              "description": "Fretting-hand positioning: keep fingers close to frets using fingertip.\n\nFluency when picking: use alternate picking (down-up) smoothly, avoid too much or too little pick showing.",
+              "icon": {
+                "name": "guitar-pick",
+                "size": 28,
+                "color": "#81C784"
+              },
+              "color": "#81C78420",
+              "borderColor": "#81C784"
+            },
+            "3. Knowledge of the Instrument": {
+              "title": "3. Knowledge of the Instrument",
+              "description": "Understand how tone changes with hand position or pickup selection.\n\nKnow the machine heads (tuners), action (string height), marker dots (position guides), nut, and saddle.",
+              "icon": {
+                "name": "guitar",
+                "size": 26,
+                "color": "#FFB74D"
+              },
+              "color": "#FFB74D20",
+              "borderColor": "#FFB74D"
+            },
+            "4. Controls on an Amplifier": {
+              "title": "4. Controls on an Amplifier",
+              "description": "Understand volume vs gain relationship, and bass/mid/treble controls.\n\nKnow what the standby switch does (valve amps).\n\nExample questions:\n• How to set gain high but volume low.\n• Name two types of amp (valve, transistor, modelling, hybrid).",
+              "icon": {
+                "name": "amplifier",
+                "size": 28,
+                "color": "#F06292"
+              },
+              "color": "#F0629220",
+              "borderColor": "#F06292"
+            }
+          }
+        ]
+      },
       "auralTests": {}
     }
   },
@@ -867,7 +983,42 @@
           }
         ]
       },
-      "spokenTests": {},
+      "spokenTests": {
+        "tests": [
+          {
+            "title": "1. Fingerboard Knowledge",
+            "description": "You will be asked to name notes on particular strings and frets taken from scales in Component 1.\n\nContinue expanding your knowledge of the entire fretboard. Be confident naming all natural notes up to the 12th fret on each string.",
+            "icon": { "name": "musical-notes", "size": 28, "color": "#4FC3F7" },
+            "color": "#4FC3F720",
+            "borderColor": "#4FC3F7"
+          },
+          {
+            "title": "2. Clarity and Fluency",
+            "description": "You may be asked about optimum hand positioning and fluency when playing:\n\n• Keep fingers close to the frets, pressing with fingertips.\n• Maintain relaxed wrist and thumb placement.\n• Use alternate picking for consistent tone.\n• Control unwanted noise by muting unused strings.\n\nFluency develops through even tone and rhythm—accuracy is more important than speed.",
+            "icon": { "name": "hand-clap", "size": 28, "color": "#81C784" },
+            "color": "#81C78420",
+            "borderColor": "#81C784"
+          },
+          {
+            "title": "3. Knowledge of the Instrument",
+            "description": "You may be asked about key parts of the guitar and their functions:\n• Headstock – holds the tuning machines\n• Nut – spaces the strings evenly\n• Frets – divide the fingerboard into semitones\n• Bridge and saddle – support the strings and define vibration length\n• Marker dots – guide visual positioning at frets 3, 5, 7, 9, and 12\n\nAlso understand how string tension and action affect playability.",
+            "icon": {
+              "name": "guitar",
+              "size": 26,
+              "color": "#FFB74D"
+            },
+            "color": "#FFB74D20",
+            "borderColor": "#FFB74D"
+          },
+          {
+            "title": "4. Types of Effects Pedals",
+            "description": "You should understand the main categories of effects pedals and their functions:\n\n🎸 **Overdrive / Distortion / Fuzz** – Add gain and saturation for more aggressive tones.\n🎚️ **Filter Effects** – Wah or envelope filter alter tone by emphasizing frequency ranges.\n🎛️ **Modulation Effects** – Chorus, flanger, phaser; add movement and depth.\n⏱️ **Delay & Reverb** – Create echo or spatial ambience, making the sound larger or more atmospheric.\n\nYou may be asked to describe how each affects the tone or to identify the type of sound they produce.",
+            "icon": { "name": "tune", "size": 28, "color": "#BA68C8" },
+            "color": "#BA68C820",
+            "borderColor": "#BA68C8"
+          }
+        ]
+      },
       "auralTests": {}
     }
   },
