@@ -25,7 +25,7 @@ const grade2LeadGuitar = () => {
             title="Grade 2, lead guitar, D major"
           />
           <YouTubePlayer
-            videoId="FWrewaqWScU"
+            videoId="71GvyR1zJto"
             title="Grade 2, lead guitar, G dom 7th"
           />
         </View>
