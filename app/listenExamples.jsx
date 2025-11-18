@@ -46,12 +46,12 @@ const listenExamples = () => {
 
           <View>
             <YouTubePlayer
-              videoId="H8FB6jAv-xY"
-              title="Grade 1,Aural tests, repetition of rhythm examples"
+              videoId="Aqoq2QR_NrI"
+              title="Grade 1, Rhythm guitar example."
             />
             <YouTubePlayer
-              videoId="opHgVSe3UFE"
-              title="Grade 1, Aural tests, repetition of melodic phrase, A minor pentatonic scale"
+              videoId="oxAFo-JTJus"
+              title="Grade 1,Rhythm guitar example."
             />
             <YouTubePlayer
               videoId="L2UwQYt443E"
