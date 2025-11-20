@@ -91,7 +91,20 @@ const grade3LeadGuitar = () => {
           </View>
 
           <View style={styles.studyItem}>
-            <Text style={styles.studyHeader}>🎥 5. Record & Reflect</Text>
+            <Text style={styles.studyHeader}>🌀 5. Arpeggio Usage</Text>
+            <Text style={styles.studyText}></Text>
+            <Text style={styles.studyText}>
+              Arpeggios help you outline the chord tones while improvising,
+              giving your solos more direction and clarity.
+            </Text>
+            <Text style={styles.studyText}>
+              Practice connecting arpeggio shapes smoothly across the fretboard
+              to create more melodic lines.
+            </Text>
+          </View>
+
+          <View style={styles.studyItem}>
+            <Text style={styles.studyHeader}>🎥 6. Record & Reflect</Text>
             <Text style={styles.studyText}>
               Record your improvisations over backing tracks or scales.
             </Text>
@@ -106,7 +119,7 @@ const grade3LeadGuitar = () => {
           </View>
 
           <View style={styles.studyItem}>
-            <Text style={styles.studyHeader}>📘 6. Guitar Journal</Text>
+            <Text style={styles.studyHeader}>📘 7. Guitar Journal</Text>
             <Text style={styles.studyText}>
               Maintain a notebook with favorite licks, scale patterns, and chord
               shapes.

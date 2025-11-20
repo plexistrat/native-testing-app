@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import YouTubePlayer from "./components/YouTubePlayer";
 
-const Grade1AuralTests = () => {
+const Grade2AuralTests = () => {
   const testSections = [
     {
       title: "Clap Back a Rhythm",
@@ -10,7 +10,7 @@ const Grade1AuralTests = () => {
       color: "#4CAF50",
       number: "1",
       description:
-        "Examiner plays a short rhythm (2 bars in 4/4). You listen, then clap it back in time. Focus on steady pulse and accurate rhythm",
+        "Examiner plays a short rhythm (4 bars in 4/4 or 3/4) twice. You listen, then clap it back in time. Focus on steady pulse and accurate rhythm",
     },
     {
       title: "Repetition of Melodic Phrases",
@@ -30,7 +30,7 @@ const Grade1AuralTests = () => {
       icon: "🎧",
       color: "#9C27B0",
       number: "4",
-      subtitle: "RGT Grade 1",
+      subtitle: "RGT Grade 2",
     },
     {
       title: "Harmony Test",
@@ -45,43 +45,50 @@ const Grade1AuralTests = () => {
       name: "Major 2nd",
       symbol: "M2",
       example: "C to D",
-      song: "Happy Birthday (Ha-ppy)",
+      song: "Silent Night",
       color: "#4CAF50",
     },
     {
       name: "Major 3rd",
       symbol: "M3",
       example: "C to E",
-      song: "When the Saints Go...",
+      song: "Summertime",
       color: "#2196F3",
     },
     {
       name: "Perfect 4th",
       symbol: "P4",
       example: "C to F",
-      song: "Here Comes the Bride",
+      song: "Amazing Grace",
       color: "#FF9800",
     },
     {
       name: "Perfect 5th",
       symbol: "P5",
       example: "C to G",
-      song: "Twinkle Twinkle...",
+      song: "Star Wars",
       color: "#9C27B0",
     },
     {
       name: "Major 6th",
       symbol: "M6",
       example: "C to A",
-      song: "The Star-Spangled Banner",
+      song: "Days of wine and roses",
       color: "#4CAF50",
     },
     {
       name: "Major 7th",
       symbol: "M7",
       example: "C to B",
-      song: "",
+      song: "Take on me",
       color: "#2196F3",
+    },
+    {
+      name: "Octave",
+      symbol: "P8",
+      example: "C to C",
+      song: "Somewhere over the rainbow",
+      color: "#FF9800",
     },
   ];
 
@@ -108,7 +115,7 @@ const Grade1AuralTests = () => {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       {/* Header Section */}
       <View style={styles.headerSection}>
-        <Text style={styles.mainTitle}>🎵 Grade 1 Aural Tests</Text>
+        <Text style={styles.mainTitle}>🎵 Grade 2 Aural Tests</Text>
         <Text style={styles.subtitle}>
           Complete guide to ear training assessments
         </Text>
@@ -181,8 +188,7 @@ const Grade1AuralTests = () => {
                 • The phrase starts on the root note
               </Text>
               <Text style={styles.bulletItem}>
-                • Uses simple rhythms – mainly quarter notes, eighth notes, and
-                half notes
+                • Uses simple rhythms – mainly quarter notes
               </Text>
             </View>
           </View>
@@ -242,9 +248,9 @@ const Grade1AuralTests = () => {
           <View style={styles.processSection}>
             <Text style={styles.processTitle}>🎼 What Happens:</Text>
             <Text style={styles.processText}>
-              The examiner plays a 4-bar melody twice, in 4/4 time. During the
-              second playing, the student claps the main pulse (on each beat).
-              The first beat of each bar should be slightly accented.
+              The examiner plays a 4-bar melody twice, in 4/4 or time. During
+              the second playing, the student claps the main pulse (on each
+              beat). The first beat of each bar should be slightly accented.
             </Text>
           </View>
 
@@ -413,7 +419,7 @@ const Grade1AuralTests = () => {
   );
 };
 
-export default Grade1AuralTests;
+export default Grade2AuralTests;
 
 const styles = StyleSheet.create({
   container: {

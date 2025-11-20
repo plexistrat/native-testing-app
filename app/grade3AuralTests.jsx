@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import YouTubePlayer from "./components/YouTubePlayer";
 
-const Grade1AuralTests = () => {
+const Grade3AuralTests = () => {
   const testSections = [
     {
       title: "Clap Back a Rhythm",
@@ -10,7 +10,7 @@ const Grade1AuralTests = () => {
       color: "#4CAF50",
       number: "1",
       description:
-        "Examiner plays a short rhythm (2 bars in 4/4) twice. You listen, then clap it back in time. Focus on steady pulse and accurate rhythm",
+        "Examiner plays a 4 bar rhythm (4/4, 3/4, 6/8) . You listen, then clap it back in time. Focus on steady pulse and accurate rhythm",
     },
     {
       title: "Repetition of Melodic Phrases",
@@ -30,7 +30,7 @@ const Grade1AuralTests = () => {
       icon: "🎧",
       color: "#9C27B0",
       number: "4",
-      subtitle: "RGT Grade 1",
+      subtitle: "RGT Grade 3",
     },
     {
       title: "Harmony Test",
@@ -66,24 +66,35 @@ const Grade1AuralTests = () => {
       name: "Perfect 5th",
       symbol: "P5",
       example: "C to G",
-      song: "Twinkle Twinkle...",
+      song: "Star Wars",
       color: "#9C27B0",
+    },
+    {
+      name: "Major 6th",
+      symbol: "M6",
+      example: "C to A",
+      song: "The days of wine and roses",
+      color: "#4CAF50",
+    },
+    {
+      name: "Major 7th",
+      symbol: "M7",
+      example: "C to B",
+      song: "Take on me",
+      color: "#2196F3",
+    },
+    {
+      name: "Octave",
+      symbol: "M8",
+      example: "C to C",
+      song: "Somewhere over the rainbow",
+      color: "#FF9800",
     },
   ];
 
   const chordQualities = [
     { type: "Major", description: "Full, strong, happy", color: "#4CAF50" },
     { type: "Minor", description: "Sad, soft", color: "#2196F3" },
-    {
-      type: "Dominant 7th",
-      description: "Bluesy, tense, needs to resolve",
-      color: "#FF9800",
-    },
-    {
-      type: "Major 7th",
-      description: "Jazzy, dreamy, smooth",
-      color: "#9C27B0",
-    },
   ];
 
   const melodicExamples = [
@@ -98,12 +109,6 @@ const Grade1AuralTests = () => {
       rhythm: "eighth – eighth – quarter – half",
       number: "3",
     },
-  ];
-
-  const practiceProgressions = [
-    "Am - Dm - Am - Em",
-    "Amaj7 - Dmaj7 - Amaj7",
-    "A7 - D7 - A7 - E7",
   ];
 
   return (
@@ -132,7 +137,10 @@ const Grade1AuralTests = () => {
             {testSections[0].description}
           </Text>
         </View>
-        <YouTubePlayer videoId="H8FB6jAv-xY" title="Clap Back Rhythm" />
+        <YouTubePlayer
+          videoId="QPR7UQ08mvU"
+          title="Clap Back Rhythm example 1-2-3"
+        />
       </View>
 
       {/* Test 2: Melodic Phrases */}
@@ -161,40 +169,28 @@ const Grade1AuralTests = () => {
             </Text>
             <View style={styles.bulletList}>
               <Text style={styles.bulletItem}>
-                • Is based on the Grade 1 scales (e.g. C Major, A Minor,
-                Pentatonic)
+                • Is based on the Grade 2 scales (e.g. G Major, A natural Minor,
+                B Minor Pentatonic)
               </Text>
               <Text style={styles.bulletItem}>
                 • The phrase starts on the root note
               </Text>
               <Text style={styles.bulletItem}>
-                • Uses simple rhythms – mainly quarter notes
+                • Uses simple rhythms – mainly quarter notes, eighth notes, and
+                half notes
               </Text>
             </View>
           </View>
 
           <View style={styles.examplesSection}>
-            <Text style={styles.examplesTitle}>
-              🎵 Melodic Phrase Examples (in C Major):
-            </Text>
-            {melodicExamples.map((example, index) => (
-              <View key={index} style={styles.exampleCard}>
-                <Text style={styles.exampleNumber}>
-                  Example {example.number}
-                </Text>
-                <Text style={styles.exampleNotes}>Notes: {example.notes}</Text>
-                <Text style={styles.exampleRhythm}>
-                  Rhythm: {example.rhythm}
-                </Text>
-              </View>
-            ))}
             <YouTubePlayer
-              videoId="opHgVSe3UFE"
-              title="More examples of Melodic Phrases"
+              videoId="AEAX6uY28SI"
+              title="Repetitionof Melodic Phrases example 1-2"
             />
-            <YouTubePlayer videoId="L2UwQYt443E" />
-            <YouTubePlayer videoId="bcczAsu6VjU" />
-            <YouTubePlayer videoId="4JR4FJBPfNA" />
+            <YouTubePlayer
+              videoId="hglE-c2kjkg"
+              title="Repetitionof Melodic Phrases example 3-4"
+            />
           </View>
 
           <View style={styles.practiceSection}>
@@ -206,10 +202,7 @@ const Grade1AuralTests = () => {
               <Text style={styles.practiceItem}>
                 • Use only the notes from all the scales from scale section
               </Text>
-              <Text style={styles.practiceItem}>
-                • Try changing rhythms of the same notes (e.g., play C–E–G as
-                eighths, then as quarters)
-              </Text>
+
               <Text style={styles.practiceItem}>
                 • Practice with a friend or teacher: They play a short melody →
                 you repeat it immediately
@@ -248,9 +241,10 @@ const Grade1AuralTests = () => {
           <View style={styles.processSection}>
             <Text style={styles.processTitle}>🎼 What Happens:</Text>
             <Text style={styles.processText}>
-              The examiner plays a 4-bar melody twice, in 4/4 time. During the
-              second playing, the student claps the main pulse (on each beat).
-              The first beat of each bar should be slightly accented.
+              The examiner plays a 4-bar melody twice, in 4/4 or 3/4 time.
+              During the second playing, the student claps the main pulse (on
+              each beat). The first beat of each bar should be slightly
+              accented.
             </Text>
           </View>
 
@@ -280,7 +274,8 @@ const Grade1AuralTests = () => {
             </View>
           </View>
         </View>
-        <YouTubePlayer videoId="jFEcyw9Q4yg" title="Keeping Time example 1-2" />
+        <YouTubePlayer videoId="Rz25F58bKqE" title="Keeping Time example 1" />
+        <YouTubePlayer videoId="EFhnhQpW4Bk" title="Keeping Time example 2" />
       </View>
 
       {/* Test 4: Pitch Test (Intervals) */}
@@ -355,7 +350,7 @@ const Grade1AuralTests = () => {
             </View>
           </View>
         </View>
-        <YouTubePlayer videoId="XyLSlkmHOsQ" />
+        <YouTubePlayer videoId="6jf85Dzozfo" title="Pitch Test (Intervals)" />
       </View>
 
       {/* Test 5: Harmony Test */}
@@ -372,9 +367,9 @@ const Grade1AuralTests = () => {
 
         <View style={styles.contentContainer}>
           <Text style={styles.descriptionText}>
-            The examiner plays a short rhythm guitar progression (typically 2–4
-            chords). The candidate listens twice. The student must identify the
-            chord types by ear:
+            The examiner plays 2 chords, one major and one minor (or the
+            opposite ). The candidate listens twice. The student must identify
+            the chord type by ear:
           </Text>
 
           <View style={styles.chordsGrid}>
@@ -399,14 +394,6 @@ const Grade1AuralTests = () => {
               Practice progressions like:
             </Text>
 
-            <View style={styles.progressionsContainer}>
-              {practiceProgressions.map((progression, index) => (
-                <View key={index} style={styles.progressionCard}>
-                  <Text style={styles.progressionText}>{progression}</Text>
-                </View>
-              ))}
-            </View>
-
             <View style={styles.practiceList}>
               <Text style={styles.practiceItem}>
                 • Listen to Each Chord Quality characteristics
@@ -420,16 +407,13 @@ const Grade1AuralTests = () => {
             </View>
           </View>
         </View>
-        <YouTubePlayer videoId="YOEdlketf0c" />
-        <YouTubePlayer videoId="FRWeUm8RHSU" />
-        <YouTubePlayer videoId="Slf1c0gzfCY" />
-        <YouTubePlayer videoId="uETmAHe2oJo" />
+        <YouTubePlayer videoId="tjUgDqJrwMM" title="Harmony Test" />
       </View>
     </ScrollView>
   );
 };
 
-export default Grade1AuralTests;
+export default Grade3AuralTests;
 
 const styles = StyleSheet.create({
   container: {

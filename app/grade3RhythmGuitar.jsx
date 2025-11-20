@@ -4,26 +4,26 @@ import React from "react";
 const grade3RhythmGuitar = () => {
   const rhythmSections = [
     {
-      title: "Ballad",
-      image: require("../assets/img/ballad.jpeg"),
+      title: "Fairly Slow",
+      image: require("../assets/img/grade3FailrySlow.jpg"),
       description: "Slow, emotional tempo with gentle strumming patterns",
       color: "#4CAF50",
     },
     {
-      title: "Mid Tempo",
-      image: require("../assets/img/midTempo.jpeg"),
+      title: "Not Too Slow",
+      image: require("../assets/img/grade3NotTooSlow.jpg"),
       description: "Moderate pace with balanced rhythm patterns",
       color: "#2196F3",
     },
     {
-      title: "Slow Tempo",
-      image: require("../assets/img/slowTempo.jpeg"),
+      title: "Moderate Tempo",
+      image: require("../assets/img/grade3ModerateTempo.jpg"),
       description: "Relaxed tempo focusing on chord transitions",
       color: "#FF9800",
     },
     {
-      title: "Up Tempo",
-      image: require("../assets/img/upTempo.jpeg"),
+      title: "Slow Ballad",
+      image: require("../assets/img/grade3SlowBallad.jpg"),
       description: "Fast-paced energetic strumming patterns",
       color: "#F44336",
     },
@@ -60,6 +60,18 @@ const grade3RhythmGuitar = () => {
       description: "repeat the same section",
       color: "#4CAF50",
     },
+    {
+      symbol: "Γ1.",
+      name: "First Ending",
+      description: "play this measure the first time only",
+      color: "#9C27B0",
+    },
+    {
+      symbol: "Γ2.",
+      name: "Second Ending",
+      description: "skip Γ1 and play this ending the second time",
+      color: "#00BCD4",
+    },
   ];
 
   return (
@@ -71,7 +83,7 @@ const grade3RhythmGuitar = () => {
       <View style={styles.container}>
         {/* Header Section */}
         <View style={styles.headerSection}>
-          <Text style={styles.mainTitle}> Grade 1 Rhythm Guitar</Text>
+          <Text style={styles.mainTitle}> Grade 3 Rhythm Guitar</Text>
         </View>
 
         {/* Rhythm Sections */}

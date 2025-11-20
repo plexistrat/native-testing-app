@@ -32,7 +32,7 @@ const listenExamples = () => {
             <View style={styles.featureItem}>
               <Text style={styles.featureIcon}>🎯</Text>
               <Text style={styles.featureText}>
-                Backing tracks, lead parts, and improvisation samples
+                Rhythm guitar perfornances, and improvisation samples
               </Text>
             </View>
 
@@ -52,10 +52,6 @@ const listenExamples = () => {
             <YouTubePlayer
               videoId="oxAFo-JTJus"
               title="Grade 1,Rhythm guitar example."
-            />
-            <YouTubePlayer
-              videoId="L2UwQYt443E"
-              title="Grade 1, Aural tests, repetition of melodic phrase, G major pentatonic scale"
             />
           </View>
           <View style={styles.ctaSection}>
