@@ -161,7 +161,7 @@ const Grade1AuralTests = () => {
             </Text>
             <View style={styles.bulletList}>
               <Text style={styles.bulletItem}>
-                • Is based on the Grade 1 scales (e.g. C Major, A Minor,
+                • Is based on the Grade 1 scales (e.g. E Blues Scale, A Minor,
                 Pentatonic)
               </Text>
               <Text style={styles.bulletItem}>
