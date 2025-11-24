@@ -268,32 +268,47 @@ const grade1Scales = () => {
           <Text style={styles.legendText}>Scale Notes</Text>
         </View>
       </View>
-      <View>
-        <Text style={styles.practiceTitle}>Scale practice</Text>
+      {/* Practice Section */}
+      <View style={{ width: "74%", marginTop: 40, marginBottom: 40 }}>
+        <Text style={styles.practiceTitle}>Scale Practice</Text>
+
         <View style={styles.practiceInstructions}>
-          <Text style={styles.practiceDescription}>Slow Practice</Text>
-          <Text style={styles.practiceDescription}>
-            Start with a slow tempo (50–60 BPM on the metronome ).
+          <Text style={styles.practiceDescriptionTitle}>
+            Foundational Tempo Work
           </Text>
           <Text style={styles.practiceDescription}>
-            Focus on the correct fingering and clear sound.
+            Begin practicing the scale at a slow, controlled tempo (50–60 BPM).
+            Focus on consistent tone, clean articulation, and steady timing.
+          </Text>
+
+          <Text style={styles.practiceDescriptionTitle}>
+            Gradual Speed Development
           </Text>
           <Text style={styles.practiceDescription}>
-            Once you fell comfortable, increase the tempo.
+            Once the scale feels comfortable, gradually increase the tempo in
+            small increments. Prioritize accuracy over speed to build reliable
+            technique.
+          </Text>
+
+          <Text style={styles.practiceDescriptionTitle}>
+            Rhythmic Variations
           </Text>
           <Text style={styles.practiceDescription}>
-            Play the scale with rhythm patterns (for example eights, triplets,
-            sixteenths).
+            Practice the scale using different rhythmic patterns such as eighth
+            notes, triplets, and sixteenth notes. This helps develop precision
+            and flexibility in both hands.
+          </Text>
+
+          <Text style={styles.practiceDescriptionTitle}>
+            Intervals & Sequences
           </Text>
           <Text style={styles.practiceDescription}>
-            Intervals and sequences
+            Strengthen your fretboard awareness by practicing interval-based
+            patterns (for example: 1–3, 2–4, 3–5).
           </Text>
           <Text style={styles.practiceDescription}>
-            Instead of playing the whole scale up and down, play intervals (for
-            example 1-3, 2-4, 3-5).
-          </Text>
-          <Text style={styles.practiceDescription}>
-            Play sequences (for example 1-2-3/2-3-4…).
+            Add sequential patterns as well, such as 1–2–3 / 2–3–4 / 3–4–5, to
+            develop flow and musical phrasing.
           </Text>
         </View>
       </View>
@@ -334,7 +349,6 @@ const styles = StyleSheet.create({
     width: "74%",
     flexDirection: "row",
     flexWrap: "wrap",
-    // justifyContent: "center",
     marginBottom: 30,
     gap: 10,
   },
@@ -497,7 +511,6 @@ const styles = StyleSheet.create({
     padding: 15,
     flexDirection: "row",
     flexWrap: "wrap",
-    // justifyContent: "space-around",
     alignItems: "center",
   },
   legendItem: {
@@ -531,6 +544,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#DEE3E4",
     marginBottom: 20,
+  },
+  practiceDescriptionTitle: {
+    fontSize: 18,
+    color: "#20c997",
+    fontWeight: "700",
+    marginTop: 10,
+    marginBottom: 5,
   },
 });
 

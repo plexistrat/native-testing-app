@@ -306,8 +306,8 @@ const grade1Chords = () => {
         </Text>
         <Text style={styles.subtitle}>4. Learn Progressions</Text>
         <Text style={styles.description}>
-          Use simple progressions like: I-IV-V → A - D - E and ii-V-I → Dm - G7
-          - C. This helps you understand musical relationships.
+          Use simple progressions like: I-IV-V → A - D - E and ii-V-I → Dm - G -
+          C. This helps you understand musical relationships.
         </Text>
         <Text style={styles.subtitle}>5. Play Along With Songs</Text>
         <Text style={styles.description}>

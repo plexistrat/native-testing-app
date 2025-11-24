@@ -10,7 +10,7 @@ const Grade1SpokenTests = () => {
     {
       title: "1. Fingerboard Knowledge",
       description:
-        "You will be asked to name notes on specific strings and frets.\n\nLearn the natural notes (A–G) up to the 5th fret on each string.\nBe confident in identifying open strings and simple fretted notes.",
+        "You will be asked to name notes on specific strings and frets.\n\nLearn the natural notes (A–G) up to the 8th fret on each string.\nBe confident in identifying open strings and simple fretted notes.",
       icon: <Ionicons name="musical-notes" size={28} color="#4FC3F7" />,
       color: "#4FC3F720",
       borderColor: "#4FC3F7",
@@ -18,7 +18,7 @@ const Grade1SpokenTests = () => {
     {
       title: "2. Clarity and Fluency",
       description:
-        "Focus on producing clear and even notes.\n\nKeep your fretting-hand fingers close to the frets using the tips of your fingers. Avoid unwanted string noise by muting unplayed strings.\n\nWhen picking, use smooth downstrokes and consistent motion.",
+        "Strive to produce clean, even, and well-balanced notes throughout your scale and lead-playing practice.\n\nMaintain precise left-hand technique by keeping the fingers close to the frets and using the fingertips for accurate pitch and minimal effort. Reduce extraneous noise by lightly muting adjacent, unused strings.\n\nFor the right hand, apply alternate picking to promote consistent, efficient motion.\n\nHold the plectrum firmly between the thumb and index finger, ensuring that only a controlled portion extends beyond the fingers to support accuracy, stability, and a clear tone.",
       icon: (
         <MaterialCommunityIcons name="hand-clap" size={28} color="#81C784" />
       ),
@@ -28,7 +28,7 @@ const Grade1SpokenTests = () => {
     {
       title: "3. Knowledge of the Instrument",
       description:
-        "Understand basic parts of the guitar:\n• Headstock – holds tuning pegs\n• Neck and fingerboard – where notes are fretted\n• Body – resonates the sound\n• Frets – divide the neck into semitone steps\n• Bridge – anchors strings to the body\n\nKnow how to tune your guitar and identify marker dots.",
+        "Develop a clear understanding of the essential parts and functions of the guitar:\n\n• **Headstock** – houses the machine heads (tuners) which adjust string tension and bring the instrument into tune.\n• **Neck and Fingerboard** – the playing surface where notes are fretted.\n• **Frets** – metal divisions that separate the fingerboard into semitone intervals.\n• **Body** – contributes to the resonance, projection, and overall tonal character of the instrument.\n• **Bridge** – anchors the strings and transfers their vibrations to the body.\n\nYou should also know how to tune the guitar accurately and learn the purpose of **marker dots**, which serve as visual reference points along the fingerboard to help with position awareness.\n\nUnderstand the term **action**, which refers to the height of the strings above the frets. Lower action generally allows for easier playing, while higher action can provide more dynamic range but requires greater pressure.\n\nBecome familiar with the basic ways to shape your tone:\n• Adjusting **pickup selector** to achieve brighter, warmer, or more balanced sounds.\n• Modifying the **tone and volume controls** on the guitar to refine clarity and color.\n• Changing the **picking-hand position**, moving closer to the bridge for a brighter, more focused sound or nearer the neck for a warmer, rounder tone.",
       icon: <FontAwesome5 name="guitar" size={26} color="#FFB74D" />,
       color: "#FFB74D20",
       borderColor: "#FFB74D",
@@ -36,7 +36,7 @@ const Grade1SpokenTests = () => {
     {
       title: "4. Basic Functions on an Amplifier",
       description:
-        "You should know what each basic control does:\n• Volume – controls loudness\n• Tone – adjusts brightness or warmth\n• Gain – adds drive or distortion\n\nExample questions:\n• What happens when you increase the gain?\n• What does the tone knob do?",
+        "You should understand the purpose of the main amplifier controls:\n\n• Volume – adjusts the overall loudness of the signal.\n• Gain – increases the input level, adding drive, saturation, or distortion.\n• Tone – shapes the general brightness or warmth of the sound.\n\nMost amplifiers also provide an EQ (equalization) section:\n• Treble – controls the high-frequency content, affecting clarity, sparkle, and attack.\n• Middle – adjusts midrange frequencies, shaping body, presence, and how well the guitar sits in a mix.\n• Bass – controls the low-frequency response, influencing depth, warmth, and fullness.\n\nExample questions you should be able to answer:\n• What happens when you increase the gain?\n• How does adjusting the treble, middle, or bass change the overall tone?\n• What does the tone knob on the guitar do in relation to the amplifier?",
       icon: (
         <MaterialCommunityIcons name="amplifier" size={28} color="#F06292" />
       ),
