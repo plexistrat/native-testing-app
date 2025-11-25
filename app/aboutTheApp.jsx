@@ -1,7 +1,6 @@
 import React from "react";
 import { ScrollView, View, Text, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import FloatingNotesBackground from "./components/FloatingNotesBackground";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function about() {
@@ -12,87 +11,85 @@ export default function about() {
     >
       <ScrollView>
         <SafeAreaView>
-          <FloatingNotesBackground>
-            {/* Animated background orbs */}
-            <View style={styles.orb1} />
-            <View style={styles.orb2} />
+          {/* Animated background orbs */}
+          <View style={styles.orb1} />
+          <View style={styles.orb2} />
 
-            <View style={styles.container}>
-              {/* Header Section */}
-              <View style={styles.headerSection}>
-                <Text style={styles.title}>About the App</Text>
-                <View style={styles.divider} />
-                <Text style={styles.subtitle}>
-                  Welcome to the ultimate companion for your electric guitar
-                  journey.
+          <View style={styles.container}>
+            {/* Header Section */}
+            <View style={styles.headerSection}>
+              <Text style={styles.title}>About the App</Text>
+              <View style={styles.divider} />
+              <Text style={styles.subtitle}>
+                Welcome to the ultimate companion for your electric guitar
+                journey.
+              </Text>
+            </View>
+
+            {/* Main Content */}
+            <View style={styles.contentSection}>
+              <Text style={styles.paragraph}>
+                This app is designed for students, teachers, and guitar
+                enthusiasts preparing for the{" "}
+                <Text style={styles.boldText}>
+                  RGT (Registry of Guitar Tutors){" "}
                 </Text>
+                electric guitar exams — from Grade 1 all the way to Grade 8.
+                Whether you're just starting out or aiming for advanced
+                performance, this app helps you:
+              </Text>
+
+              {/* Features List */}
+              <View style={styles.featuresContainer}>
+                <View style={styles.featureItem}>
+                  <View style={styles.bulletPoint} />
+                  <Text style={styles.featureText}>
+                    Understand each grade's requirements
+                  </Text>
+                </View>
+
+                <View style={styles.featureItem}>
+                  <View style={styles.bulletPoint} />
+                  <Text style={styles.featureText}>
+                    Access study materials and backing tracks
+                  </Text>
+                </View>
+
+                <View style={styles.featureItem}>
+                  <View style={styles.bulletPoint} />
+                  <Text style={styles.featureText}>
+                    Track your technical progress
+                  </Text>
+                </View>
+
+                <View style={styles.featureItem}>
+                  <View style={styles.bulletPoint} />
+                  <Text style={styles.featureText}>
+                    Listen to performance examples
+                  </Text>
+                </View>
               </View>
 
-              {/* Main Content */}
-              <View style={styles.contentSection}>
+              {/* Closing Section */}
+              <View style={styles.closingSection}>
                 <Text style={styles.paragraph}>
-                  This app is designed for students, teachers, and guitar
-                  enthusiasts preparing for the{" "}
-                  <Text style={styles.boldText}>
-                    RGT (Registry of Guitar Tutors){" "}
-                  </Text>
-                  electric guitar exams — from Grade 1 all the way to Grade 8.
-                  Whether you're just starting out or aiming for advanced
-                  performance, this app helps you:
+                  With a modern, intuitive interface and content aligned with
+                  the official RGT syllabus, we aim to inspire consistent
+                  practice and confident playing.
                 </Text>
 
-                {/* Features List */}
-                <View style={styles.featuresContainer}>
-                  <View style={styles.featureItem}>
-                    <View style={styles.bulletPoint} />
-                    <Text style={styles.featureText}>
-                      Understand each grade's requirements
-                    </Text>
-                  </View>
-
-                  <View style={styles.featureItem}>
-                    <View style={styles.bulletPoint} />
-                    <Text style={styles.featureText}>
-                      Access study materials and backing tracks
-                    </Text>
-                  </View>
-
-                  <View style={styles.featureItem}>
-                    <View style={styles.bulletPoint} />
-                    <Text style={styles.featureText}>
-                      Track your technical progress
-                    </Text>
-                  </View>
-
-                  <View style={styles.featureItem}>
-                    <View style={styles.bulletPoint} />
-                    <Text style={styles.featureText}>
-                      Listen to performance examples
-                    </Text>
-                  </View>
+                <View style={styles.mottoContainer}>
+                  <Text style={styles.motto}>Learn. Play. Progress.</Text>
+                  <View style={styles.mottoUnderline} />
                 </View>
-
-                {/* Closing Section */}
-                <View style={styles.closingSection}>
-                  <Text style={styles.paragraph}>
-                    With a modern, intuitive interface and content aligned with
-                    the official RGT syllabus, we aim to inspire consistent
-                    practice and confident playing.
-                  </Text>
-
-                  <View style={styles.mottoContainer}>
-                    <Text style={styles.motto}>Learn. Play. Progress.</Text>
-                    <View style={styles.mottoUnderline} />
-                  </View>
-                </View>
-              </View>
-
-              {/* Guitar Icon */}
-              <View style={styles.guitarIcon}>
-                <Text style={styles.guitarEmoji}>🎸</Text>
               </View>
             </View>
-          </FloatingNotesBackground>
+
+            {/* Guitar Icon */}
+            <View style={styles.guitarIcon}>
+              <Text style={styles.guitarEmoji}>🎸</Text>
+            </View>
+          </View>
         </SafeAreaView>
       </ScrollView>
     </LinearGradient>

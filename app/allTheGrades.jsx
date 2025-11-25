@@ -1,130 +1,141 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import FloatingNotesBackground from "./components/FloatingNotesBackground";
+import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const grades = () => {
+const allTheGrades = () => {
   return (
-    <ScrollView style={styles.scrollContainer}>
-      <SafeAreaView>
-        <FloatingNotesBackground>
-          <View style={styles.container}>
-            <Text style={styles.mainTitle}>
-              RGT Electric Guitar Grades – Overview
-            </Text>
+    <>
+      <LinearGradient
+        colors={["#0f1214", "#1b1e21", "#242830"]}
+        style={styles.scrollContainer}
+      >
+        <ScrollView>
+          <SafeAreaView>
+            {/* Animated background orbs */}
+            <View style={styles.orb1} />
+            <View style={styles.orb2} />
 
-            <View style={styles.introSection}>
-              <Text style={styles.description}>
-                This app is based on the official syllabus of the Registry of
-                Guitar Tutors (RGT). It helps guitarists prepare for recognized
-                graded exams (Grades 1–8) through structured content and
-                practical assessment categories.
-              </Text>
-            </View>
-
-            <View style={styles.section}>
-              <Text style={styles.sectionTitle}>
-                Core Exam Components (All Grades)
-              </Text>
-              <Text style={styles.description}>
-                Each grade level assesses the following key areas:
+            <View style={styles.container}>
+              <Text style={styles.mainTitle}>
+                RGT Electric Guitar Grades – Overview
               </Text>
 
-              <View style={styles.componentsGrid}>
-                <View style={styles.componentItem}>
-                  <Text style={styles.componentText}>Scales & Arpeggios</Text>
+              <View style={styles.introSection}>
+                <Text style={styles.description}>
+                  This app is based on the official syllabus of the Registry of
+                  Guitar Tutors (RGT). It helps guitarists prepare for
+                  recognized graded exams (Grades 1–8) through structured
+                  content and practical assessment categories.
+                </Text>
+              </View>
+
+              <View style={styles.section}>
+                <Text style={styles.sectionTitle}>
+                  Core Exam Components (All Grades)
+                </Text>
+                <Text style={styles.description}>
+                  Each grade level assesses the following key areas:
+                </Text>
+
+                <View style={styles.componentsGrid}>
+                  <View style={styles.componentItem}>
+                    <Text style={styles.componentText}>Scales & Arpeggios</Text>
+                  </View>
+                  <View style={styles.componentItem}>
+                    <Text style={styles.componentText}>Chords</Text>
+                  </View>
+                  <View style={styles.componentItem}>
+                    <Text style={styles.componentText}>Rhythm Playing</Text>
+                  </View>
+                  <View style={styles.componentItem}>
+                    <Text style={styles.componentText}>Lead Playing</Text>
+                  </View>
+                  <View style={styles.componentItem}>
+                    <Text style={styles.componentText}>Spoken Test</Text>
+                  </View>
+                  <View style={styles.componentItem}>
+                    <Text style={styles.componentText}>Aural Assessment</Text>
+                  </View>
+                  <View style={styles.componentItem}>
+                    <Text style={styles.componentText}>
+                      Specialism (Grades 6–8)
+                    </Text>
+                  </View>
                 </View>
-                <View style={styles.componentItem}>
-                  <Text style={styles.componentText}>Chords</Text>
+              </View>
+
+              <View style={styles.section}>
+                <View style={styles.gradeCard}>
+                  <Text style={styles.gradeTitle}>Grades 1–2 (Beginner)</Text>
+                  <View style={styles.gradeContent}>
+                    <Text style={styles.gradePoint}>
+                      • Major/minor scales and basic chords
+                    </Text>
+                    <Text style={styles.gradePoint}>
+                      • Simple rhythm accompaniment
+                    </Text>
+                    <Text style={styles.gradePoint}>
+                      • Basic soloing and improvisation
+                    </Text>
+                    <Text style={styles.gradePoint}>
+                      • Introductory spoken & aural tests
+                    </Text>
+                    <Text style={styles.focusText}>
+                      Focus: Building core technique and confidence
+                    </Text>
+                  </View>
                 </View>
-                <View style={styles.componentItem}>
-                  <Text style={styles.componentText}>Rhythm Playing</Text>
-                </View>
-                <View style={styles.componentItem}>
-                  <Text style={styles.componentText}>Lead Playing</Text>
-                </View>
-                <View style={styles.componentItem}>
-                  <Text style={styles.componentText}>Spoken Test</Text>
-                </View>
-                <View style={styles.componentItem}>
-                  <Text style={styles.componentText}>Aural Assessment</Text>
-                </View>
-                <View style={styles.componentItem}>
-                  <Text style={styles.componentText}>
-                    Specialism (Grades 6–8)
+
+                <View style={styles.gradeCard}>
+                  <Text style={styles.gradeTitle}>
+                    Grades 3–5 (Intermediate)
                   </Text>
+                  <View style={styles.gradeContent}>
+                    <Text style={styles.gradePoint}>
+                      • Extended scale shapes, arpeggios
+                    </Text>
+                    <Text style={styles.gradePoint}>
+                      • Chord transitions and rhythmic patterns
+                    </Text>
+                    <Text style={styles.gradePoint}>
+                      • Solo development and phrasing
+                    </Text>
+                    <Text style={styles.gradePoint}>
+                      • More advanced musical knowledge
+                    </Text>
+                    <Text style={styles.focusText}>
+                      Focus: Expanding range, accuracy, musicality
+                    </Text>
+                  </View>
+                </View>
+
+                <View style={styles.gradeCard}>
+                  <Text style={styles.gradeTitle}>Grades 6–8 (Advanced)</Text>
+                  <View style={styles.gradeContent}>
+                    <Text style={styles.gradePoint}>
+                      • Full fretboard scale fluency, modes
+                    </Text>
+                    <Text style={styles.gradePoint}>
+                      • Complex rhythms and stylistic chord work
+                    </Text>
+                    <Text style={styles.gradePoint}>
+                      • Creative soloing, advanced techniques
+                    </Text>
+                    <Text style={styles.gradePoint}>
+                      • Specialism: perform your own composition
+                    </Text>
+                    <Text style={styles.focusText}>
+                      Focus: Expressive playing, mastery, personal style
+                    </Text>
+                  </View>
                 </View>
               </View>
             </View>
-
-            <View style={styles.section}>
-              <View style={styles.gradeCard}>
-                <Text style={styles.gradeTitle}>Grades 1–2 (Beginner)</Text>
-                <View style={styles.gradeContent}>
-                  <Text style={styles.gradePoint}>
-                    • Major/minor scales and basic chords
-                  </Text>
-                  <Text style={styles.gradePoint}>
-                    • Simple rhythm accompaniment
-                  </Text>
-                  <Text style={styles.gradePoint}>
-                    • Basic soloing and improvisation
-                  </Text>
-                  <Text style={styles.gradePoint}>
-                    • Introductory spoken & aural tests
-                  </Text>
-                  <Text style={styles.focusText}>
-                    Focus: Building core technique and confidence
-                  </Text>
-                </View>
-              </View>
-
-              <View style={styles.gradeCard}>
-                <Text style={styles.gradeTitle}>Grades 3–5 (Intermediate)</Text>
-                <View style={styles.gradeContent}>
-                  <Text style={styles.gradePoint}>
-                    • Extended scale shapes, arpeggios
-                  </Text>
-                  <Text style={styles.gradePoint}>
-                    • Chord transitions and rhythmic patterns
-                  </Text>
-                  <Text style={styles.gradePoint}>
-                    • Solo development and phrasing
-                  </Text>
-                  <Text style={styles.gradePoint}>
-                    • More advanced musical knowledge
-                  </Text>
-                  <Text style={styles.focusText}>
-                    Focus: Expanding range, accuracy, musicality
-                  </Text>
-                </View>
-              </View>
-
-              <View style={styles.gradeCard}>
-                <Text style={styles.gradeTitle}>Grades 6–8 (Advanced)</Text>
-                <View style={styles.gradeContent}>
-                  <Text style={styles.gradePoint}>
-                    • Full fretboard scale fluency, modes
-                  </Text>
-                  <Text style={styles.gradePoint}>
-                    • Complex rhythms and stylistic chord work
-                  </Text>
-                  <Text style={styles.gradePoint}>
-                    • Creative soloing, advanced techniques
-                  </Text>
-                  <Text style={styles.gradePoint}>
-                    • Specialism: perform your own composition
-                  </Text>
-                  <Text style={styles.focusText}>
-                    Focus: Expressive playing, mastery, personal style
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-        </FloatingNotesBackground>
-      </SafeAreaView>
-    </ScrollView>
+          </SafeAreaView>
+        </ScrollView>
+      </LinearGradient>
+    </>
   );
 };
 
@@ -132,11 +143,42 @@ const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
   },
+  wrapper: {
+    position: "relative",
+  },
   container: {
-    flex: 1,
     padding: 20,
     paddingTop: 40,
-    backgroundColor: "#212529",
+    minHeight: 1000,
+  },
+  // Floating background orbs for depth
+  orb1: {
+    position: "absolute",
+    top: 100,
+    right: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    opacity: 0.6,
+    shadowColor: "#6366f1",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 60,
+  },
+  orb2: {
+    position: "absolute",
+    bottom: 150,
+    left: -80,
+    width: 250,
+    height: 250,
+    borderRadius: 125,
+    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    opacity: 0.5,
+    shadowColor: "#a855f7",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 70,
   },
   mainTitle: {
     fontSize: 28,
@@ -147,7 +189,7 @@ const styles = StyleSheet.create({
     lineHeight: 36,
   },
   introSection: {
-    backgroundColor: "#212529",
+    backgroundColor: "rgba(33, 37, 41, 0.6)",
     borderRadius: 12,
     padding: 20,
     marginBottom: 25,
@@ -180,7 +222,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   componentsGrid: {
-    backgroundColor: "#212529",
+    backgroundColor: "rgba(33, 37, 41, 0.6)",
     borderRadius: 12,
     padding: 20,
     shadowColor: "#000",
@@ -212,7 +254,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   gradeCard: {
-    backgroundColor: "#212529",
+    backgroundColor: "rgba(33, 37, 41, 0.6)",
     borderRadius: 15,
     padding: 20,
     marginBottom: 20,
@@ -258,4 +300,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default grades;
+export default allTheGrades;

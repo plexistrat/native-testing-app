@@ -16,40 +16,47 @@ export default function YouTubePlayer({ videoId, title }) {
   }, []);
 
   return (
-    <View style={styles.contentContainer}>
-      <Text style={styles.title}>{title}</Text>
+    <View style={styles.container}>
+      <View style={styles.card}>
+        <Text style={styles.title}>{title}</Text>
 
-      <YoutubePlayer
-        ref={playerRef}
-        height={fullscreen ? 400 : 250}
-        width={350}
-        play={playing}
-        videoId={videoId}
-        onChangeState={onStateChange}
-      />
+        <View style={styles.playerWrapper}>
+          <YoutubePlayer
+            ref={playerRef}
+            height={fullscreen ? 400 : 220}
+            width="100%"
+            play={playing}
+            videoId={videoId}
+            onChangeState={onStateChange}
+          />
+        </View>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  contentContainer: {
-    flex: 1,
-    padding: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 50,
-  },
-  controlsContainer: {
-    flexDirection: "row",
-    marginTop: 10,
-    justifyContent: "space-around",
+  container: {
     width: "100%",
+    marginVertical: 10,
+  },
+  card: {
+    backgroundColor: "rgba(33, 37, 41, 0.4)",
+    borderRadius: 10,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: "rgba(32, 201, 151, 0.15)",
   },
   title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 15,
+    fontSize: 14,
+    fontWeight: "600",
+    marginBottom: 10,
     textAlign: "center",
     color: "#20C997",
+  },
+  playerWrapper: {
+    borderRadius: 8,
+    overflow: "hidden",
+    backgroundColor: "#000",
   },
 });

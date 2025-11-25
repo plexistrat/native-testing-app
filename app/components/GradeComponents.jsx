@@ -7,6 +7,7 @@ const GradeComponents = ({ title, num }) => {
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.button}
+        activeOpacity={0.7}
         onPress={() => {
           linkTo(`/grade${num}${title}`);
         }}
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
   titleContainer: {
     alignItems: "center",
     justifyContent: "center",
-    padding: 10,
+    padding: 15,
   },
   title: {
     fontSize: 24,

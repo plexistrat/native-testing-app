@@ -1,79 +1,94 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
 import YouTubePlayer from "./components/YouTubePlayer";
+
 const listenExamples = () => {
   return (
-    <ScrollView style={styles.scrollContainer}>
-      <SafeAreaView style={styles.safeArea}>
-        <View style={styles.container}>
-          <Text style={styles.title}>🎸 Listening Examples</Text>
+    <LinearGradient
+      colors={["#0f1214", "#1b1e21", "#242830"]}
+      style={{ flex: 1 }}
+    >
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView style={styles.scrollContainer}>
+          <View style={styles.wrapper}>
+            <View style={styles.orb1} />
+            <View style={styles.orb2} />
 
-          <View style={styles.welcomeSection}>
-            <Text style={styles.welcomeText}>
-              Welcome to the Listening Examples You Tube Channel for the RGT
-              Electric Guitar Grades App
-            </Text>
-          </View>
+            <View style={styles.container}>
+              <Text style={styles.title}>🎸 Listening Examples</Text>
 
-          <View style={styles.featuresSection}>
-            <View style={styles.featureItem}>
-              <Text style={styles.featureIcon}>🎧</Text>
-              <Text style={styles.featureText}>
-                Hear how each exam piece sounds
-              </Text>
+              <View style={styles.welcomeSection}>
+                <Text style={styles.welcomeText}>
+                  Welcome to the Listening Examples You Tube Channel for the RGT
+                  Electric Guitar Grades App
+                </Text>
+              </View>
+
+              <View style={styles.featuresSection}>
+                <View style={styles.featureItem}>
+                  <Text style={styles.featureIcon}>🎧</Text>
+                  <Text style={styles.featureText}>
+                    Hear how each exam piece sounds
+                  </Text>
+                </View>
+
+                <View style={styles.featureItem}>
+                  <Text style={styles.featureIcon}>🎵</Text>
+                  <Text style={styles.featureText}>
+                    From Grade 1 to Grade 8
+                  </Text>
+                </View>
+
+                <View style={styles.featureItem}>
+                  <Text style={styles.featureIcon}>🎯</Text>
+                  <Text style={styles.featureText}>
+                    Rhythm guitar perfornances, and improvisation samples
+                  </Text>
+                </View>
+
+                <View style={styles.featureItem}>
+                  <Text style={styles.featureIcon}>🧠</Text>
+                  <Text style={styles.featureText}>
+                    Practice smarter. Play better.
+                  </Text>
+                </View>
+              </View>
+
+              <View>
+                <YouTubePlayer
+                  videoId="Aqoq2QR_NrI"
+                  title="Grade 1, Rhythm guitar example."
+                />
+                <YouTubePlayer
+                  videoId="oxAFo-JTJus"
+                  title="Grade 1,Rhythm guitar example."
+                />
+              </View>
+
+              <View style={styles.ctaSection}>
+                <Text style={styles.ctbText}>
+                  You will find more examples to my YouTube Channel
+                </Text>
+                <Text style={styles.ctaText}>
+                  Subscribe & start your journey today!
+                </Text>
+
+                <Link
+                  href="https://www.youtube.com/watch?v=9zfKh_Pm8T4&ab_channel=Dutchguitarman"
+                  style={styles.youtubeLink}
+                >
+                  <Text style={styles.youtubeLinkText}>
+                    Go to my YouTube Channel
+                  </Text>
+                </Link>
+              </View>
             </View>
-
-            <View style={styles.featureItem}>
-              <Text style={styles.featureIcon}>🎵</Text>
-              <Text style={styles.featureText}>From Grade 1 to Grade 8</Text>
-            </View>
-
-            <View style={styles.featureItem}>
-              <Text style={styles.featureIcon}>🎯</Text>
-              <Text style={styles.featureText}>
-                Rhythm guitar perfornances, and improvisation samples
-              </Text>
-            </View>
-
-            <View style={styles.featureItem}>
-              <Text style={styles.featureIcon}>🧠</Text>
-              <Text style={styles.featureText}>
-                Practice smarter. Play better.
-              </Text>
-            </View>
           </View>
-
-          <View>
-            <YouTubePlayer
-              videoId="Aqoq2QR_NrI"
-              title="Grade 1, Rhythm guitar example."
-            />
-            <YouTubePlayer
-              videoId="oxAFo-JTJus"
-              title="Grade 1,Rhythm guitar example."
-            />
-          </View>
-          <View style={styles.ctaSection}>
-            <Text style={styles.ctbText}>
-              You will find more examples to my YouTube Channel
-            </Text>
-            <Text style={styles.ctaText}>
-              Subscribe & start your journey today!
-            </Text>
-
-            <Link
-              href="https://www.youtube.com/watch?v=9zfKh_Pm8T4&ab_channel=Dutchguitarman"
-              style={styles.youtubeLink}
-            >
-              <Text style={styles.youtubeLinkText}>
-                Go to my YouTube Channel
-              </Text>
-            </Link>
-          </View>
-        </View>
+        </ScrollView>
       </SafeAreaView>
-    </ScrollView>
+    </LinearGradient>
   );
 };
 
@@ -82,16 +97,43 @@ export default listenExamples;
 const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
-    backgroundColor: "#212529",
   },
-  safeArea: {
-    flex: 1,
+  wrapper: {
+    position: "relative",
+    minHeight: 1000,
   },
   container: {
-    flex: 1,
     paddingHorizontal: 20,
     paddingTop: 40,
     paddingBottom: 40,
+  },
+  orb1: {
+    position: "absolute",
+    top: 100,
+    right: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    opacity: 0.6,
+    shadowColor: "#6366f1",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 60,
+  },
+  orb2: {
+    position: "absolute",
+    bottom: 150,
+    left: -80,
+    width: 250,
+    height: 250,
+    borderRadius: 125,
+    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    opacity: 0.5,
+    shadowColor: "#a855f7",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 70,
   },
   title: {
     fontSize: 28,
@@ -141,6 +183,7 @@ const styles = StyleSheet.create({
   },
   ctaSection: {
     alignItems: "center",
+    marginTop: 20,
   },
   ctaText: {
     fontSize: 20,

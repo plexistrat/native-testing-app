@@ -6,15 +6,22 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import FloatingNotesBackground from "./components/FloatingNotesBackground";
+import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Home = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView style={styles.scrollContainer}>
-        <FloatingNotesBackground>
+    <LinearGradient
+      colors={["#0f1214", "#1b1e21", "#242830"]}
+      style={{ flex: 1 }}
+    >
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView style={styles.scrollContainer}>
+          {/* Animated background orbs */}
+          <View style={styles.orb1} />
+          <View style={styles.orb2} />
+
           <View style={styles.container}>
             {/* Hero Section */}
             <View style={styles.heroSection}>
@@ -112,9 +119,9 @@ const Home = () => {
               </Text>
             </View>
           </View>
-        </FloatingNotesBackground>
-      </ScrollView>
-    </SafeAreaView>
+        </ScrollView>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 
@@ -125,12 +132,40 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container: {
-    flex: 1,
     alignItems: "center",
     paddingHorizontal: 20,
     paddingTop: 80,
     paddingBottom: 40,
     minHeight: 1000,
+  },
+  // Floating background orbs for depth
+  orb1: {
+    position: "absolute",
+    top: 100,
+    right: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    opacity: 0.6,
+    shadowColor: "#6366f1",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 60,
+  },
+  orb2: {
+    position: "absolute",
+    bottom: 150,
+    left: -80,
+    width: 250,
+    height: 250,
+    borderRadius: 125,
+    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    opacity: 0.5,
+    shadowColor: "#a855f7",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 70,
   },
   heroSection: {
     alignItems: "center",

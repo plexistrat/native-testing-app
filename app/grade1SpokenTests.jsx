@@ -1,4 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
 import {
   Ionicons,
   MaterialCommunityIcons,
@@ -46,54 +48,68 @@ const Grade1SpokenTests = () => {
   ];
 
   return (
-    <ScrollView
-      style={styles.scrollContainer}
-      showsVerticalScrollIndicator={false}
+    <LinearGradient
+      colors={["#0f1214", "#1b1e21", "#242830"]}
+      style={{ flex: 1 }}
     >
-      <View style={styles.container}>
-        <View style={styles.headerSection}>
-          <Text style={styles.mainTitle}>Grade 1 Spoken Tests</Text>
-          <Text style={styles.subtitle}>
-            Introducing guitar knowledge and essential technique
-          </Text>
-        </View>
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView
+          style={styles.scrollContainer}
+          showsVerticalScrollIndicator={false}
+        >
+          <View style={styles.wrapper}>
+            <View style={styles.orb1} />
+            <View style={styles.orb2} />
 
-        {spokenSections.map((section, index) => (
-          <View
-            key={index}
-            style={[
-              styles.sectionCard,
-              {
-                backgroundColor: section.color,
-                borderColor: section.borderColor,
-              },
-            ]}
-          >
-            <View style={styles.sectionHeader}>
-              {section.icon}
-              <Text style={styles.sectionTitle}>{section.title}</Text>
+            <View style={styles.container}>
+              <View style={styles.headerSection}>
+                <Text style={styles.mainTitle}>Grade 1 Spoken Tests</Text>
+                <Text style={styles.subtitle}>
+                  Introducing guitar knowledge and essential technique
+                </Text>
+              </View>
+
+              {spokenSections.map((section, index) => (
+                <View
+                  key={index}
+                  style={[
+                    styles.sectionCard,
+                    {
+                      backgroundColor: section.color,
+                      borderColor: section.borderColor,
+                    },
+                  ]}
+                >
+                  <View style={styles.sectionHeader}>
+                    {section.icon}
+                    <Text style={styles.sectionTitle}>{section.title}</Text>
+                  </View>
+                  <Text style={styles.sectionDescription}>
+                    {section.description}
+                  </Text>
+                </View>
+              ))}
+
+              <View style={styles.tipsSection}>
+                <Text style={styles.tipsTitle}>💡 Practice Tips</Text>
+                <Text style={styles.tipText}>
+                  • Say note names out loud as you play them.
+                </Text>
+                <Text style={styles.tipText}>
+                  • Keep your fingers curved and close to the strings.
+                </Text>
+                <Text style={styles.tipText}>
+                  • Practice with both clean and slightly overdriven tones.
+                </Text>
+                <Text style={styles.tipText}>
+                  • Record yourself to check clarity and consistency.
+                </Text>
+              </View>
             </View>
-            <Text style={styles.sectionDescription}>{section.description}</Text>
           </View>
-        ))}
-
-        <View style={styles.tipsSection}>
-          <Text style={styles.tipsTitle}>💡 Practice Tips</Text>
-          <Text style={styles.tipText}>
-            • Say note names out loud as you play them.
-          </Text>
-          <Text style={styles.tipText}>
-            • Keep your fingers curved and close to the strings.
-          </Text>
-          <Text style={styles.tipText}>
-            • Practice with both clean and slightly overdriven tones.
-          </Text>
-          <Text style={styles.tipText}>
-            • Record yourself to check clarity and consistency.
-          </Text>
-        </View>
-      </View>
-    </ScrollView>
+        </ScrollView>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 
@@ -102,13 +118,43 @@ export default Grade1SpokenTests;
 const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
-    backgroundColor: "#1B1F24",
+  },
+  wrapper: {
+    position: "relative",
+    minHeight: 1000,
   },
   container: {
-    flex: 1,
     paddingHorizontal: 20,
     paddingTop: 60,
     paddingBottom: 40,
+  },
+  orb1: {
+    position: "absolute",
+    top: 100,
+    right: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    opacity: 0.6,
+    shadowColor: "#6366f1",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 60,
+  },
+  orb2: {
+    position: "absolute",
+    bottom: 150,
+    left: -80,
+    width: 250,
+    height: 250,
+    borderRadius: 125,
+    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    opacity: 0.5,
+    shadowColor: "#a855f7",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 70,
   },
   headerSection: {
     alignItems: "center",

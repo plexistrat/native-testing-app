@@ -7,6 +7,8 @@ import {
   StyleSheet,
   Dimensions,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const { width } = Dimensions.get("window");
 
@@ -61,7 +63,6 @@ const grade1Chords = () => {
       type: "Minor",
       notes: ["A", "C", "E"],
       color: "#2196F3",
-
       frets: [0, 1, 2, 2, 0, -1],
       fingers: [null, 1, 3, 2, null, null],
       muted: [false, false, false, false, false, true],
@@ -157,9 +158,12 @@ const grade1Chords = () => {
         </Text>
 
         <View style={styles.fretboard}>
+          {/* Nut (top of fretboard) */}
+          <View style={styles.nut} />
+
           <View style={styles.stringsContainer}>
             {[0, 1, 2, 3, 4, 5].map((stringIndex) => (
-              <View key={stringIndex} style={styles.stringLine}>
+              <View key={stringIndex} style={styles.stringColumn}>
                 <Text style={styles.stringLabel}>
                   {stringNames[stringIndex]}
                 </Text>
@@ -173,9 +177,9 @@ const grade1Chords = () => {
                     <Text style={styles.openIndicator}>○</Text>
                   )}
 
-                <View style={styles.fretPositions}>
+                <View style={styles.fretColumn}>
                   {[1, 2, 3, 4].map((fretNum) => (
-                    <View key={fretNum} style={styles.fretPosition}>
+                    <View key={fretNum} style={styles.fretCell}>
                       {chord.frets[stringIndex] === fretNum && (
                         <View
                           style={[
@@ -188,6 +192,7 @@ const grade1Chords = () => {
                           </Text>
                         </View>
                       )}
+                      {fretNum < 4 && <View style={styles.fretWire} />}
                     </View>
                   ))}
                 </View>
@@ -197,8 +202,17 @@ const grade1Chords = () => {
             ))}
           </View>
 
+          {/* Fret markers */}
+          <View style={styles.fretMarkers}>
+            {[3].map((fret) => (
+              <View
+                key={fret}
+                style={[styles.fretMarker, { top: (fret - 0.5) * 60 + 70 }]}
+              />
+            ))}
+          </View>
+
           <View style={styles.fretNumbers}>
-            <View style={styles.fretNumberSpace} />
             {[1, 2, 3, 4].map((num) => (
               <View key={num} style={styles.fretNumberContainer}>
                 <Text style={styles.fretNumber}>{num}</Text>
@@ -212,7 +226,7 @@ const grade1Chords = () => {
 
   const renderChordButtons = () => {
     return (
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <View>
         {chordTypes.map((type) => (
           <View key={type} style={styles.chordCategory}>
             <Text style={styles.categoryTitle}>{type}</Text>
@@ -231,7 +245,9 @@ const grade1Chords = () => {
                         styles.chordButton,
                         {
                           backgroundColor:
-                            selectedChord === chordName ? chord.color : "#333",
+                            selectedChord === chordName
+                              ? chord.color
+                              : "rgba(44, 62, 80, 0.8)",
                           borderColor: chord.color,
                         },
                       ]}
@@ -245,7 +261,7 @@ const grade1Chords = () => {
             </ScrollView>
           </View>
         ))}
-      </ScrollView>
+      </View>
     );
   };
 
@@ -274,100 +290,164 @@ const grade1Chords = () => {
   };
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <Text style={styles.title}>🎸 Guitar Chords</Text>
-      <Text style={styles.subtitle}>Open Chords – 1st Position</Text>
+    <LinearGradient
+      colors={["#0f1214", "#1b1e21", "#242830"]}
+      style={{ flex: 1 }}
+    >
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.wrapper}>
+            <View style={styles.orb1} />
+            <View style={styles.orb2} />
 
-      {renderChordButtons()}
-      {renderChordInfo()}
-      {renderChordDiagram()}
-      <View style={styles.practiceContainer}>
-        <Text style={styles.title}>Chords Practice</Text>
-        <Text style={styles.subtitle}>1. Learn the shapes gradually</Text>
-        <Text style={styles.description}>
-          Start with Major chords (A, D, E), then add Minor (Am, Dm, Em), and
-          finally Dominant7 & Major7.
-        </Text>
-        <Text style={styles.tip}>
-          Don’t try to learn all at once — one chord group per week is ideal.
-          Tip: place your fingers from top to bottom (in relation to the
-          fretboard).
-        </Text>
-        <Text style={styles.subtitle}>2. Practice Slow Changes</Text>
-        <Text style={styles.description}>
-          Pick 2 chords (e.g., A → D). Play slowly with a metronome at 50–60
-          BPM. Goal: clean sound and correct finger placement.
-        </Text>
-        <Text style={styles.subtitle}>3. Chord Transitions</Text>
-        <Text style={styles.description}>
-          Once you know the shapes, practice transitions (e.g., A → D → E). Use
-          a strumming pattern (like down-down-up-up-down). Try switching chords
-          every bar, half, or quarter note.
-        </Text>
-        <Text style={styles.subtitle}>4. Learn Progressions</Text>
-        <Text style={styles.description}>
-          Use simple progressions like: I-IV-V → A - D - E and ii-V-I → Dm - G -
-          C. This helps you understand musical relationships.
-        </Text>
-        <Text style={styles.subtitle}>5. Play Along With Songs</Text>
-        <Text style={styles.description}>
-          Choose simple songs that use these Grade 1 chords, e.g. Knockin’ On
-          Heaven’s Door (G - D - Am - G - D - C). This connects chords to real
-          music.
-        </Text>
-        <Text style={styles.subtitle}>6. Ear Training</Text>
-        <Text style={styles.description}>
-          Play a chord and listen: Major sounds bright, Minor sounds sad.
-          Training your ear helps recognize chord “colors”.
-        </Text>
-        <Text style={styles.subtitle}>7. 10-Minute Daily Routine</Text>
-        <Text style={styles.description}>
-          Warm-up → Play all chords slowly once. Changes → 2 minutes switching
-          (e.g., A↔D). Progression → Play a small rhythm (4 chords). Then jam
-          over a backing track.
-        </Text>
-        <Text style={styles.subtitle1}>Tip:</Text>
-        <Text style={styles.description1}>
-          Don’t always look at your hand — try to *feel* the shapes. Your muscle
-          memory will improve and transitions will get faster.
-        </Text>
-        <Text style={styles.subtitle1}>Song List</Text>
-        <Text style={styles.description1}>
-          Knockin’ On Heaven’s Door – Bob Dylan (G – D – Am – G – D – C)
-        </Text>
-        <Text style={styles.description1}>
-          Leaving On A Jet Plane – John Denver (G – C – D)
-        </Text>
-        <Text style={styles.description1}>
-          Sweet Home Alabama – Lynyrd Skynyrd (D – C – G)
-        </Text>
-        <Text style={styles.description1}>
-          Horse With No Name – America (Em – D6add9, replace with D)
-        </Text>
-        <Text style={styles.description1}>
-          Twist And Shout – The Beatles (D – G – A7)
-        </Text>
-        <Text style={styles.description1}>
-          Folsom Prison Blues – Johnny Cash (E – A – B7)
-        </Text>
-        <Text style={styles.description1}>
-          Blue Suede Shoes – Elvis Presley (A7 – D7 – E7)
-        </Text>
-        <Text style={styles.description1}>
-          Wonderful Tonight – Eric Clapton (G – D – C – D – Cmaj7)
-        </Text>
-      </View>
-    </ScrollView>
+            <View style={styles.content}>
+              <Text style={styles.title}>🎸 Guitar Chords</Text>
+              <Text style={styles.subtitle}>Open Chords – 1st Position</Text>
+
+              {renderChordButtons()}
+              {renderChordInfo()}
+              {renderChordDiagram()}
+
+              <View style={styles.practiceContainer}>
+                <Text style={styles.practiceTitle}>Chords Practice</Text>
+
+                <Text style={styles.sectionTitle}>
+                  1. Learn the shapes gradually
+                </Text>
+                <Text style={styles.description}>
+                  Start with Major chords (A, D, E), then add Minor (Am, Dm,
+                  Em), and finally Dominant7 & Major7.
+                </Text>
+                <Text style={styles.tip}>
+                  Don't try to learn all at once — one chord group per week is
+                  ideal. Tip: place your fingers from top to bottom (in relation
+                  to the fretboard).
+                </Text>
+
+                <Text style={styles.sectionTitle}>
+                  2. Practice Slow Changes
+                </Text>
+                <Text style={styles.description}>
+                  Pick 2 chords (e.g., A → D). Play slowly with a metronome at
+                  50–60 BPM. Goal: clean sound and correct finger placement.
+                </Text>
+
+                <Text style={styles.sectionTitle}>3. Chord Transitions</Text>
+                <Text style={styles.description}>
+                  Once you know the shapes, practice transitions (e.g., A → D →
+                  E). Use a strumming pattern (like down-down-up-up-down). Try
+                  switching chords every bar, half, or quarter note.
+                </Text>
+
+                <Text style={styles.sectionTitle}>4. Learn Progressions</Text>
+                <Text style={styles.description}>
+                  Use simple progressions like: I-IV-V → A - D - E and ii-V-I →
+                  Dm - G - C. This helps you understand musical relationships.
+                </Text>
+
+                <Text style={styles.sectionTitle}>
+                  5. Play Along With Songs
+                </Text>
+                <Text style={styles.description}>
+                  Choose simple songs that use these Grade 1 chords, e.g.
+                  Knockin' On Heaven's Door (G - D - Am - G - D - C). This
+                  connects chords to real music.
+                </Text>
+
+                <Text style={styles.sectionTitle}>6. Ear Training</Text>
+                <Text style={styles.description}>
+                  Play a chord and listen: Major sounds bright, Minor sounds
+                  sad. Training your ear helps recognize chord "colors".
+                </Text>
+
+                <Text style={styles.sectionTitle}>
+                  7. 10-Minute Daily Routine
+                </Text>
+                <Text style={styles.description}>
+                  Warm-up → Play all chords slowly once. Changes → 2 minutes
+                  switching (e.g., A↔D). Progression → Play a small rhythm (4
+                  chords). Then jam over a backing track.
+                </Text>
+
+                <Text style={styles.tipTitle}>Tip:</Text>
+                <Text style={styles.tipText}>
+                  Don't always look at your hand — try to *feel* the shapes.
+                  Your muscle memory will improve and transitions will get
+                  faster.
+                </Text>
+
+                <Text style={styles.songListTitle}>Song List</Text>
+                <Text style={styles.songItem}>
+                  Knockin' On Heaven's Door – Bob Dylan (G – D – Am – G – D – C)
+                </Text>
+                <Text style={styles.songItem}>
+                  Leaving On A Jet Plane – John Denver (G – C – D)
+                </Text>
+                <Text style={styles.songItem}>
+                  Sweet Home Alabama – Lynyrd Skynyrd (D – C – G)
+                </Text>
+                <Text style={styles.songItem}>
+                  Horse With No Name – America (Em – D6add9, replace with D)
+                </Text>
+                <Text style={styles.songItem}>
+                  Twist And Shout – The Beatles (D – G – A7)
+                </Text>
+                <Text style={styles.songItem}>
+                  Folsom Prison Blues – Johnny Cash (E – A – B7)
+                </Text>
+                <Text style={styles.songItem}>
+                  Blue Suede Shoes – Elvis Presley (A7 – D7 – E7)
+                </Text>
+                <Text style={styles.songItem}>
+                  Wonderful Tonight – Eric Clapton (G – D – C – D – Cmaj7)
+                </Text>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#212529",
+  wrapper: {
+    position: "relative",
+    minHeight: 1000,
+  },
+  content: {
+    padding: 20,
+  },
+  orb1: {
+    position: "absolute",
+    top: 100,
+    right: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    opacity: 0.6,
+    shadowColor: "#6366f1",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 60,
+  },
+  orb2: {
+    position: "absolute",
+    bottom: 150,
+    left: -80,
+    width: 250,
+    height: 250,
+    borderRadius: 125,
+    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    opacity: 0.5,
+    shadowColor: "#a855f7",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 70,
   },
   practiceContainer: {
-    marginHorizontal: 15,
+    marginTop: 30,
     marginBottom: 30,
   },
   title: {
@@ -380,37 +460,66 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 18,
-    fontWeight: "bold",
-    color: "#ccc",
+    fontWeight: "600",
+    color: "#20c997",
     textAlign: "center",
     marginBottom: 30,
   },
-  subtitle1: {
+  practiceTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#DEE3E4",
+    marginBottom: 20,
+  },
+  sectionTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#ccc",
-    marginBottom: 20,
+    color: "#20c997",
+    marginTop: 15,
+    marginBottom: 8,
   },
   description: {
-    fontSize: 12,
-    color: "#ccc",
-    textAlign: "center",
-    marginBottom: 20,
-  },
-  description1: {
-    fontSize: 12,
-    color: "#ccc",
-    marginBottom: 10,
+    fontSize: 15,
+    color: "#DEE3E4",
+    marginBottom: 15,
+    lineHeight: 22,
   },
   tip: {
-    fontSize: 12,
-    color: "#ccc",
-    textAlign: "center",
-    marginBottom: 20,
+    fontSize: 14,
+    color: "#20c997",
+    fontStyle: "italic",
+    marginBottom: 15,
+    lineHeight: 20,
+  },
+  tipTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#20c997",
+    marginTop: 15,
+    marginBottom: 8,
+  },
+  tipText: {
+    fontSize: 15,
+    color: "#DEE3E4",
+    marginBottom: 15,
+    lineHeight: 22,
+  },
+  songListTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#DEE3E4",
+    marginTop: 20,
+    marginBottom: 12,
+  },
+  songItem: {
+    fontSize: 14,
+    color: "#DEE3E4",
+    marginBottom: 8,
+    paddingLeft: 10,
   },
   chordCategory: {
     backgroundColor: "rgba(42, 42, 42, 0.8)",
-    margin: 10,
+    marginVertical: 10,
     padding: 20,
     borderRadius: 15,
     borderWidth: 1,
@@ -451,7 +560,7 @@ const styles = StyleSheet.create({
   },
   chordInfo: {
     backgroundColor: "rgba(42, 42, 42, 0.8)",
-    margin: 10,
+    marginVertical: 10,
     padding: 20,
     borderRadius: 15,
     borderWidth: 1,
@@ -495,7 +604,7 @@ const styles = StyleSheet.create({
   },
   chordDiagram: {
     backgroundColor: "rgba(42, 42, 42, 0.9)",
-    margin: 10,
+    marginVertical: 10,
     padding: 20,
     borderRadius: 15,
     borderWidth: 1,
@@ -503,116 +612,145 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   chordName: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
   },
   fretboard: {
-    backgroundColor: "#4e5651ff",
-    borderRadius: 10,
+    backgroundColor: "#D2B48C",
+    borderRadius: 12,
     padding: 20,
-    width: width - 60,
-    maxWidth: 350,
+    height: 350,
+    width: 280,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.4,
     shadowRadius: 16,
     elevation: 16,
+    position: "relative",
+  },
+  nut: {
+    position: "absolute",
+    top: 20,
+    bottom: 20,
+    left: 70,
+    width: 6,
+    backgroundColor: "#2C1810",
+    borderRadius: 2,
+    zIndex: 10,
   },
   stringsContainer: {
-    position: "relative",
+    flexDirection: "column",
+    paddingTop: 10,
   },
-  stringLine: {
+  stringColumn: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 15,
-    height: 40,
+    marginBottom: 8,
     position: "relative",
-  },
-  stringWire: {
-    position: "absolute",
-    left: 50,
-    right: 0,
-    top: "50%",
-    height: 2,
-    backgroundColor: "#C0C0C0",
-    transform: [{ translateY: -1 }],
-    zIndex: -1,
+    height: 45,
   },
   stringLabel: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: "bold",
-    color: "#fff",
-    backgroundColor: "#333",
-    width: 30,
-    height: 30,
+    color: "#2C1810",
+    backgroundColor: "#F5DEB3",
+    width: 24,
+    height: 24,
     textAlign: "center",
-    textAlignVertical: "center",
-    borderRadius: 15,
-    marginRight: 15,
+    lineHeight: 24,
+    borderRadius: 12,
+    marginRight: 8,
+    borderWidth: 1,
+    borderColor: "#8B4513",
   },
   mutedIndicator: {
     position: "absolute",
-    left: 55,
-    top: -5,
-    fontSize: 20,
+    left: 32,
+    fontSize: 18,
     color: "#FF4444",
     fontWeight: "bold",
   },
   openIndicator: {
     position: "absolute",
-    left: 55,
-    top: -5,
-    fontSize: 20,
+    left: 32,
+    fontSize: 18,
     color: "#44FF44",
     fontWeight: "bold",
   },
-  fretPositions: {
+  fretColumn: {
     flexDirection: "row",
-    position: "absolute",
-    left: 80,
-    right: 0,
+    marginLeft: 18,
   },
-  fretPosition: {
+  fretCell: {
     width: 50,
-    height: 40,
     alignItems: "center",
     justifyContent: "center",
+    position: "relative",
+  },
+  fretWire: {
+    position: "absolute",
+    right: 0,
+    top: -25,
+    bottom: -25,
+    width: 2,
+    backgroundColor: "#8B4513",
+  },
+  stringWire: {
+    position: "absolute",
+    left: 56,
+    right: 0,
+    top: "50%",
+    height: 2,
+    backgroundColor: "#C0C0C0",
+    transform: [{ translateY: -1 }],
   },
   fingerPosition: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
     alignItems: "center",
     justifyContent: "center",
     borderWidth: 2,
-    borderColor: "rgba(255,255,255,0.3)",
+    borderColor: "rgba(255,255,255,0.4)",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.4,
-    shadowRadius: 8,
+    shadowOpacity: 0.5,
+    shadowRadius: 6,
     elevation: 8,
+    zIndex: 5,
   },
   fingerNumber: {
     color: "#fff",
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: "bold",
+  },
+  fretMarkers: {
+    position: "absolute",
+    top: "50%",
+    transform: [{ translateY: -4 }],
+  },
+  fretMarker: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: "#8B7355",
+    position: "absolute",
+    left: 160,
   },
   fretNumbers: {
     flexDirection: "row",
-    marginTop: 10,
-    alignItems: "center",
-  },
-  fretNumberSpace: {
-    width: 95,
+    position: "absolute",
+    bottom: 5,
+    left: 85,
   },
   fretNumberContainer: {
     width: 50,
     alignItems: "center",
   },
   fretNumber: {
-    color: "#ccc",
+    color: "#2C1810",
     fontSize: 12,
     fontWeight: "bold",
   },
