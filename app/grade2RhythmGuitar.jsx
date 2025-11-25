@@ -1,5 +1,7 @@
 import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
-// import React from "react";
+import React from "react";
+import { LinearGradient } from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const grade2RhythmGuitar = () => {
   const rhythmSections = [
@@ -75,103 +77,116 @@ const grade2RhythmGuitar = () => {
   ];
 
   return (
-    <ScrollView
-      style={styles.scrollContainer}
-      showsVerticalScrollIndicator={false}
+    <LinearGradient
+      colors={["#0f1214", "#1b1e21", "#242830"]}
+      style={{ flex: 1 }}
     >
-      {/* <FloatingNotesBackground> */}
-      <View style={styles.container}>
-        {/* Header Section */}
-        <View style={styles.headerSection}>
-          <Text style={styles.mainTitle}> Grade 2 Rhythm Guitar</Text>
-        </View>
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView
+          style={styles.scrollContainer}
+          showsVerticalScrollIndicator={false}
+        >
+          <View style={styles.wrapper}>
+            <View style={styles.orb1} />
+            <View style={styles.orb2} />
 
-        {/* Rhythm Sections */}
-        <View style={styles.sectionsContainer}>
-          {rhythmSections.map((section, index) => (
-            <View key={index} style={styles.section}>
-              <View
-                style={[
-                  styles.sectionHeader,
-                  { borderLeftColor: section.color },
-                ]}
-              >
-                <Text style={styles.sectionTitle}>{section.title}</Text>
-                <Text style={styles.sectionDescription}>
-                  {section.description}
-                </Text>
+            <View style={styles.container}>
+              {/* Header Section */}
+              <View style={styles.headerSection}>
+                <Text style={styles.mainTitle}>Grade 2 Rhythm Guitar</Text>
               </View>
 
-              <View style={styles.imageContainer}>
-                <Image
-                  source={section.image}
-                  style={styles.progressionImage}
-                  resizeMode="contain"
-                />
-                <View
-                  style={[
-                    styles.imageOverlay,
-                    { backgroundColor: section.color + "20" },
-                  ]}
-                />
+              {/* Rhythm Sections */}
+              <View style={styles.sectionsContainer}>
+                {rhythmSections.map((section, index) => (
+                  <View key={index} style={styles.section}>
+                    <View
+                      style={[
+                        styles.sectionHeader,
+                        { borderLeftColor: section.color },
+                      ]}
+                    >
+                      <Text style={styles.sectionTitle}>{section.title}</Text>
+                      <Text style={styles.sectionDescription}>
+                        {section.description}
+                      </Text>
+                    </View>
+
+                    <View style={styles.imageContainer}>
+                      <Image
+                        source={section.image}
+                        style={styles.progressionImage}
+                        resizeMode="contain"
+                      />
+                      <View
+                        style={[
+                          styles.imageOverlay,
+                          { backgroundColor: section.color + "20" },
+                        ]}
+                      />
+                    </View>
+                  </View>
+                ))}
               </View>
-            </View>
-          ))}
-        </View>
 
-        {/* Dynamics Section */}
-        <View style={styles.infoSection}>
-          <View style={styles.infoHeader}>
-            <Text style={styles.infoTitle}>Dynamics and Repeat Explained</Text>
-            <Text style={styles.infoSubtitle}>
-              Understanding musical expression
-            </Text>
-          </View>
-
-          <View style={styles.dynamicsGrid}>
-            {dynamicsAndRepeatInfo.map((dynamic, index) => (
-              <View key={index} style={styles.dynamicCard}>
-                <View
-                  style={[
-                    styles.symbolContainer,
-                    { backgroundColor: dynamic.color },
-                  ]}
-                >
-                  <Text style={styles.symbolText}>{dynamic.symbol}</Text>
-                </View>
-                <View style={styles.dynamicInfo}>
-                  <Text style={styles.dynamicName}>
-                    <Text style={styles.italicText}>{dynamic.name}</Text>
+              {/* Dynamics Section */}
+              <View style={styles.infoSection}>
+                <View style={styles.infoHeader}>
+                  <Text style={styles.infoTitle}>
+                    Dynamics and Repeat Explained
                   </Text>
-                  <Text style={styles.dynamicDescription}>
-                    {dynamic.description}
+                  <Text style={styles.infoSubtitle}>
+                    Understanding musical expression
                   </Text>
                 </View>
-              </View>
-            ))}
-          </View>
 
-          {/* Practice Tips */}
-          <View style={styles.tipsSection}>
-            <Text style={styles.tipsTitle}>💡 Practice Tips</Text>
-            <View style={styles.tipsList}>
-              <Text style={styles.tipText}>
-                • Start slowly and focus on clean chord changes
-              </Text>
-              <Text style={styles.tipText}>
-                • Use a metronome to maintain steady tempo
-              </Text>
-              <Text style={styles.tipText}>
-                • Practice dynamics with each rhythm pattern
-              </Text>
-              <Text style={styles.tipText}>
-                • Record yourself to identify areas for improvement
-              </Text>
+                <View style={styles.dynamicsGrid}>
+                  {dynamicsAndRepeatInfo.map((dynamic, index) => (
+                    <View key={index} style={styles.dynamicCard}>
+                      <View
+                        style={[
+                          styles.symbolContainer,
+                          { backgroundColor: dynamic.color },
+                        ]}
+                      >
+                        <Text style={styles.symbolText}>{dynamic.symbol}</Text>
+                      </View>
+                      <View style={styles.dynamicInfo}>
+                        <Text style={styles.dynamicName}>
+                          <Text style={styles.italicText}>{dynamic.name}</Text>
+                        </Text>
+                        <Text style={styles.dynamicDescription}>
+                          {dynamic.description}
+                        </Text>
+                      </View>
+                    </View>
+                  ))}
+                </View>
+
+                {/* Practice Tips */}
+                <View style={styles.tipsSection}>
+                  <Text style={styles.tipsTitle}>💡 Practice Tips</Text>
+                  <View style={styles.tipsList}>
+                    <Text style={styles.tipText}>
+                      • Start slowly and focus on clean chord changes
+                    </Text>
+                    <Text style={styles.tipText}>
+                      • Use a metronome to maintain steady tempo
+                    </Text>
+                    <Text style={styles.tipText}>
+                      • Practice dynamics with each rhythm pattern
+                    </Text>
+                    <Text style={styles.tipText}>
+                      • Record yourself to identify areas for improvement
+                    </Text>
+                  </View>
+                </View>
+              </View>
             </View>
           </View>
-        </View>
-      </View>
-    </ScrollView>
+        </ScrollView>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 
@@ -180,13 +195,43 @@ export default grade2RhythmGuitar;
 const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
-    backgroundColor: "#212529",
+  },
+  wrapper: {
+    position: "relative",
+    minHeight: 1000,
   },
   container: {
-    flex: 1,
     paddingHorizontal: 20,
     paddingTop: 60,
     paddingBottom: 40,
+  },
+  orb1: {
+    position: "absolute",
+    top: 100,
+    right: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    opacity: 0.6,
+    shadowColor: "#6366f1",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 60,
+  },
+  orb2: {
+    position: "absolute",
+    bottom: 150,
+    left: -80,
+    width: 250,
+    height: 250,
+    borderRadius: 125,
+    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    opacity: 0.5,
+    shadowColor: "#a855f7",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 70,
   },
 
   // Header Styles

@@ -6,9 +6,11 @@ import {
   ScrollView,
   StyleSheet,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const grade2Scales = () => {
-  const [selectedScale, setSelectedScale] = useState("A blues scale");
+  const [selectedScale, setSelectedScale] = useState("G blues scale");
 
   const scales = {
     "A blues scale": {
@@ -142,7 +144,7 @@ const grade2Scales = () => {
   };
 
   const stringNames = ["E", "B", "G", "D", "A", "E"];
-  const frets = Array.from({ length: 13 }, (_, i) => i); // 0-12 frets
+  const frets = Array.from({ length: 13 }, (_, i) => i);
 
   const isNoteActive = (string, fret) => {
     return scales[selectedScale].positions.some(
@@ -168,7 +170,6 @@ const grade2Scales = () => {
   const renderFretboard = () => {
     return (
       <View style={styles.fretboardContainer}>
-        {/* Fret numbers */}
         <View style={styles.fretNumbersRow}>
           <View style={styles.stringLabel}>
             <Text style={styles.stringLabelText}>String</Text>
@@ -180,7 +181,6 @@ const grade2Scales = () => {
           ))}
         </View>
 
-        {/* Guitar strings */}
         {[1, 2, 3, 4, 5, 6].map((string) => (
           <View key={string} style={styles.stringRow}>
             <View style={styles.stringLabel}>
@@ -190,13 +190,8 @@ const grade2Scales = () => {
             </View>
             {frets.map((fret) => (
               <View key={fret} style={styles.fretCell}>
-                {/* Fret line */}
                 {fret > 0 && <View style={styles.fretLine} />}
-
-                {/* String line */}
                 <View style={styles.stringLine} />
-
-                {/* Note dot */}
                 {isNoteActive(string, fret) && (
                   <View
                     style={[
@@ -211,8 +206,6 @@ const grade2Scales = () => {
                     </Text>
                   </View>
                 )}
-
-                {/* Fret markers */}
                 {string === 6 && [3, 5, 7, 9, 12].includes(fret) && (
                   <View style={styles.fretMarker} />
                 )}
@@ -225,109 +218,167 @@ const grade2Scales = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Grade 2 Scales</Text>
-        <Text style={styles.subtitle}>
-          Select a scale and view it on the fretboard grid
-        </Text>
-      </View>
+    <LinearGradient
+      colors={["#0f1214", "#1b1e21", "#242830"]}
+      style={{ flex: 1 }}
+    >
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView style={styles.container}>
+          <View style={styles.wrapper}>
+            <View style={styles.orb1} />
+            <View style={styles.orb2} />
 
-      {/* Scale selector buttons */}
-      <View style={styles.scaleButtons}>
-        {Object.keys(scales).map((scale) => (
-          <TouchableOpacity
-            key={scale}
-            onPress={() => setSelectedScale(scale)}
-            style={[
-              styles.scaleButton,
-              selectedScale === scale && styles.selectedScaleButton,
-            ]}
-          >
-            <Text
-              style={[
-                styles.scaleButtonText,
-                selectedScale === scale && styles.selectedScaleButtonText,
-              ]}
-            >
-              {scale}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </View>
+            <View style={styles.content}>
+              <View style={styles.header}>
+                <Text style={styles.title}>Grade 2 Scales</Text>
+                <Text style={styles.subtitle}>
+                  Select a scale and view it on the fretboard grid
+                </Text>
+              </View>
 
-      {/* Current scale info */}
-      <View style={styles.scaleInfo}>
-        <Text style={styles.scaleTitle}>{selectedScale}</Text>
-        <View style={styles.notesContainer}>
-          <Text style={styles.notesLabel}>Scale notes: </Text>
-          <Text style={styles.notesText}>
-            {scales[selectedScale].notes.join(" - ")}
-          </Text>
-        </View>
-      </View>
+              <View style={styles.scaleButtons}>
+                {Object.keys(scales).map((scale) => (
+                  <TouchableOpacity
+                    key={scale}
+                    onPress={() => setSelectedScale(scale)}
+                    style={[
+                      styles.scaleButton,
+                      selectedScale === scale && styles.selectedScaleButton,
+                    ]}
+                  >
+                    <Text
+                      style={[
+                        styles.scaleButtonText,
+                        selectedScale === scale &&
+                          styles.selectedScaleButtonText,
+                      ]}
+                    >
+                      {scale}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
 
-      {/* Fretboard */}
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={styles.fretboardScroll}
-      >
-        {renderFretboard()}
-      </ScrollView>
+              <View style={styles.scaleInfo}>
+                <Text style={styles.scaleTitle}>{selectedScale}</Text>
+                <View style={styles.notesContainer}>
+                  <Text style={styles.notesLabel}>Scale notes: </Text>
+                  <Text style={styles.notesText}>
+                    {scales[selectedScale].notes.join(" - ")}
+                  </Text>
+                </View>
+              </View>
 
-      {/* Legend */}
-      <View style={styles.legend}>
-        <View style={styles.legendItem}>
-          <View style={[styles.legendDot, styles.rootNoteDot]} />
-          <Text style={styles.legendText}>Root Note</Text>
-        </View>
-        <View style={styles.legendItem}>
-          <View style={[styles.legendDot, styles.scaleNoteDot]} />
-          <Text style={styles.legendText}>Scale Notes</Text>
-        </View>
-      </View>
-      <View>
-        <Text style={styles.practiceTitle}>Scale practice</Text>
-        <View style={styles.practiceInstructions}>
-          <Text style={styles.practiceDescription}>Slow Practice</Text>
-          <Text style={styles.practiceDescription}>
-            Start with a slow tempo (50–60 BPM on the metronome ).
-          </Text>
-          <Text style={styles.practiceDescription}>
-            Focus on the correct fingering and clear sound.
-          </Text>
-          <Text style={styles.practiceDescription}>
-            Once you fell comfortable, increase the tempo.
-          </Text>
-          <Text style={styles.practiceDescription}>
-            Play the scale with rhythm patterns (for example eights, triplets,
-            sixteenths).
-          </Text>
-          <Text style={styles.practiceDescription}>
-            Intervals and sequences
-          </Text>
-          <Text style={styles.practiceDescription}>
-            Instead of playing the whole scale up and down, play intervals (for
-            example 1-3, 2-4, 3-5).
-          </Text>
-          <Text style={styles.practiceDescription}>
-            Play sequences (for example 1-2-3/2-3-4…).
-          </Text>
-        </View>
-      </View>
-    </ScrollView>
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                style={styles.fretboardScroll}
+              >
+                {renderFretboard()}
+              </ScrollView>
+
+              <View style={styles.legend}>
+                <View style={styles.legendItem}>
+                  <View style={[styles.legendDot, styles.rootNoteDot]} />
+                  <Text style={styles.legendText}>Root Note</Text>
+                </View>
+                <View style={styles.legendItem}>
+                  <View style={[styles.legendDot, styles.scaleNoteDot]} />
+                  <Text style={styles.legendText}>Scale Notes</Text>
+                </View>
+              </View>
+
+              <View style={styles.practiceSection}>
+                <Text style={styles.practiceTitle}>Scale Practice</Text>
+
+                <View style={styles.practiceInstructions}>
+                  <Text style={styles.practiceDescriptionTitle}>
+                    Foundational Tempo Work
+                  </Text>
+                  <Text style={styles.practiceDescription}>
+                    Begin practicing the scale at a slow, controlled tempo
+                    (50–60 BPM). Focus on consistent tone, clean articulation,
+                    and steady timing.
+                  </Text>
+
+                  <Text style={styles.practiceDescriptionTitle}>
+                    Gradual Speed Development
+                  </Text>
+                  <Text style={styles.practiceDescription}>
+                    Once the scale feels comfortable, gradually increase the
+                    tempo in small increments. Prioritize accuracy over speed to
+                    build reliable technique.
+                  </Text>
+
+                  <Text style={styles.practiceDescriptionTitle}>
+                    Rhythmic Variations
+                  </Text>
+                  <Text style={styles.practiceDescription}>
+                    Practice the scale using different rhythmic patterns such as
+                    eighth notes, triplets, and sixteenth notes. This helps
+                    develop precision and flexibility in both hands.
+                  </Text>
+
+                  <Text style={styles.practiceDescriptionTitle}>
+                    Intervals & Sequences
+                  </Text>
+                  <Text style={styles.practiceDescription}>
+                    Strengthen your fretboard awareness by practicing
+                    interval-based patterns (for example: 1–3, 2–4, 3–5).
+                  </Text>
+                  <Text style={styles.practiceDescription}>
+                    Add sequential patterns as well, such as 1–2–3 / 2–3–4 /
+                    3–4–5, to develop flow and musical phrasing.
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#212529",
+  },
+  wrapper: {
+    position: "relative",
+    minHeight: 1000,
+  },
+  content: {
     padding: 20,
-    border: "1px solid #20c997",
-    borderRadius: 8,
-    marginBottom: 20,
+    alignItems: "center",
+  },
+  orb1: {
+    position: "absolute",
+    top: 100,
+    right: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    opacity: 0.6,
+    shadowColor: "#6366f1",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 60,
+  },
+  orb2: {
+    position: "absolute",
+    bottom: 150,
+    left: -80,
+    width: 250,
+    height: 250,
+    borderRadius: 125,
+    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    opacity: 0.5,
+    shadowColor: "#a855f7",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 70,
   },
   header: {
     alignItems: "center",
@@ -335,7 +386,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   title: {
-    width: "74%",
+    width: "100%",
     fontSize: 28,
     fontWeight: "bold",
     color: "#20c997",
@@ -343,22 +394,21 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   subtitle: {
-    width: "74%",
+    width: "100%",
     fontSize: 16,
     color: "#DEE3E4",
     marginBottom: 20,
     textAlign: "center",
   },
   scaleButtons: {
-    width: "74%",
+    width: "100%",
     flexDirection: "row",
     flexWrap: "wrap",
-    // justifyContent: "center",
     marginBottom: 30,
     gap: 10,
   },
   scaleButton: {
-    backgroundColor: "#2c3e50",
+    backgroundColor: "rgba(44, 62, 80, 0.8)",
     paddingHorizontal: 15,
     paddingVertical: 10,
     borderRadius: 8,
@@ -381,8 +431,8 @@ const styles = StyleSheet.create({
     color: "#ffffff",
   },
   scaleInfo: {
-    width: "74%",
-    backgroundColor: "#2c3e50",
+    width: "100%",
+    backgroundColor: "rgba(44, 62, 80, 0.8)",
     borderRadius: 12,
     marginBottom: 20,
     borderWidth: 1,
@@ -510,18 +560,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#8B4513",
   },
   legend: {
-    width: "74%",
-    backgroundColor: "#2c3e50",
+    width: "100%",
+    backgroundColor: "rgba(44, 62, 80, 0.8)",
     borderRadius: 8,
     padding: 15,
     flexDirection: "row",
     flexWrap: "wrap",
-    // justifyContent: "space-around",
     alignItems: "center",
+    marginBottom: 20,
   },
   legendItem: {
     flexDirection: "row",
     alignItems: "center",
+    marginRight: 20,
   },
   legendDot: {
     width: 16,
@@ -533,23 +584,32 @@ const styles = StyleSheet.create({
     color: "#DEE3E4",
     fontSize: 14,
   },
+  practiceSection: {
+    width: "100%",
+    marginTop: 20,
+    marginBottom: 40,
+  },
   practiceTitle: {
     fontSize: 24,
     fontWeight: "bold",
     color: "#DEE3E4",
-    marginBottom: 30,
-    marginTop: 30,
+    marginBottom: 20,
   },
   practiceInstructions: {
-    width: "74%",
-    fontSize: 18,
-    color: "#DEE3E4",
-    marginBottom: 20,
+    width: "100%",
   },
   practiceDescription: {
     fontSize: 16,
     color: "#DEE3E4",
     marginBottom: 20,
+    lineHeight: 24,
+  },
+  practiceDescriptionTitle: {
+    fontSize: 18,
+    color: "#20c997",
+    fontWeight: "700",
+    marginTop: 10,
+    marginBottom: 5,
   },
 });
 

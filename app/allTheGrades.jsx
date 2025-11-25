@@ -123,7 +123,9 @@ const allTheGrades = () => {
                       • Creative soloing, advanced techniques
                     </Text>
                     <Text style={styles.gradePoint}>
-                      • Specialism: perform your own composition
+                      • Specialism: perform special techniques (tapping, slide
+                      guitar, fingerstyle, etc.), sight reading or just
+                      improvisation/ rhythm guitar.
                     </Text>
                     <Text style={styles.focusText}>
                       Focus: Expressive playing, mastery, personal style

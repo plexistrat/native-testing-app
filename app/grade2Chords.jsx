@@ -7,6 +7,8 @@ import {
   StyleSheet,
   Dimensions,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const { width } = Dimensions.get("window");
 
@@ -63,9 +65,9 @@ const grade2Chords = () => {
       muted: [false, false, false, false, false, false],
     },
     Em7: {
-      type: "Minor 7th",
+      type: "Minor seventh",
       notes: ["E", "G", "B", "D"],
-      color: "#bb6551ff",
+      color: "#ff3b3bff",
       frets: [0, 0, 0, 0, 0, 2, 0],
       fingers: [null, null, null, null, null, 1, null],
       muted: [false, false, false, false, false, false],
@@ -73,7 +75,7 @@ const grade2Chords = () => {
     Am7: {
       type: "Minor 7th",
       notes: ["A", "C", "E", "G"],
-      color: "#bb6551ff",
+      color: "#ff3b3bff",
       frets: [0, 1, 0, 2, 0, -1],
       fingers: [null, 1, null, 2, null, null],
       muted: [false, false, false, false, false, true],
@@ -81,7 +83,7 @@ const grade2Chords = () => {
     Dm7: {
       type: "Minor 7th",
       notes: ["D", "F", "A", "C"],
-      color: "#bb6551ff",
+      color: "#ff3b3bff",
       frets: [1, 1, 2, 0, -1, -1],
       fingers: [1, 1, 2, null, null, null],
       muted: [false, false, false, false, true, true],
@@ -115,9 +117,12 @@ const grade2Chords = () => {
         </Text>
 
         <View style={styles.fretboard}>
+          {/* Nut (top of fretboard) */}
+          <View style={styles.nut} />
+
           <View style={styles.stringsContainer}>
             {[0, 1, 2, 3, 4, 5].map((stringIndex) => (
-              <View key={stringIndex} style={styles.stringLine}>
+              <View key={stringIndex} style={styles.stringColumn}>
                 <Text style={styles.stringLabel}>
                   {stringNames[stringIndex]}
                 </Text>
@@ -131,9 +136,9 @@ const grade2Chords = () => {
                     <Text style={styles.openIndicator}>○</Text>
                   )}
 
-                <View style={styles.fretPositions}>
+                <View style={styles.fretColumn}>
                   {[1, 2, 3, 4].map((fretNum) => (
-                    <View key={fretNum} style={styles.fretPosition}>
+                    <View key={fretNum} style={styles.fretCell}>
                       {chord.frets[stringIndex] === fretNum && (
                         <View
                           style={[
@@ -146,6 +151,7 @@ const grade2Chords = () => {
                           </Text>
                         </View>
                       )}
+                      {fretNum < 4 && <View style={styles.fretWire} />}
                     </View>
                   ))}
                 </View>
@@ -155,8 +161,17 @@ const grade2Chords = () => {
             ))}
           </View>
 
+          {/* Fret markers */}
+          <View style={styles.fretMarkers}>
+            {[3].map((fret) => (
+              <View
+                key={fret}
+                style={[styles.fretMarker, { top: (fret - 0.5) * 60 + 70 }]}
+              />
+            ))}
+          </View>
+
           <View style={styles.fretNumbers}>
-            <View style={styles.fretNumberSpace} />
             {[1, 2, 3, 4].map((num) => (
               <View key={num} style={styles.fretNumberContainer}>
                 <Text style={styles.fretNumber}>{num}</Text>
@@ -170,7 +185,7 @@ const grade2Chords = () => {
 
   const renderChordButtons = () => {
     return (
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <View>
         {chordTypes.map((type) => (
           <View key={type} style={styles.chordCategory}>
             <Text style={styles.categoryTitle}>{type}</Text>
@@ -189,7 +204,9 @@ const grade2Chords = () => {
                         styles.chordButton,
                         {
                           backgroundColor:
-                            selectedChord === chordName ? chord.color : "#333",
+                            selectedChord === chordName
+                              ? chord.color
+                              : "rgba(44, 62, 80, 0.8)",
                           borderColor: chord.color,
                         },
                       ]}
@@ -203,7 +220,7 @@ const grade2Chords = () => {
             </ScrollView>
           </View>
         ))}
-      </ScrollView>
+      </View>
     );
   };
 
@@ -232,108 +249,102 @@ const grade2Chords = () => {
   };
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <Text style={styles.title}>🎸 Guitar Chords — Grade 2</Text>
-      <Text style={styles.subtitle}>
-        Grade 2: Barre Prep, 7th Chords, Shape Control
-      </Text>
+    <LinearGradient
+      colors={["#0f1214", "#1b1e21", "#242830"]}
+      style={{ flex: 1 }}
+    >
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.wrapper}>
+            <View style={styles.orb1} />
+            <View style={styles.orb2} />
 
-      {renderChordButtons()}
-      {renderChordInfo()}
-      {renderChordDiagram()}
-      <View style={styles.practiceContainer}>
-        <Text style={styles.title}>Practice Section</Text>
-        <Text style={styles.subtitle}>1. Strengthen Finger Independence</Text>
-        <Text style={styles.description}>
-          Start by pressing two-note shapes (dyads) cleanly:{"\n"}1 + 2{"\n"} 1
-          + 3{"\n"} 2 + 4{"\n"}
-          These small shapes make barre and 7th chords easier later.
-        </Text>
+            <View style={styles.content}>
+              <Text style={styles.title}>🎸 Guitar Chords</Text>
+              <Text style={styles.subtitle}>Open Chords – 1st Position</Text>
 
-        <Text style={styles.subtitle}>2. Smooth Shape Placement</Text>
-        <Text style={styles.description}>
-          Pick one chord (like Bm). Place fingers all together, not one at a
-          time. Aim for clean sound using slow, steady strumming.
-        </Text>
-        <Text style={styles.subtitle}>3. Expand Your Chord Library</Text>
-        <Text style={styles.description}>
-          Minor shapes (Bm, F#m) {"\n"} Dominant 7 (C7, G7) {"\n"} Major 7
-          (Fmaj7, Gmaj7){"\n"} These teach tension, color, and smoother
-          transitions.
-        </Text>
-        <Text style={styles.subtitle}>4. Change Between Chords</Text>
-        <Text style={styles.description}>
-          Bm → C7{"\n"} Am7 → Dm7{"\n"} G → Gmaj7{"\n"} Use a metronome at 55–65
-          BPM.{"\n"}
-        </Text>
-        <Text style={styles.subtitle}>5. Learn Basic Progressions</Text>
-        <Text style={styles.description}>
-          Great Grade 2 progressions: {"\n"} ii → V → I: Dm → G7 → C{"\n"} vi →
-          IV → I → V: Am → F → C → G {"\n"} I → vi → IV → V: C → Am → Fmaj7 → G7{" "}
-          {"\n"}.
-        </Text>
-        <Text style={styles.subtitle}>6. Add Simple Rhythm Patterns</Text>
-        <Text style={styles.description}>
-          Use these patterns: {"\n"} Down Down Up Up Down {"\n"} Down Miss Down
-          Up Miss Up{"\n"} Keep the rhythm steady even when the chord changes
-          feel slow.
-        </Text>
-        <Text style={styles.subtitle}>7. Ear Training</Text>
-        <Text style={styles.description}>
-          Play two chords back to back and listen:{"\n"} Major = bright {"\n"}
-          Minor = dark{"\n"} 7th chords = colorful and slightly tense{"\n"}
-          Start predicting the sound before playing it.
-        </Text>
-        <Text style={styles.subtitle1}>8. 10-Minute Daily Routine</Text>
-        <Text style={styles.description1}>
-          Warm-up → light finger stretching{"\n"} Shapes → play 3 chords slowly
-          {"\n"}
-          Changes → 2 minutes switching between any two{"\n"} Progression → loop
-          one pattern{"\n"} Play-along → slow track with 4–8 chords
-        </Text>
-        <Text style={styles.subtitle1}>Tip</Text>
-        <Text style={styles.description1}>
-          Relax your fingertips and keep your thumb behind the neck. If a chord
-          buzzes, reduce pressure slightly and adjust finger angle.
-        </Text>
+              {renderChordButtons()}
+              {renderChordInfo()}
+              {renderChordDiagram()}
 
-        <Text style={styles.subtitle1}>Song List</Text>
-        <Text style={styles.description1}>
-          Stand By Me – Ben E. King (G – Em – C – D – G7)
-        </Text>
-        <Text style={styles.description1}>
-          No Woman No Cry – Bob Marley (C – G – Am – F)
-        </Text>
-        <Text style={styles.description1}>
-          Wish You Were Here – Pink Floyd (G – C – D – Am7)s
-        </Text>
-        <Text style={styles.description1}>
-          Let It Be – The Beatles (C – G – Am – F – C – G – Fmaj7)
-        </Text>
-        <Text style={styles.description1}>
-          Redemption Song – Bob Marley (G – Em – C – D)
-        </Text>
-        <Text style={styles.description1}>
-          Time of Your Life – Green Day (G – C – D – Em)
-        </Text>
-        <Text style={styles.description1}>
-          Blue Suede Shoes – Elvis Presley (A7 – D7 – E7)
-        </Text>
-        <Text style={styles.description1}>
-          House of the Rising Sun – Traditional (Am – C – D – F – E7)
-        </Text>
-      </View>
-    </ScrollView>
+              <View style={styles.practiceContainer}>
+                <Text style={styles.practiceTitle}>Chords Practice</Text>
+
+                <Text style={styles.sectionTitle}>
+                  1. Learn the shapes gradually
+                </Text>
+                <Text style={styles.description}>
+                  Try to asosciate the shapes with the chords from grade 1
+                </Text>
+                <Text style={styles.description}>
+                  Work in groups based on the note , for example: A, Am, Am7,
+                  A7, Amaj7 with same study rhythm motif.
+                </Text>
+                <Text style={styles.description}>
+                  Once you master the shapes, try to move from chord to chord
+                  with the least amount of movement.
+                </Text>
+
+                <Text style={styles.songListTitle}>Song List</Text>
+                <Text style={styles.songItem}>
+                  Knockin' On Heaven's Door – Bob Dylan (G – D – Am7 – G – D –
+                  C)
+                </Text>
+                <Text style={styles.songItem}>
+                  All of me (A section) (C-E7-Am7-Dm7-A7-G7-Cmaj7)
+                </Text>
+                <Text style={styles.songItem}>G7 12 bar blues</Text>
+
+                <Text style={styles.songItem}>
+                  People are strange - The Doors
+                </Text>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#212529",
+  wrapper: {
+    position: "relative",
+    minHeight: 1000,
+  },
+  content: {
+    padding: 20,
+  },
+  orb1: {
+    position: "absolute",
+    top: 100,
+    right: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    opacity: 0.6,
+    shadowColor: "#6366f1",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 60,
+  },
+  orb2: {
+    position: "absolute",
+    bottom: 150,
+    left: -80,
+    width: 250,
+    height: 250,
+    borderRadius: 125,
+    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    opacity: 0.5,
+    shadowColor: "#a855f7",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 70,
   },
   practiceContainer: {
-    marginHorizontal: 15,
+    marginTop: 30,
     marginBottom: 30,
   },
   title: {
@@ -346,37 +357,66 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 18,
-    fontWeight: "bold",
-    color: "#ccc",
+    fontWeight: "600",
+    color: "#20c997",
     textAlign: "center",
     marginBottom: 30,
   },
-  subtitle1: {
+  practiceTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#DEE3E4",
+    marginBottom: 20,
+  },
+  sectionTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#ccc",
-    marginBottom: 20,
+    color: "#20c997",
+    marginTop: 15,
+    marginBottom: 8,
   },
   description: {
-    fontSize: 12,
-    color: "#ccc",
-    textAlign: "center",
-    marginBottom: 20,
-  },
-  description1: {
-    fontSize: 12,
-    color: "#ccc",
-    marginBottom: 10,
+    fontSize: 15,
+    color: "#DEE3E4",
+    marginBottom: 15,
+    lineHeight: 22,
   },
   tip: {
-    fontSize: 12,
-    color: "#ccc",
-    textAlign: "center",
-    marginBottom: 20,
+    fontSize: 14,
+    color: "#20c997",
+    fontStyle: "italic",
+    marginBottom: 15,
+    lineHeight: 20,
+  },
+  tipTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#20c997",
+    marginTop: 15,
+    marginBottom: 8,
+  },
+  tipText: {
+    fontSize: 15,
+    color: "#DEE3E4",
+    marginBottom: 15,
+    lineHeight: 22,
+  },
+  songListTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#DEE3E4",
+    marginTop: 20,
+    marginBottom: 12,
+  },
+  songItem: {
+    fontSize: 14,
+    color: "#DEE3E4",
+    marginBottom: 8,
+    paddingLeft: 10,
   },
   chordCategory: {
     backgroundColor: "rgba(42, 42, 42, 0.8)",
-    margin: 10,
+    marginVertical: 10,
     padding: 20,
     borderRadius: 15,
     borderWidth: 1,
@@ -417,7 +457,7 @@ const styles = StyleSheet.create({
   },
   chordInfo: {
     backgroundColor: "rgba(42, 42, 42, 0.8)",
-    margin: 10,
+    marginVertical: 10,
     padding: 20,
     borderRadius: 15,
     borderWidth: 1,
@@ -461,7 +501,7 @@ const styles = StyleSheet.create({
   },
   chordDiagram: {
     backgroundColor: "rgba(42, 42, 42, 0.9)",
-    margin: 10,
+    marginVertical: 10,
     padding: 20,
     borderRadius: 15,
     borderWidth: 1,
@@ -469,116 +509,145 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   chordName: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
   },
   fretboard: {
-    backgroundColor: "#4e5651ff",
-    borderRadius: 10,
+    backgroundColor: "#D2B48C",
+    borderRadius: 12,
     padding: 20,
-    width: width - 60,
-    maxWidth: 350,
+    height: 350,
+    width: 280,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.4,
     shadowRadius: 16,
     elevation: 16,
+    position: "relative",
+  },
+  nut: {
+    position: "absolute",
+    top: 20,
+    bottom: 20,
+    left: 70,
+    width: 6,
+    backgroundColor: "#2C1810",
+    borderRadius: 2,
+    zIndex: 10,
   },
   stringsContainer: {
-    position: "relative",
+    flexDirection: "column",
+    paddingTop: 10,
   },
-  stringLine: {
+  stringColumn: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 15,
-    height: 40,
+    marginBottom: 8,
     position: "relative",
-  },
-  stringWire: {
-    position: "absolute",
-    left: 50,
-    right: 0,
-    top: "50%",
-    height: 2,
-    backgroundColor: "#C0C0C0",
-    transform: [{ translateY: -1 }],
-    zIndex: -1,
+    height: 45,
   },
   stringLabel: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: "bold",
-    color: "#fff",
-    backgroundColor: "#333",
-    width: 30,
-    height: 30,
+    color: "#2C1810",
+    backgroundColor: "#F5DEB3",
+    width: 24,
+    height: 24,
     textAlign: "center",
-    textAlignVertical: "center",
-    borderRadius: 15,
-    marginRight: 15,
+    lineHeight: 24,
+    borderRadius: 12,
+    marginRight: 8,
+    borderWidth: 1,
+    borderColor: "#8B4513",
   },
   mutedIndicator: {
     position: "absolute",
-    left: 55,
-    top: -5,
-    fontSize: 20,
+    left: 32,
+    fontSize: 18,
     color: "#FF4444",
     fontWeight: "bold",
   },
   openIndicator: {
     position: "absolute",
-    left: 55,
-    top: -5,
-    fontSize: 20,
+    left: 32,
+    fontSize: 18,
     color: "#44FF44",
     fontWeight: "bold",
   },
-  fretPositions: {
+  fretColumn: {
     flexDirection: "row",
-    position: "absolute",
-    left: 80,
-    right: 0,
+    marginLeft: 18,
   },
-  fretPosition: {
+  fretCell: {
     width: 50,
-    height: 40,
     alignItems: "center",
     justifyContent: "center",
+    position: "relative",
+  },
+  fretWire: {
+    position: "absolute",
+    right: 0,
+    top: -25,
+    bottom: -25,
+    width: 2,
+    backgroundColor: "#8B4513",
+  },
+  stringWire: {
+    position: "absolute",
+    left: 56,
+    right: 0,
+    top: "50%",
+    height: 2,
+    backgroundColor: "#C0C0C0",
+    transform: [{ translateY: -1 }],
   },
   fingerPosition: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
     alignItems: "center",
     justifyContent: "center",
     borderWidth: 2,
-    borderColor: "rgba(255,255,255,0.3)",
+    borderColor: "rgba(255,255,255,0.4)",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.4,
-    shadowRadius: 8,
+    shadowOpacity: 0.5,
+    shadowRadius: 6,
     elevation: 8,
+    zIndex: 5,
   },
   fingerNumber: {
     color: "#fff",
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: "bold",
+  },
+  fretMarkers: {
+    position: "absolute",
+    top: "50%",
+    transform: [{ translateY: -4 }],
+  },
+  fretMarker: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: "#8B7355",
+    position: "absolute",
+    left: 160,
   },
   fretNumbers: {
     flexDirection: "row",
-    marginTop: 10,
-    alignItems: "center",
-  },
-  fretNumberSpace: {
-    width: 95,
+    position: "absolute",
+    bottom: 5,
+    left: 85,
   },
   fretNumberContainer: {
     width: 50,
     alignItems: "center",
   },
   fretNumber: {
-    color: "#ccc",
+    color: "#2C1810",
     fontSize: 12,
     fontWeight: "bold",
   },
