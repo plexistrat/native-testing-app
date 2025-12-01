@@ -2,8 +2,12 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
+import { TouchableOpacity } from "react-native";
 
 const allTheGrades = () => {
+  const router = useRouter();
+
   return (
     <>
       <LinearGradient
@@ -67,7 +71,7 @@ const allTheGrades = () => {
 
               <View style={styles.section}>
                 <View style={styles.gradeCard}>
-                  <Text style={styles.gradeTitle}>Grades 1–2 (Beginner)</Text>
+                  <Text style={styles.gradeTitle}>Grades 1–2-3 (Beginner)</Text>
                   <View style={styles.gradeContent}>
                     <Text style={styles.gradePoint}>
                       • Major/minor scales and basic chords
@@ -89,7 +93,7 @@ const allTheGrades = () => {
 
                 <View style={styles.gradeCard}>
                   <Text style={styles.gradeTitle}>
-                    Grades 3–5 (Intermediate)
+                    Grades 4–5 (Intermediate)
                   </Text>
                   <View style={styles.gradeContent}>
                     <Text style={styles.gradePoint}>
@@ -133,6 +137,13 @@ const allTheGrades = () => {
                   </View>
                 </View>
               </View>
+              {/* Back Button */}
+              <TouchableOpacity
+                style={styles.backButton}
+                onPress={() => router.back()}
+              >
+                <Text style={styles.backButtonText}>← Back</Text>
+              </TouchableOpacity>
             </View>
           </SafeAreaView>
         </ScrollView>
@@ -299,6 +310,23 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     borderTopWidth: 1,
     borderTopColor: "#20c997",
+  },
+  backButton: {
+    alignSelf: "flex-start",
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    borderRadius: 10,
+    backgroundColor: "rgba(32, 201, 151, 0.12)",
+    borderWidth: 1,
+    borderColor: "rgba(32, 201, 151, 0.3)",
+    marginBottom: 20,
+    marginLeft: 5,
+  },
+
+  backButtonText: {
+    fontSize: 16,
+    color: "#20c997",
+    fontWeight: "600",
   },
 });
 

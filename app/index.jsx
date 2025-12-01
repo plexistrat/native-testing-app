@@ -134,8 +134,8 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     paddingHorizontal: 20,
-    paddingTop: 80,
-    paddingBottom: 40,
+    paddingTop: 5,
+    paddingBottom: 30,
     minHeight: 1000,
   },
   // Floating background orbs for depth
@@ -169,14 +169,14 @@ const styles = StyleSheet.create({
   },
   heroSection: {
     alignItems: "center",
-    marginBottom: 60,
+    marginBottom: 20,
   },
   titleContainer: {
     alignItems: "flex-start",
-    marginBottom: 30,
+    marginBottom: 8,
   },
   title1: {
-    fontSize: 48,
+    fontSize: 46,
     fontWeight: "bold",
     color: "#DEE3E4",
     textAlign: "left",
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     marginLeft: 60,
   },
   title3: {
-    fontSize: 56,
+    fontSize: 54,
     fontWeight: "bold",
     color: "#20c997",
     textAlign: "center",
@@ -206,13 +206,13 @@ const styles = StyleSheet.create({
     color: "#DEE3E4",
     textAlign: "center",
     width: "100%",
-    marginTop: 5,
+    marginTop: 2,
     opacity: 0.9,
   },
   decorativeContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 5,
   },
   decorativeLine: {
     width: 50,
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
   },
   guitarEmoji: {
-    fontSize: 32,
+    fontSize: 30,
   },
   navigationSection: {
     width: "100%",
@@ -231,12 +231,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "#DEE3E4",
-    marginBottom: 30,
+    marginBottom: 20,
     textAlign: "center",
   },
   linksContainer: {
     width: "100%",
-    gap: 15,
+    gap: 10,
   },
   linkButton: {
     backgroundColor: "rgba(32, 201, 151, 0.1)",
@@ -275,8 +275,8 @@ const styles = StyleSheet.create({
   },
   footerSection: {
     alignItems: "center",
-    marginTop: 60,
-    paddingTop: 40,
+    marginTop: 20,
+    paddingTop: 20,
     borderTopWidth: 1,
     borderTopColor: "rgba(32, 201, 151, 0.2)",
   },
@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
     width: 80,
     height: 2,
     backgroundColor: "#20c997",
-    marginBottom: 15,
+    marginBottom: 10,
   },
   footerSubtext: {
     fontSize: 14,

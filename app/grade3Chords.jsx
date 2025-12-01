@@ -212,8 +212,8 @@ const grade3Chords = () => {
               <Text style={styles.subtitle}>Grade 3, Bar Chords</Text>
 
               {renderChordButtons()}
-              {renderChordInfo()}
               {renderChordDiagram()}
+              {renderChordInfo()}
 
               <View style={styles.practiceContainer}>
                 <Text style={styles.practiceTitle}>Bar Chords Practice</Text>

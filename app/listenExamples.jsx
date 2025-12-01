@@ -3,8 +3,12 @@ import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
 import YouTubePlayer from "./components/YouTubePlayer";
+import { useRouter } from "expo-router";
+import { TouchableOpacity } from "react-native";
 
 const listenExamples = () => {
+  const router = useRouter();
+
   return (
     <LinearGradient
       colors={["#0f1214", "#1b1e21", "#242830"]}
@@ -85,6 +89,13 @@ const listenExamples = () => {
                 </Link>
               </View>
             </View>
+            {/* Back Button */}
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => router.back()}
+            >
+              <Text style={styles.backButtonText}>← Back</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -218,5 +229,22 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  backButton: {
+    alignSelf: "flex-start",
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    borderRadius: 10,
+    backgroundColor: "rgba(32, 201, 151, 0.12)",
+    borderWidth: 1,
+    borderColor: "rgba(32, 201, 151, 0.3)",
+    marginBottom: 20,
+    marginLeft: 5,
+  },
+
+  backButtonText: {
+    fontSize: 16,
+    color: "#20c997",
+    fontWeight: "600",
   },
 });

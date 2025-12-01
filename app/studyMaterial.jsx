@@ -1,44 +1,74 @@
-import { StyleSheet, Text, View, ScrollView, Dimensions } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import GradeCard from "./components/GradeCard";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
+import { TouchableOpacity } from "react-native";
 
-const studyMaterial = () => {
+const StudyMaterial = () => {
+  const router = useRouter();
+
   return (
     <LinearGradient
       colors={["#0f1214", "#1b1e21", "#242830"]}
       style={styles.scrollContainer}
     >
       <ScrollView contentContainerStyle={styles.container}>
-        {/* Animated background orbs */}
+        {/* Background orbs */}
         <View style={styles.orb1} />
         <View style={styles.orb2} />
 
-        {/* Header with gradient text effect */}
+        {/* Header */}
         <View style={styles.headerContainer}>
-          <Text style={styles.title}>Study Material</Text>
+          <MaterialCommunityIcons
+            name="guitar-electric"
+            size={60}
+            color="#20c997"
+            style={{ marginBottom: 15 }}
+          />
+
+          <Text style={styles.title}>Guitar Study Hub</Text>
+          <Text style={styles.subtitle}>
+            Your pathway through the RGT grades
+          </Text>
+
           <View style={styles.titleUnderline} />
         </View>
 
-        {/* Content card with enhanced glass effect */}
+        {/* Grade Cards */}
         <View style={styles.gradeContainer}>
-          <View style={styles.shimmerOverlay} />
           <GradeCard title="Grade 1" grade="grade1" />
           <GradeCard title="Grade 2" grade="grade2" />
           <GradeCard title="Grade 3" grade="grade3" />
-          <GradeCard title="Grade 4" grade="grade4" />
-          <GradeCard title="Grade 5" grade="grade5" />
-          <GradeCard title="Grade 6" grade="grade6" />
-          <GradeCard title="Grade 7" grade="grade7" />
-          <GradeCard title="Grade 8" grade="grade8" />
+        </View>
+
+        {/* Bottom Banner */}
+        <View style={styles.bottomBanner}>
+          <MaterialCommunityIcons
+            name="lightbulb-on-outline"
+            size={28}
+            color="#20c997"
+            style={styles.bannerIcon}
+          />
+          <Text style={styles.bannerText}>
+            “Small steps daily create unstoppable players.”
+          </Text>
+        </View>
+        <View>
+          {/* Back Button - fixed bottom-left */}
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => router.back()}
+          >
+            <Text style={styles.backButtonText}>← Back</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </LinearGradient>
   );
 };
 
-export default studyMaterial;
-
-const screenWidth = Dimensions.get("window").width;
+export default StudyMaterial;
 
 const styles = StyleSheet.create({
   scrollContainer: {
@@ -47,65 +77,114 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     paddingHorizontal: 20,
-    paddingTop: 80,
-    paddingBottom: 80,
+    paddingTop: 30,
+    paddingBottom: 100,
   },
-  // Floating background orbs for depth
+
+  /* --- Orbs --- */
   orb1: {
     position: "absolute",
-    top: 100,
-    right: -50,
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    backgroundColor: "rgba(99, 102, 241, 0.15)",
-    opacity: 0.6,
-    shadowColor: "#6366f1",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.5,
-    shadowRadius: 60,
+    top: 120,
+    right: -40,
+    width: 180,
+    height: 180,
+    borderRadius: 90,
+    backgroundColor: "rgba(99, 102, 241, 0.18)",
   },
   orb2: {
     position: "absolute",
     bottom: 150,
-    left: -80,
-    width: 250,
-    height: 250,
-    borderRadius: 125,
-    backgroundColor: "rgba(168, 85, 247, 0.12)",
-    opacity: 0.5,
-    shadowColor: "#a855f7",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.4,
-    shadowRadius: 70,
+    left: -70,
+    width: 240,
+    height: 240,
+    borderRadius: 120,
+    backgroundColor: "rgba(168, 85, 247, 0.15)",
   },
+
+  /* --- Header --- */
   headerContainer: {
-    marginBottom: 45,
     alignItems: "center",
+    marginBottom: 50,
   },
+
   title: {
-    fontSize: 46,
+    fontSize: 40,
     fontWeight: "900",
     color: "#f5f7f8",
     letterSpacing: 1.5,
-    textShadowColor: "rgba(99, 102, 241, 0.3)",
+    textShadowColor: "rgba(32, 201, 151, 0.3)",
     textShadowOffset: { width: 0, height: 4 },
-    textShadowRadius: 12,
+    textShadowRadius: 10,
   },
+
+  subtitle: {
+    fontSize: 16,
+    color: "#cfd2d3",
+    marginTop: 6,
+    marginBottom: 12,
+    opacity: 0.9,
+  },
+
   titleUnderline: {
-    marginTop: 12,
-    width: 80,
+    marginTop: 10,
+    width: 100,
     height: 4,
     borderRadius: 2,
     backgroundColor: "#20c997",
-    shadowColor: "#20c997",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.8,
-    shadowRadius: 8,
   },
+
+  /* --- Cards Container --- */
   gradeContainer: {
     width: "100%",
     alignItems: "center",
-    gap: 14,
+    gap: 16,
+  },
+
+  /* --- Bottom banner --- */
+  bottomBanner: {
+    marginTop: 50,
+    backgroundColor: "rgba(33, 37, 41, 0.7)",
+    borderRadius: 14,
+    paddingVertical: 20,
+    paddingHorizontal: 25,
+    flexDirection: "row",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#20c997",
+  },
+
+  bannerIcon: {
+    marginRight: 14,
+  },
+
+  bannerText: {
+    color: "#f5f7f8",
+    fontSize: 15,
+    fontWeight: "600",
+    flex: 1,
+  },
+  backButton: {
+    position: "absolute",
+    bottom: -80,
+    left: -170,
+
+    paddingVertical: 10,
+    paddingHorizontal: 18,
+    borderRadius: 12,
+
+    backgroundColor: "rgba(32, 201, 151, 0.12)",
+    borderWidth: 1,
+    borderColor: "rgba(32, 201, 151, 0.3)",
+
+    shadowColor: "#20c997",
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+  },
+
+  backButtonText: {
+    fontSize: 17,
+    fontWeight: "700",
+    color: "#20c997",
   },
 });

@@ -20,10 +20,11 @@ export default function grade3() {
             <View style={styles.container}>
               <GradeComponents title="Scales" num="3" />
               <GradeComponents title="Chords" num="3" />
-              <GradeComponents title="RhythmGuitar" num="3" />
-              <GradeComponents title="LeadGuitar" num="3" />
-              <GradeComponents title="SpokenTests" num="3" />
-              <GradeComponents title="AuralTests" num="3" />
+              <GradeComponents title="Arpeggios" num="3" />
+              <GradeComponents title="Rhythm Guitar" num="3" />
+              <GradeComponents title="Lead Guitar" num="3" />
+              <GradeComponents title="Spoken Tests" num="3" />
+              <GradeComponents title="Aural Tests" num="3" />
               <View style={styles.titleContainer}>
                 <Text style={styles.title}>
                   For more details go to

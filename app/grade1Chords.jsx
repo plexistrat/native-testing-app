@@ -305,8 +305,8 @@ const grade1Chords = () => {
               <Text style={styles.subtitle}>Open Chords – 1st Position</Text>
 
               {renderChordButtons()}
-              {renderChordInfo()}
               {renderChordDiagram()}
+              {renderChordInfo()}
 
               <View style={styles.practiceContainer}>
                 <Text style={styles.practiceTitle}>Chords Practice</Text>

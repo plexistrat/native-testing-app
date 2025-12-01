@@ -79,7 +79,6 @@ const grade3RhythmGuitar = () => {
       style={styles.scrollContainer}
       showsVerticalScrollIndicator={false}
     >
-      {/* <FloatingNotesBackground> */}
       <View style={styles.container}>
         {/* Header Section */}
         <View style={styles.headerSection}>
