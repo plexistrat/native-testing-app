@@ -409,6 +409,8 @@ const Grade3AuralTests = () => {
           </View>
         </View>
         <YouTubePlayer videoId="tjUgDqJrwMM" title="Harmony Test" />
+      </View>
+      <View style={styles.backButton}>
         <BackButton />
       </View>
     </ScrollView>
@@ -779,5 +781,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#FFEBEE",
     fontFamily: "monospace",
+  },
+  backButton: {
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 5,
   },
 });
