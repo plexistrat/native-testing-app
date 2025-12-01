@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import YouTubePlayer from "./components/YouTubePlayer";
+import BackButton from "./components/backButton";
 
 const Grade3AuralTests = () => {
   const testSections = [
@@ -408,6 +409,7 @@ const Grade3AuralTests = () => {
           </View>
         </View>
         <YouTubePlayer videoId="tjUgDqJrwMM" title="Harmony Test" />
+        <BackButton />
       </View>
     </ScrollView>
   );

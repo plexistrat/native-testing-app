@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
+import BackButton from "./components/backButton";
 
 const grade1Scales = () => {
   const [selectedScale, setSelectedScale] = useState("E minor pentatonic");
@@ -314,6 +315,7 @@ const grade1Scales = () => {
                 </View>
               </View>
             </View>
+            <BackButton />
           </View>
         </ScrollView>
       </SafeAreaView>

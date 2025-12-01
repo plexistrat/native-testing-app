@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
+import BackButton from "./components/backButton";
 
 const grade2Scales = () => {
   const [selectedScale, setSelectedScale] = useState("G blues scale");
@@ -333,6 +334,7 @@ const grade2Scales = () => {
                 </View>
               </View>
             </View>
+            <BackButton />
           </View>
         </ScrollView>
       </SafeAreaView>

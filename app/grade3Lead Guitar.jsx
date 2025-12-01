@@ -1,5 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import YouTubePlayer from "./components/YouTubePlayer";
+import BackButton from "./components/backButton";
 
 const grade3LeadGuitar = () => {
   return (
@@ -130,6 +131,7 @@ const grade3LeadGuitar = () => {
             </Text>
           </View>
         </View>
+        <BackButton />
       </View>
     </ScrollView>
   );

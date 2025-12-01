@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 import YouTubePlayer from "./components/YouTubePlayer";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
+import BackButton from "./components/backButton";
 
 const Grade2AuralTests = () => {
   const testSections = [
@@ -497,6 +498,7 @@ const Grade2AuralTests = () => {
                 <YouTubePlayer videoId="uETmAHe2oJo" />
               </View>
             </View>
+            <BackButton />
           </View>
         </ScrollView>
       </SafeAreaView>

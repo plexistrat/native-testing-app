@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import YouTubePlayer from "./components/YouTubePlayer";
+import BackButton from "./components/backButton";
 
 const grade2LeadGuitar = () => {
   return (
@@ -139,6 +140,7 @@ const grade2LeadGuitar = () => {
                 </View>
               </View>
             </View>
+            <BackButton />
           </View>
         </ScrollView>
       </SafeAreaView>

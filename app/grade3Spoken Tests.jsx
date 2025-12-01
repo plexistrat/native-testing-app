@@ -4,6 +4,7 @@ import {
   MaterialCommunityIcons,
   FontAwesome5,
 } from "@expo/vector-icons";
+import BackButton from "./components/backButton";
 
 const Grade3SpokenTests = () => {
   const spokenSections = [
@@ -92,6 +93,7 @@ const Grade3SpokenTests = () => {
             • Continue naming notes up to the 12th fret daily.
           </Text>
         </View>
+        <BackButton />
       </View>
     </ScrollView>
   );

@@ -3,8 +3,12 @@ import { LinearGradient } from "expo-linear-gradient";
 import GradeComponents from "./components/GradeComponents";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
+import { useRouter } from "expo-router";
+import { TouchableOpacity } from "react-native";
 
 export default function grade3() {
+  const router = useRouter();
+
   return (
     <LinearGradient
       colors={["#0f1214", "#1b1e21", "#242830"]}
@@ -38,6 +42,12 @@ export default function grade3() {
                 </Text>
               </View>
             </View>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => router.back()}
+            >
+              <Text style={styles.backButtonText}>← Back</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -55,9 +65,9 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     paddingHorizontal: 20,
-    paddingTop: 80,
-    paddingBottom: 40,
-    minHeight: 1000,
+    paddingTop: 10,
+    paddingBottom: 2,
+    // minHeight: 1000,
   },
   // Floating background orbs for depth
   orb1: {
@@ -100,8 +110,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     color: "#20c997",
-    marginBottom: 20,
-    marginTop: 20,
+    marginBottom: 5,
+    marginTop: 5,
     textAlign: "center",
   },
   chordsContainer: {
@@ -109,7 +119,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 80,
     paddingBottom: 40,
-    minHeight: 1000,
+    // minHeight: 1000,
   },
   tap1: {
     fontSize: 16,
@@ -121,5 +131,23 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#DEE3E4",
     marginRight: 250,
+  },
+  backButton: {
+    alignSelf: "flex-start",
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    borderRadius: 10,
+    backgroundColor: "rgba(32, 201, 151, 0.12)",
+    borderWidth: 1,
+    borderColor: "rgba(32, 201, 151, 0.3)",
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 5,
+  },
+
+  backButtonText: {
+    fontSize: 16,
+    color: "#20c997",
+    fontWeight: "600",
   },
 });

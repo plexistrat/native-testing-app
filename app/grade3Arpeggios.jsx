@@ -6,6 +6,7 @@ import {
   ScrollView,
   StyleSheet,
 } from "react-native";
+import BackButton from "./components/backButton";
 
 const grade3Arpeggios = () => {
   const [selectedArpeggio, setSelectedArpeggio] = useState(
@@ -188,6 +189,7 @@ const grade3Arpeggios = () => {
         <Text style={styles.practiceDescription}>
           5. Incorporate arpeggios into improvisation and chord progressions.
         </Text>
+        <BackButton />
       </View>
     </ScrollView>
   );

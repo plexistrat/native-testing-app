@@ -6,6 +6,7 @@ import {
   MaterialCommunityIcons,
   FontAwesome5,
 } from "@expo/vector-icons";
+import BackButton from "./components/backButton";
 
 const Grade1SpokenTests = () => {
   const spokenSections = [
@@ -106,6 +107,7 @@ const Grade1SpokenTests = () => {
                 </Text>
               </View>
             </View>
+            <BackButton />
           </View>
         </ScrollView>
       </SafeAreaView>

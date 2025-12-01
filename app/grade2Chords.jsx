@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
+import BackButton from "./components/backButton";
 
 const { width } = Dimensions.get("window");
 
@@ -300,6 +301,7 @@ const grade2Chords = () => {
                 </Text>
               </View>
             </View>
+            <BackButton />
           </View>
         </ScrollView>
       </SafeAreaView>

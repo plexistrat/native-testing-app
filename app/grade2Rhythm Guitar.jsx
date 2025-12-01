@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
+import BackButton from "./components/backButton";
 
 const grade2RhythmGuitar = () => {
   const rhythmSections = [
@@ -183,6 +184,7 @@ const grade2RhythmGuitar = () => {
                 </View>
               </View>
             </View>
+            <BackButton />
           </View>
         </ScrollView>
       </SafeAreaView>
