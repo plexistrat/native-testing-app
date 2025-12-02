@@ -1,170 +1,187 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  LayoutAnimation,
+  Platform,
+  UIManager,
+} from "react-native";
+import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
-import { TouchableOpacity } from "react-native";
 
-const allTheGrades = () => {
+// Enable animation on Android
+if (
+  Platform.OS === "android" &&
+  UIManager.setLayoutAnimationEnabledExperimental
+) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
+
+const AllTheGrades = () => {
   const router = useRouter();
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleCollapse = () => {
+    LayoutAnimation.easeInEaseOut();
+    setCollapsed(!collapsed);
+  };
 
   return (
-    <>
-      <LinearGradient
-        colors={["#0f1214", "#1b1e21", "#242830"]}
-        style={styles.scrollContainer}
-      >
-        <ScrollView>
-          <SafeAreaView>
-            {/* Animated background orbs */}
-            <View style={styles.orb1} />
-            <View style={styles.orb2} />
+    <LinearGradient
+      colors={["#0f1214", "#1b1e21", "#242830"]}
+      style={styles.scrollContainer}
+    >
+      <ScrollView>
+        <SafeAreaView>
+          {/* Background orbs */}
+          <View style={styles.orb1} />
+          <View style={styles.orb2} />
 
-            <View style={styles.container}>
-              <Text style={styles.mainTitle}>
-                RGT Electric Guitar Grades – Overview
+          <View style={styles.container}>
+            {/* Main Title */}
+            <Text style={styles.mainTitle}>Electric Guitar Grades</Text>
+            <Text style={styles.subtitle}>Overview & Skills Breakdown</Text>
+
+            {/* Intro */}
+            <View style={styles.introSection}>
+              <Text style={styles.description}>
+                This guide gives a clear overview of what guitarists learn and
+                are tested on throughout Grades 1 to 8. Use it to understand the
+                journey and prepare with confidence.
               </Text>
-
-              <View style={styles.introSection}>
-                <Text style={styles.description}>
-                  This app is based on the official syllabus of the Registry of
-                  Guitar Tutors (RGT). It helps guitarists prepare for
-                  recognized graded exams (Grades 1–8) through structured
-                  content and practical assessment categories.
-                </Text>
-              </View>
-
-              <View style={styles.section}>
-                <Text style={styles.sectionTitle}>
-                  Core Exam Components (All Grades)
-                </Text>
-                <Text style={styles.description}>
-                  Each grade level assesses the following key areas:
-                </Text>
-
-                <View style={styles.componentsGrid}>
-                  <View style={styles.componentItem}>
-                    <Text style={styles.componentText}>Scales & Arpeggios</Text>
-                  </View>
-                  <View style={styles.componentItem}>
-                    <Text style={styles.componentText}>Chords</Text>
-                  </View>
-                  <View style={styles.componentItem}>
-                    <Text style={styles.componentText}>Rhythm Playing</Text>
-                  </View>
-                  <View style={styles.componentItem}>
-                    <Text style={styles.componentText}>Lead Playing</Text>
-                  </View>
-                  <View style={styles.componentItem}>
-                    <Text style={styles.componentText}>Spoken Test</Text>
-                  </View>
-                  <View style={styles.componentItem}>
-                    <Text style={styles.componentText}>Aural Assessment</Text>
-                  </View>
-                  <View style={styles.componentItem}>
-                    <Text style={styles.componentText}>
-                      Specialism (Grades 6–8)
-                    </Text>
-                  </View>
-                </View>
-              </View>
-
-              <View style={styles.section}>
-                <View style={styles.gradeCard}>
-                  <Text style={styles.gradeTitle}>Grades 1–2-3 (Beginner)</Text>
-                  <View style={styles.gradeContent}>
-                    <Text style={styles.gradePoint}>
-                      • Major/minor scales and basic chords
-                    </Text>
-                    <Text style={styles.gradePoint}>
-                      • Simple rhythm accompaniment
-                    </Text>
-                    <Text style={styles.gradePoint}>
-                      • Basic soloing and improvisation
-                    </Text>
-                    <Text style={styles.gradePoint}>
-                      • Introductory spoken & aural tests
-                    </Text>
-                    <Text style={styles.focusText}>
-                      Focus: Building core technique and confidence
-                    </Text>
-                  </View>
-                </View>
-
-                <View style={styles.gradeCard}>
-                  <Text style={styles.gradeTitle}>
-                    Grades 4–5 (Intermediate)
-                  </Text>
-                  <View style={styles.gradeContent}>
-                    <Text style={styles.gradePoint}>
-                      • Extended scale shapes, arpeggios
-                    </Text>
-                    <Text style={styles.gradePoint}>
-                      • Chord transitions and rhythmic patterns
-                    </Text>
-                    <Text style={styles.gradePoint}>
-                      • Solo development and phrasing
-                    </Text>
-                    <Text style={styles.gradePoint}>
-                      • More advanced musical knowledge
-                    </Text>
-                    <Text style={styles.focusText}>
-                      Focus: Expanding range, accuracy, musicality
-                    </Text>
-                  </View>
-                </View>
-
-                <View style={styles.gradeCard}>
-                  <Text style={styles.gradeTitle}>Grades 6–8 (Advanced)</Text>
-                  <View style={styles.gradeContent}>
-                    <Text style={styles.gradePoint}>
-                      • Full fretboard scale fluency, modes
-                    </Text>
-                    <Text style={styles.gradePoint}>
-                      • Complex rhythms and stylistic chord work
-                    </Text>
-                    <Text style={styles.gradePoint}>
-                      • Creative soloing, advanced techniques
-                    </Text>
-                    <Text style={styles.gradePoint}>
-                      • Specialism: perform special techniques (tapping, slide
-                      guitar, fingerstyle, etc.), sight reading or just
-                      improvisation/ rhythm guitar.
-                    </Text>
-                    <Text style={styles.focusText}>
-                      Focus: Expressive playing, mastery, personal style
-                    </Text>
-                  </View>
-                </View>
-              </View>
-              {/* Back Button */}
-              <TouchableOpacity
-                style={styles.backButton}
-                onPress={() => router.back()}
-              >
-                <Text style={styles.backButtonText}>← Back</Text>
-              </TouchableOpacity>
             </View>
-          </SafeAreaView>
-        </ScrollView>
-      </LinearGradient>
-    </>
+
+            {/* ✔ NEW COLLAPSIBLE SECTION */}
+            <View style={styles.section}>
+              <TouchableOpacity
+                onPress={toggleCollapse}
+                style={styles.collapseHeader}
+              >
+                <Text style={styles.collapseTitle}>
+                  🎸 What to Expect in Each Exam
+                </Text>
+                <Text style={styles.collapseIndicator}>
+                  {collapsed ? "▼" : "▲"}
+                </Text>
+              </TouchableOpacity>
+
+              {!collapsed && (
+                <View style={styles.collapseBody}>
+                  <Text style={styles.collapseText}>
+                    • Demonstrate scale and arpeggio patterns
+                  </Text>
+                  <Text style={styles.collapseText}>
+                    • Play rhythm guitar using chord progressions
+                  </Text>
+                  <Text style={styles.collapseText}>
+                    • Perform a lead section or improvisation
+                  </Text>
+                  <Text style={styles.collapseText}>
+                    • Answer spoken musical knowledge questions
+                  </Text>
+                  <Text style={styles.collapseText}>
+                    • Complete a short aural/ear-training test
+                  </Text>
+                </View>
+              )}
+            </View>
+
+            {/* Core exam components */}
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Core Skills in All Grades</Text>
+
+              <View style={styles.componentsGrid}>
+                {[
+                  "Scales & Arpeggios",
+                  "Chords",
+                  "Rhythm Playing",
+                  "Lead Playing",
+                  "Spoken Test",
+                  "Aural Assessment",
+                  "Specialism (Grades 6–8)",
+                ].map((item, index) => (
+                  <View key={index} style={styles.componentItem}>
+                    {/* <Text style={styles.componentEmoji}>🎵</Text> */}
+                    <Text style={styles.componentText}>{item}</Text>
+                  </View>
+                ))}
+              </View>
+            </View>
+
+            {/* Grade Cards */}
+            <View style={styles.section}>
+              <View style={styles.gradeCard}>
+                <Text style={styles.gradeTitle}>Grades 1–3 (Beginner)</Text>
+                <Text style={styles.gradePoint}>
+                  • Basic scales, chords, rhythms
+                </Text>
+                <Text style={styles.gradePoint}>
+                  • Simple solos and patterns
+                </Text>
+                <Text style={styles.gradePoint}>
+                  • Intro-level spoken & aural tests
+                </Text>
+                <Text style={styles.focusText}>
+                  Focus: Build fundamentals & confidence
+                </Text>
+              </View>
+
+              <View style={styles.gradeCard}>
+                <Text style={styles.gradeTitle}>Grades 4–5 (Intermediate)</Text>
+                <Text style={styles.gradePoint}>
+                  • Extended scales & arpeggios
+                </Text>
+                <Text style={styles.gradePoint}>
+                  • More advanced chords & rhythms
+                </Text>
+                <Text style={styles.gradePoint}>
+                  • Melodic soloing & phrasing
+                </Text>
+                <Text style={styles.focusText}>
+                  Focus: Accuracy, control, musicality
+                </Text>
+              </View>
+
+              <View style={styles.gradeCard}>
+                <Text style={styles.gradeTitle}>Grades 6–8 (Advanced)</Text>
+                <Text style={styles.gradePoint}>
+                  • Full fretboard fluency & modes
+                </Text>
+                <Text style={styles.gradePoint}>
+                  • Complex rhythms & stylistic work
+                </Text>
+                <Text style={styles.gradePoint}>
+                  • Advanced techniques (tapping, slides, etc.)
+                </Text>
+                <Text style={styles.focusText}>
+                  Focus: Expression, mastery, style identity
+                </Text>
+              </View>
+            </View>
+
+            {/* Back Button */}
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => router.back()}
+            >
+              <Text style={styles.backButtonText}>← Back</Text>
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+      </ScrollView>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollContainer: {
-    flex: 1,
-  },
-  wrapper: {
-    position: "relative",
-  },
-  container: {
-    padding: 20,
-    paddingTop: 10,
-    // minHeight: 1000,
-  },
-  // Floating background orbs for depth
+  scrollContainer: { flex: 1 },
+  container: { padding: 20, paddingTop: 10 },
+
+  /* Background orbs */
   orb1: {
     position: "absolute",
     top: 100,
@@ -173,11 +190,9 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 100,
     backgroundColor: "rgba(99, 102, 241, 0.15)",
-    opacity: 0.6,
     shadowColor: "#6366f1",
-    shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.5,
-    shadowRadius: 60,
+    shadowRadius: 50,
   },
   orb2: {
     position: "absolute",
@@ -187,65 +202,91 @@ const styles = StyleSheet.create({
     height: 250,
     borderRadius: 125,
     backgroundColor: "rgba(168, 85, 247, 0.12)",
-    opacity: 0.5,
     shadowColor: "#a855f7",
-    shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.4,
-    shadowRadius: 70,
+    shadowRadius: 60,
   },
+
+  /* Titles */
   mainTitle: {
-    fontSize: 28,
-    fontWeight: "bold",
+    fontSize: 34,
+    fontWeight: "900",
     color: "#20c997",
+    textAlign: "center",
+    letterSpacing: 1,
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 18,
+    color: "#b7bec0",
     textAlign: "center",
     marginBottom: 20,
-    lineHeight: 36,
   },
+
+  /* Intro */
   introSection: {
-    backgroundColor: "rgba(33, 37, 41, 0.6)",
+    backgroundColor: "rgba(33,37,41,0.6)",
     borderRadius: 12,
     padding: 20,
-    marginBottom: 10,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
     borderWidth: 1,
     borderColor: "#20c997",
-  },
-  section: {
-    marginBottom: 25,
-  },
-  sectionTitle: {
-    fontSize: 22,
-    fontWeight: "bold",
-    color: "#20c997",
-    marginBottom: 15,
-    textAlign: "center",
+    marginBottom: 20,
   },
   description: {
     fontSize: 16,
     color: "#DEE3E4",
     lineHeight: 24,
     textAlign: "center",
-    marginBottom: 10,
   },
+
+  /* Collapsible */
+  collapseHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "rgba(33,37,41,0.7)",
+    padding: 15,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#20c997",
+  },
+  collapseTitle: {
+    color: "#20c997",
+    fontSize: 18,
+    fontWeight: "700",
+  },
+  collapseIndicator: {
+    color: "#20c997",
+    fontSize: 18,
+  },
+  collapseBody: {
+    marginTop: 10,
+    backgroundColor: "rgba(33,37,41,0.6)",
+    padding: 15,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#20c997",
+  },
+  collapseText: {
+    color: "#DEE3E4",
+    fontSize: 15,
+    marginBottom: 6,
+  },
+
+  /* Sections */
+  section: { marginBottom: 25 },
+  sectionTitle: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#20c997",
+    textAlign: "center",
+    marginBottom: 15,
+  },
+
+  /* Core components */
   componentsGrid: {
-    backgroundColor: "rgba(33, 37, 41, 0.6)",
+    backgroundColor: "rgba(33,37,41,0.6)",
     borderRadius: 12,
     padding: 20,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
     borderWidth: 1,
     borderColor: "#20c997",
   },
@@ -253,81 +294,53 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 12,
-    paddingVertical: 8,
   },
-  componentEmoji: {
-    fontSize: 20,
-    marginRight: 12,
-    width: 30,
-  },
-  componentText: {
-    fontSize: 16,
-    color: "#DEE3E4",
-    fontWeight: "500",
-    flex: 1,
-  },
+  componentEmoji: { fontSize: 20, marginRight: 12 },
+  componentText: { fontSize: 16, color: "#DEE3E4", fontWeight: "500" },
+
+  /* Grade cards */
   gradeCard: {
-    backgroundColor: "rgba(33, 37, 41, 0.6)",
+    backgroundColor: "rgba(33,37,41,0.6)",
     borderRadius: 15,
     padding: 20,
-    marginBottom: 20,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.15,
-    shadowRadius: 6,
-    elevation: 4,
-    borderLeftWidth: 4,
-    borderLeftColor: "#20c997",
     borderWidth: 1,
     borderColor: "#20c997",
+    marginBottom: 20,
   },
   gradeTitle: {
     fontSize: 20,
     fontWeight: "bold",
     color: "#DEE3E4",
-    marginBottom: 15,
     textAlign: "center",
+    marginBottom: 10,
   },
-  gradeContent: {
-    paddingHorizontal: 10,
-  },
-  gradePoint: {
-    fontSize: 15,
-    color: "#DEE3E4",
-    lineHeight: 22,
-    marginBottom: 8,
-  },
+  gradePoint: { color: "#DEE3E4", fontSize: 15, marginBottom: 6 },
   focusText: {
-    fontSize: 15,
     color: "#20c997",
+    fontSize: 15,
     fontWeight: "600",
-    fontStyle: "italic",
-    marginTop: 10,
     textAlign: "center",
+    marginTop: 10,
     paddingTop: 10,
     borderTopWidth: 1,
     borderTopColor: "#20c997",
   },
+
+  /* Back button */
   backButton: {
     alignSelf: "flex-start",
-    paddingVertical: 8,
-    paddingHorizontal: 14,
+    padding: 10,
     borderRadius: 10,
-    backgroundColor: "rgba(32, 201, 151, 0.12)",
     borderWidth: 1,
-    borderColor: "rgba(32, 201, 151, 0.3)",
-    marginBottom: 20,
-    marginLeft: 5,
+    borderColor: "#20c997",
+    backgroundColor: "rgba(32,201,151,0.1)",
+    marginBottom: 30,
   },
-
   backButtonText: {
-    fontSize: 16,
     color: "#20c997",
-    fontWeight: "600",
+    fontSize: 16,
+    fontWeight: "700",
   },
 });
 
-export default allTheGrades;
+export default AllTheGrades;

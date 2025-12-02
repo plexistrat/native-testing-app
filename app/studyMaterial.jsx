@@ -29,7 +29,7 @@ const StudyMaterial = () => {
 
           <Text style={styles.title}>Guitar Study Hub</Text>
           <Text style={styles.subtitle}>
-            Your pathway through the RGT grades
+            Your pathway through the guitar grades{" "}
           </Text>
 
           <View style={styles.titleUnderline} />

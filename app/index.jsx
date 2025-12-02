@@ -190,7 +190,6 @@ const styles = StyleSheet.create({
   decorativeContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
     marginTop: 20,
     width: "100%",
   },
@@ -200,7 +199,7 @@ const styles = StyleSheet.create({
     maxWidth: 80,
     height: 2,
     backgroundColor: "#20c997",
-    marginHorizontal: 12,
+    marginHorizontal: 20,
     opacity: 0.8,
   },
 

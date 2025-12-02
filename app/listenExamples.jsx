@@ -22,8 +22,8 @@ const listenExamples = () => {
 
               <View style={styles.welcomeSection}>
                 <Text style={styles.welcomeText}>
-                  Welcome to the Listening Examples You Tube Channel for the RGT
-                  Electric Guitar Grades App
+                  Welcome to the Listening Examples section of the Electric
+                  Guitar Grades App.
                 </Text>
               </View>
 
@@ -31,28 +31,28 @@ const listenExamples = () => {
                 <View style={styles.featureItem}>
                   <Text style={styles.featureIcon}>🎧</Text>
                   <Text style={styles.featureText}>
-                    Hear how each exam piece sounds
+                    Hear demonstration performances for grade material
                   </Text>
                 </View>
 
                 <View style={styles.featureItem}>
                   <Text style={styles.featureIcon}>🎵</Text>
                   <Text style={styles.featureText}>
-                    From Grade 1 to Grade 8
+                    Covering beginner to advanced levels
                   </Text>
                 </View>
 
                 <View style={styles.featureItem}>
                   <Text style={styles.featureIcon}>🎯</Text>
                   <Text style={styles.featureText}>
-                    Rhythm guitar perfornances, and improvisation samples
+                    Rhythm guitar examples, groove playing & improvisation
                   </Text>
                 </View>
 
                 <View style={styles.featureItem}>
                   <Text style={styles.featureIcon}>🧠</Text>
                   <Text style={styles.featureText}>
-                    Practice smarter. Play better.
+                    Learn how exam sections sound in context
                   </Text>
                 </View>
               </View>
@@ -60,32 +60,31 @@ const listenExamples = () => {
               <View>
                 <YouTubePlayer
                   videoId="Aqoq2QR_NrI"
-                  title="Grade 1, Rhythm guitar example."
+                  title="Grade 1 – Rhythm Guitar Example"
                 />
                 <YouTubePlayer
                   videoId="oxAFo-JTJus"
-                  title="Grade 1,Rhythm guitar example."
+                  title="Grade 1 – Rhythm Guitar Example"
                 />
               </View>
 
               <View style={styles.ctaSection}>
                 <Text style={styles.ctbText}>
-                  You will find more examples to my YouTube Channel
+                  More examples are available on my YouTube Channel.
                 </Text>
-                <Text style={styles.ctaText}>
-                  Subscribe & start your journey today!
-                </Text>
+                <Text style={styles.ctaText}>Subscribe and keep learning!</Text>
 
                 <Link
                   href="https://www.youtube.com/watch?v=9zfKh_Pm8T4&ab_channel=Dutchguitarman"
                   style={styles.youtubeLink}
                 >
                   <Text style={styles.youtubeLinkText}>
-                    Go to my YouTube Channel
+                    Go to YouTube Channel
                   </Text>
                 </Link>
               </View>
             </View>
+
             <BackButton />
           </View>
         </ScrollView>
