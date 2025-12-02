@@ -23,7 +23,7 @@ export default function about() {
               <View style={styles.divider} />
 
               <Text style={styles.subtitle}>
-                The complete beginner’s guide to the RGT Electric Guitar Grades.
+                The complete beginner’s guide to the Electric Guitar Grades.
               </Text>
             </View>
 
@@ -32,7 +32,7 @@ export default function about() {
               <Text style={styles.paragraph}>
                 This app is designed as your personal companion for the{" "}
                 <Text style={styles.boldText}>
-                  RGT Electric Guitar Syllabus
+                  Electric Guitar Grades system
                 </Text>
                 . It focuses specifically on the{" "}
                 <Text style={styles.boldText}>
@@ -52,7 +52,6 @@ export default function about() {
                 advanced grades (4–8), which cover more demanding skills,
                 musicianship, and full exam preparation.
               </Text>
-
               {/* Features List */}
               <View style={styles.featuresContainer}>
                 <View style={styles.featureItem}>
