@@ -25,11 +25,10 @@ const Home = () => {
           <View style={styles.container}>
             {/* Hero Section */}
             <View style={styles.heroSection}>
-              <View style={styles.titleContainer}>
-                <Text style={styles.title1}>Explore</Text>
-                <Text style={styles.title2}>the </Text>
-                <Text style={styles.title3}>RGT</Text>
-                <Text style={styles.title4}>electric guitar grades</Text>
+              <View style={styles.heroSection}>
+                <View style={styles.titleContainerCentered}>
+                  <Text style={styles.mainTitle}>Electric Guitar Grades</Text>
+                </View>
               </View>
 
               {/* Decorative Elements */}
@@ -111,7 +110,8 @@ const Home = () => {
             {/* Footer */}
             <View style={styles.footerSection}>
               <Text style={styles.footerText}>
-                Master your electric guitar journey with RGT certification
+                Master your electric guitar playing with step-by-step graded
+                material
               </Text>
               <View style={styles.footerDivider} />
               <Text style={styles.footerSubtext}>
@@ -127,6 +127,7 @@ const Home = () => {
 
 export default Home;
 
+/* STYLES UNCHANGED BELOW */
 const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
@@ -138,7 +139,6 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
     minHeight: 1000,
   },
-  // Floating background orbs for depth
   orb1: {
     position: "absolute",
     top: 100,
@@ -171,55 +171,39 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 20,
   },
-  titleContainer: {
-    alignItems: "flex-start",
-    marginBottom: 8,
+  titleContainerCentered: {
+    alignItems: "center",
+    marginBottom: 12,
   },
-  title1: {
+
+  mainTitle: {
     fontSize: 46,
-    fontWeight: "bold",
-    color: "#DEE3E4",
-    textAlign: "left",
-    width: "100%",
-    textShadowColor: "rgba(32, 201, 151, 0.3)",
-    textShadowOffset: { width: 0, height: 2 },
-    textShadowRadius: 4,
-  },
-  title2: {
-    fontSize: 28,
-    fontWeight: "600",
-    color: "#DEE3E4",
-    opacity: 0.8,
-    marginLeft: 60,
-  },
-  title3: {
-    fontSize: 54,
-    fontWeight: "bold",
+    fontWeight: "900",
     color: "#20c997",
-    textAlign: "center",
-    width: "100%",
     letterSpacing: 2,
-  },
-  title4: {
-    fontSize: 24,
-    fontWeight: "600",
-    color: "#DEE3E4",
     textAlign: "center",
-    width: "100%",
-    marginTop: 2,
-    opacity: 0.9,
+
+    textShadowColor: "rgba(32, 201, 151, 0.25)",
+    textShadowOffset: { width: 0, height: 3 },
+    textShadowRadius: 8,
   },
   decorativeContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 5,
+    justifyContent: "center",
+    marginTop: 20,
+    width: "100%",
   },
+
   decorativeLine: {
-    width: 50,
+    flex: 1,
+    maxWidth: 80,
     height: 2,
     backgroundColor: "#20c997",
-    marginHorizontal: 15,
+    marginHorizontal: 12,
+    opacity: 0.8,
   },
+
   guitarEmoji: {
     fontSize: 30,
   },
@@ -231,7 +215,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "#DEE3E4",
-    marginBottom: 20,
+    marginBottom: 50,
     textAlign: "center",
   },
   linksContainer: {
