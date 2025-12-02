@@ -2,12 +2,9 @@ import React from "react";
 import { ScrollView, View, Text, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router";
-import { TouchableOpacity } from "react-native";
+import BackButton from "./components/BackButton";
 
 export default function about() {
-  const router = useRouter();
-
   return (
     <LinearGradient
       colors={["#0f1214", "#1b1e21", "#242830"]}
@@ -109,15 +106,8 @@ export default function about() {
             <View style={styles.guitarIcon}>
               <Text style={styles.guitarEmoji}>🎸</Text>
             </View>
-            {/* Back Button */}
-
-            <TouchableOpacity
-              style={styles.backButton}
-              onPress={() => router.back()}
-            >
-              <Text style={styles.backButtonText}>← Back</Text>
-            </TouchableOpacity>
           </View>
+          <BackButton />
         </SafeAreaView>
       </ScrollView>
     </LinearGradient>
@@ -130,10 +120,10 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: "center",
-    paddingTop: 20,
-    paddingBottom: 40,
+    paddingTop: 10,
+    paddingBottom: 20,
     paddingHorizontal: 20,
-    minHeight: 1000,
+    // minHeight: 1000,
   },
 
   /* Background Orbs */
@@ -169,14 +159,14 @@ const styles = StyleSheet.create({
   /* Header */
   headerSection: {
     alignItems: "center",
-    marginBottom: 40,
+    marginBottom: 20,
   },
   title: {
     fontSize: 38,
     fontWeight: "bold",
     color: "#DEE3E4",
     textAlign: "center",
-    marginBottom: 15,
+    marginBottom: 10,
     textShadowColor: "rgba(32, 201, 151, 0.3)",
     textShadowOffset: { width: 0, height: 2 },
     textShadowRadius: 4,
@@ -207,7 +197,7 @@ const styles = StyleSheet.create({
     color: "#DEE3E4",
     textAlign: "center",
     lineHeight: 24,
-    marginBottom: 28,
+    marginBottom: 20,
     opacity: 0.9,
   },
   boldText: {
@@ -222,13 +212,13 @@ const styles = StyleSheet.create({
   /* Features List */
   featuresContainer: {
     width: "100%",
-    marginBottom: 40,
+    marginBottom: 10,
     paddingHorizontal: 10,
   },
   featureItem: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 18,
+    marginBottom: 10,
     paddingHorizontal: 20,
     paddingVertical: 15,
     backgroundColor: "rgba(32, 201, 151, 0.08)",
@@ -254,11 +244,11 @@ const styles = StyleSheet.create({
   /* Closing Section */
   closingSection: {
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 10,
   },
   mottoContainer: {
     alignItems: "center",
-    marginTop: 40,
+    marginTop: 10,
     paddingVertical: 20,
     paddingHorizontal: 30,
     backgroundColor: "rgba(222, 227, 228, 0.05)",
@@ -300,22 +290,5 @@ const styles = StyleSheet.create({
   guitarEmoji: {
     fontSize: 40,
     textAlign: "center",
-  },
-  backButton: {
-    alignSelf: "flex-start",
-    paddingVertical: 8,
-    paddingHorizontal: 14,
-    borderRadius: 10,
-    backgroundColor: "rgba(32, 201, 151, 0.12)",
-    borderWidth: 1,
-    borderColor: "rgba(32, 201, 151, 0.3)",
-    marginBottom: 20,
-    marginLeft: 5,
-  },
-
-  backButtonText: {
-    fontSize: 16,
-    color: "#20c997",
-    fontWeight: "600",
   },
 });

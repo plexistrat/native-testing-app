@@ -6,7 +6,7 @@ import {
   ScrollView,
   StyleSheet,
 } from "react-native";
-import BackButton from "./components/backButton";
+import BackButton from "./components/BackButton";
 
 const grade3Arpeggios = () => {
   const [selectedArpeggio, setSelectedArpeggio] = useState(

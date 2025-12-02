@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     justifyContent: "center",
-    padding: 10,
+    padding: 5,
   },
   button: {
     backgroundColor: "#212529",
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     shadowRadius: 12,
     elevation: 8,
     minWidth: 150,
-    minHeight: 50,
+    minHeight: 40,
   },
   innerContainer: {
     alignItems: "center",

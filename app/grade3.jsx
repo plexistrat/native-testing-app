@@ -3,12 +3,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import GradeComponents from "./components/GradeComponents";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
-import { useRouter } from "expo-router";
-import { TouchableOpacity } from "react-native";
+import BackButton from "./components/BackButton";
 
 export default function grade3() {
-  const router = useRouter();
-
   return (
     <LinearGradient
       colors={["#0f1214", "#1b1e21", "#242830"]}
@@ -42,12 +39,7 @@ export default function grade3() {
                 </Text>
               </View>
             </View>
-            <TouchableOpacity
-              style={styles.backButton}
-              onPress={() => router.back()}
-            >
-              <Text style={styles.backButtonText}>← Back</Text>
-            </TouchableOpacity>
+            <BackButton />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -65,9 +57,8 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     paddingHorizontal: 20,
-    paddingTop: 10,
+    paddingTop: 2,
     paddingBottom: 2,
-    // minHeight: 1000,
   },
   // Floating background orbs for depth
   orb1: {
@@ -103,7 +94,7 @@ const styles = StyleSheet.create({
     borderColor: "#20c997",
     borderRadius: 20,
     borderWidth: 2,
-    marginTop: 20,
+    marginTop: 10,
     backgroundColor: "rgba(33, 37, 41, 0.6)",
   },
   title: {

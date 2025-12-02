@@ -6,7 +6,7 @@ import {
   MaterialCommunityIcons,
   FontAwesome5,
 } from "@expo/vector-icons";
-import BackButton from "./components/backButton";
+import BackButton from "./components/BackButton";
 
 const Grade1SpokenTests = () => {
   const spokenSections = [

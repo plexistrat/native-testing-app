@@ -3,12 +3,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
 import YouTubePlayer from "./components/YouTubePlayer";
-import { useRouter } from "expo-router";
-import { TouchableOpacity } from "react-native";
+import BackButton from "./components/BackButton";
 
 const listenExamples = () => {
-  const router = useRouter();
-
   return (
     <LinearGradient
       colors={["#0f1214", "#1b1e21", "#242830"]}
@@ -89,13 +86,7 @@ const listenExamples = () => {
                 </Link>
               </View>
             </View>
-            {/* Back Button */}
-            <TouchableOpacity
-              style={styles.backButton}
-              onPress={() => router.back()}
-            >
-              <Text style={styles.backButtonText}>← Back</Text>
-            </TouchableOpacity>
+            <BackButton />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -111,12 +102,12 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     position: "relative",
-    minHeight: 1000,
+    // minHeight: 1000,
   },
   container: {
     paddingHorizontal: 20,
-    paddingTop: 40,
-    paddingBottom: 40,
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   orb1: {
     position: "absolute",
@@ -151,7 +142,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#DEE3E4",
     textAlign: "center",
-    marginBottom: 30,
+    marginBottom: 10,
   },
   welcomeSection: {
     backgroundColor: "rgba(32, 201, 151, 0.1)",
@@ -169,7 +160,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   featuresSection: {
-    marginBottom: 40,
+    marginBottom: 20,
   },
   featureItem: {
     flexDirection: "row",
@@ -194,20 +185,20 @@ const styles = StyleSheet.create({
   },
   ctaSection: {
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 10,
   },
   ctaText: {
     fontSize: 20,
     color: "#20c997",
     fontWeight: "bold",
     textAlign: "center",
-    marginBottom: 25,
+    marginBottom: 10,
   },
   ctbText: {
     fontSize: 16,
     color: "#DEE3E4",
     textAlign: "center",
-    marginBottom: 15,
+    marginBottom: 10,
   },
   youtubeLink: {
     marginBottom: 20,

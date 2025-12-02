@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import YouTubePlayer from "./components/YouTubePlayer";
-import BackButton from "./components/backButton";
+import BackButton from "./components/BackButton";
 
 const Grade1AuralTests = () => {
   const testSections = [

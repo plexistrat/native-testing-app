@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
-import BackButton from "./components/backButton";
+import BackButton from "./components/BackButton";
 
 const grade3RhythmGuitar = () => {
   const rhythmSections = [

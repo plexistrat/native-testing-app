@@ -161,8 +161,8 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 20,
-    paddingTop: 40,
-    minHeight: 1000,
+    paddingTop: 10,
+    // minHeight: 1000,
   },
   // Floating background orbs for depth
   orb1: {
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(33, 37, 41, 0.6)",
     borderRadius: 12,
     padding: 20,
-    marginBottom: 25,
+    marginBottom: 10,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     color: "#DEE3E4",
     lineHeight: 24,
     textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 10,
   },
   componentsGrid: {
     backgroundColor: "rgba(33, 37, 41, 0.6)",

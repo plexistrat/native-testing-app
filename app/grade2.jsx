@@ -3,12 +3,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import GradeComponents from "./components/GradeComponents";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
-import { useRouter } from "expo-router";
-import { TouchableOpacity } from "react-native";
+import BackButton from "./components/BackButton";
 
-export default function grade2() {
-  const router = useRouter();
-
+export default function grade1() {
   return (
     <LinearGradient
       colors={["#0f1214", "#1b1e21", "#242830"]}
@@ -41,12 +38,7 @@ export default function grade2() {
                 </Text>
               </View>
             </View>
-            <TouchableOpacity
-              style={styles.backButton}
-              onPress={() => router.back()}
-            >
-              <Text style={styles.backButtonText}>← Back</Text>
-            </TouchableOpacity>
+            <BackButton />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -64,8 +56,8 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     paddingHorizontal: 20,
-    paddingTop: 10,
-    paddingBottom: 2,
+    paddingTop: 20,
+    paddingBottom: 30,
     // minHeight: 1000,
   },
   // Floating background orbs for depth
@@ -102,15 +94,15 @@ const styles = StyleSheet.create({
     borderColor: "#20c997",
     borderRadius: 20,
     borderWidth: 2,
-    marginTop: 20,
+    marginTop: 30,
     backgroundColor: "rgba(33, 37, 41, 0.6)",
   },
   title: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#20c997",
-    marginBottom: 5,
-    marginTop: 5,
+    marginBottom: 10,
+    marginTop: 10,
     textAlign: "center",
   },
   chordsContainer: {
@@ -130,23 +122,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#DEE3E4",
     marginRight: 250,
-  },
-  backButton: {
-    alignSelf: "flex-start",
-    paddingVertical: 8,
-    paddingHorizontal: 14,
-    borderRadius: 10,
-    backgroundColor: "rgba(32, 201, 151, 0.12)",
-    borderWidth: 1,
-    borderColor: "rgba(32, 201, 151, 0.3)",
-    marginTop: 20,
-    marginBottom: 20,
-    marginLeft: 5,
-  },
-
-  backButtonText: {
-    fontSize: 16,
-    color: "#20c997",
-    fontWeight: "600",
   },
 });

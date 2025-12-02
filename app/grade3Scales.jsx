@@ -9,7 +9,7 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialIcons } from "@expo/vector-icons";
-import BackButton from "./components/backButton";
+import BackButton from "./components/BackButton";
 
 export default function Grade3Scales() {
   const [selectedScale, setSelectedScale] = useState("A major scale");
