@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
   mainTitle: {
     fontSize: 34,
     fontWeight: "900",
-    color: "#20c997",
+    color: "#4A90E2",
     textAlign: "center",
     letterSpacing: 1,
     marginBottom: 10,
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 20,
     borderWidth: 1,
-    borderColor: "#20c997",
+    borderColor: "#4A90E2",
     marginBottom: 20,
   },
   description: {
@@ -259,15 +259,15 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: "#20c997",
+    borderColor: "#4A90E2",
   },
   collapseTitle: {
-    color: "#20c997",
+    color: "#4A90E2",
     fontSize: 18,
     fontWeight: "700",
   },
   collapseIndicator: {
-    color: "#20c997",
+    color: "#4A90E2",
     fontSize: 18,
   },
   collapseBody: {
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: "#20c997",
+    borderColor: "#4A90E2",
   },
   collapseText: {
     color: "#DEE3E4",
@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     textAlign: "center",
     marginBottom: 15,
   },
@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 20,
     borderWidth: 1,
-    borderColor: "#20c997",
+    borderColor: "#4A90E2",
   },
   componentItem: {
     flexDirection: "row",
@@ -316,7 +316,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     padding: 20,
     borderWidth: 1,
-    borderColor: "#20c997",
+    borderColor: "#4A90E2",
     marginBottom: 20,
   },
   gradeTitle: {
@@ -328,14 +328,14 @@ const styles = StyleSheet.create({
   },
   gradePoint: { color: "#DEE3E4", fontSize: 15, marginBottom: 6 },
   focusText: {
-    color: "#20c997",
+    color: "#4A90E2",
     fontSize: 15,
     fontWeight: "600",
     textAlign: "center",
     marginTop: 10,
     paddingTop: 10,
     borderTopWidth: 1,
-    borderTopColor: "#20c997",
+    borderTopColor: "#4A90E2",
   },
 
   /* Back button */
@@ -344,12 +344,12 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: "#20c997",
+    borderColor: "#4A90E2",
     backgroundColor: "rgba(32,201,151,0.1)",
     marginBottom: 30,
   },
   backButtonText: {
-    color: "#20c997",
+    color: "#4A90E2",
     fontSize: 16,
     fontWeight: "700",
   },

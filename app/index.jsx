@@ -5,6 +5,7 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
@@ -26,22 +27,17 @@ const Home = () => {
             {/* Hero Section */}
             <View style={styles.heroSection}>
               <View style={styles.heroSection}>
-                <View style={styles.titleContainerCentered}>
-                  <Text style={styles.mainTitle}>Electric Guitar Grades</Text>
-                </View>
-              </View>
-
-              {/* Decorative Elements */}
-              <View style={styles.decorativeContainer}>
-                <View style={styles.decorativeLine} />
-                <Text style={styles.guitarEmoji}>🎸</Text>
-                <View style={styles.decorativeLine} />
+                {/*  LOGO ADDED HERE */}
+                <Image
+                  source={require("../assets/logo1.png")}
+                  style={styles.appLogo}
+                  resizeMode="contain"
+                />
               </View>
             </View>
 
             {/* Navigation Links */}
             <View style={styles.navigationSection}>
-              <Text style={styles.sectionTitle}>Get Started</Text>
               <View style={styles.linksContainer}>
                 <Link href="/aboutTheApp" asChild>
                   <TouchableOpacity style={styles.linkButton}>
@@ -139,6 +135,8 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
     minHeight: 1000,
   },
+
+  /* ORBS (tinted blue now) */
   orb1: {
     position: "absolute",
     top: 100,
@@ -146,9 +144,9 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    backgroundColor: "rgba(74, 144, 226, 0.25)",
     opacity: 0.6,
-    shadowColor: "#6366f1",
+    shadowColor: "#4A90E2",
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.5,
     shadowRadius: 60,
@@ -160,109 +158,87 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     borderRadius: 125,
-    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    backgroundColor: "rgba(74, 144, 226, 0.2)",
     opacity: 0.5,
-    shadowColor: "#a855f7",
+    shadowColor: "#4A90E2",
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.4,
     shadowRadius: 70,
   },
+
   heroSection: {
     alignItems: "center",
     marginBottom: 20,
   },
-  titleContainerCentered: {
-    alignItems: "center",
-    marginBottom: 12,
+
+  appLogo: {
+    width: 280,
+    height: 280,
   },
 
-  mainTitle: {
-    fontSize: 46,
-    fontWeight: "900",
-    color: "#20c997",
-    letterSpacing: 2,
-    textAlign: "center",
-
-    textShadowColor: "rgba(32, 201, 151, 0.25)",
-    textShadowOffset: { width: 0, height: 3 },
-    textShadowRadius: 8,
-  },
-  decorativeContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 20,
-    width: "100%",
-  },
-
-  decorativeLine: {
-    flex: 1,
-    maxWidth: 80,
-    height: 2,
-    backgroundColor: "#20c997",
-    marginHorizontal: 20,
-    opacity: 0.8,
-  },
-
-  guitarEmoji: {
-    fontSize: 30,
-  },
+  /* BUTTONS + LINKS */
   navigationSection: {
     width: "100%",
     alignItems: "center",
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#DEE3E4",
-    marginBottom: 50,
-    textAlign: "center",
-  },
+
   linksContainer: {
     width: "100%",
     gap: 10,
   },
+
   linkButton: {
-    backgroundColor: "rgba(32, 201, 151, 0.1)",
+    backgroundColor: "rgba(74, 144, 226, 0.08)",
     borderRadius: 15,
     borderWidth: 1,
-    borderColor: "rgba(32, 201, 151, 0.3)",
+    borderColor: "rgba(74, 144, 226, 0.35)",
     overflow: "hidden",
   },
+
   linkContent: {
     flexDirection: "row",
     alignItems: "center",
     padding: 20,
   },
+
   linkIcon: {
     fontSize: 24,
     marginRight: 15,
+    color: "#4A90E2",
   },
+
   linkTextContainer: {
     flex: 1,
   },
+
   linkTitle: {
     fontSize: 18,
     fontWeight: "600",
     color: "#DEE3E4",
     marginBottom: 4,
   },
+
   linkSubtitle: {
     fontSize: 14,
-    color: "#20c997",
-    opacity: 0.8,
+    color: "#4A90E2",
+    opacity: 0.85,
   },
+
   linkArrow: {
     fontSize: 20,
-    color: "#20c997",
+    color: "#4A90E2",
     fontWeight: "bold",
   },
+
+  /* FOOTER */
   footerSection: {
     alignItems: "center",
     marginTop: 20,
     paddingTop: 20,
     borderTopWidth: 1,
-    borderTopColor: "rgba(32, 201, 151, 0.2)",
+    borderTopColor: "rgba(74, 144, 226, 0.3)",
   },
+
   footerText: {
     fontSize: 16,
     color: "#DEE3E4",
@@ -270,15 +246,17 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     marginBottom: 15,
   },
+
   footerDivider: {
     width: 80,
     height: 2,
-    backgroundColor: "#20c997",
+    backgroundColor: "#4A90E2",
     marginBottom: 10,
   },
+
   footerSubtext: {
     fontSize: 14,
-    color: "#20c997",
+    color: "#4A90E2",
     textAlign: "center",
     fontStyle: "italic",
     letterSpacing: 1,
