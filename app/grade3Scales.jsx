@@ -207,8 +207,7 @@ export default function Grade3Scales() {
               <View style={styles.header}>
                 <Text style={styles.title}>Grade 3 Scales</Text>
                 <Text style={styles.subtitle}>
-                  Choose a scale, view the pattern, and follow the practice
-                  routine.
+                  Select a scale and view it on the fretboard grid
                 </Text>
               </View>
 
@@ -356,8 +355,8 @@ function DailyItem({ minutes, text }) {
 // ---------------------------------------------------------
 const styles = StyleSheet.create({
   container: { flex: 1 },
-  wrapper: { position: "relative", minHeight: 1000 },
-  content: { padding: 20, alignItems: "center" },
+  wrapper: { position: "relative", minHeight: "auto" },
+  content: { padding: 8, alignItems: "center" },
 
   // BACKGROUND ORBS
   orb1: {
@@ -380,7 +379,7 @@ const styles = StyleSheet.create({
   },
 
   // HEADERS
-  header: { alignItems: "center", marginBottom: 30, marginTop: 20 },
+  header: { alignItems: "center", marginBottom: 10, marginTop: 10 },
   title: {
     width: "100%",
     fontSize: 28,
@@ -394,7 +393,7 @@ const styles = StyleSheet.create({
     maxWidth: 320, // <- limits line width
     fontSize: 16,
     color: "#DEE3E4",
-    marginBottom: 20,
+    marginBottom: 10,
     textAlign: "center",
     alignSelf: "center",
   },
@@ -404,8 +403,8 @@ const styles = StyleSheet.create({
     width: "100%",
     flexDirection: "row",
     flexWrap: "wrap",
-    marginBottom: 30,
-    gap: 10,
+    marginBottom: 10,
+    gap: 8,
   },
   scaleButton: {
     backgroundColor: "rgba(44, 62, 80, 0.8)",
@@ -428,10 +427,10 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "rgba(44, 62, 80, 0.8)",
     borderRadius: 12,
-    marginBottom: 20,
+    marginBottom: 12,
     borderWidth: 1,
     borderColor: "#20c997",
-    padding: 20,
+    padding: 18,
   },
   scaleTitle: {
     fontSize: 22,
