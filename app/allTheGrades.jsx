@@ -72,19 +72,31 @@ const AllTheGrades = () => {
               {!collapsed && (
                 <View style={styles.collapseBody}>
                   <Text style={styles.collapseText}>
-                    • Demonstrate scale and arpeggio patterns
+                    • Perform the required scales, arpeggios, and chord shapes
+                    for your grade.
                   </Text>
+
                   <Text style={styles.collapseText}>
-                    • Play rhythm guitar using chord progressions
+                    • Play rhythm guitar to set examples using a variety of time
+                    signatures (4/4, 3/4, 6/8, 5/4), demonstrating accuracy and
+                    steady timing.
                   </Text>
+
                   <Text style={styles.collapseText}>
-                    • Perform a lead section or improvisation
+                    • Perform a lead section over a given chord progression,
+                    showing phrasing, tone control, and musical expression.
                   </Text>
+
                   <Text style={styles.collapseText}>
-                    • Answer spoken musical knowledge questions
+                    • Answer spoken musical knowledge questions covering the
+                    guitar, basic theory, tone shaping, common effect pedals,
+                    and general musicianship.
                   </Text>
+
                   <Text style={styles.collapseText}>
-                    • Complete a short aural/ear-training test
+                    • Complete a short ear-training test, including rhythm
+                    recognition, pitch comparison, and interval or chord
+                    identification (depending on grade).
                   </Text>
                 </View>
               )}

@@ -37,15 +37,13 @@ const listenExamples = () => {
 
                 <View style={styles.featureItem}>
                   <Text style={styles.featureIcon}>🎵</Text>
-                  <Text style={styles.featureText}>
-                    Covering beginner to advanced levels
-                  </Text>
+                  <Text style={styles.featureText}>Covering grades 1 to 3</Text>
                 </View>
 
                 <View style={styles.featureItem}>
                   <Text style={styles.featureIcon}>🎯</Text>
                   <Text style={styles.featureText}>
-                    Rhythm guitar examples, groove playing & improvisation
+                    Rhythm guitar examples & improvisation
                   </Text>
                 </View>
 
