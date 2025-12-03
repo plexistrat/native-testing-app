@@ -329,10 +329,10 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     position: "relative",
-    minHeight: 1000,
+    minHeight: "auto",
   },
   content: {
-    padding: 20,
+    padding: 10,
     alignItems: "center",
   },
   orb1: {
@@ -343,7 +343,7 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 100,
     backgroundColor: "rgba(99, 102, 241, 0.15)",
-    opacity: 0.6,
+    opacity: 0.8,
     shadowColor: "#6366f1",
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.5,
@@ -357,7 +357,7 @@ const styles = StyleSheet.create({
     height: 250,
     borderRadius: 125,
     backgroundColor: "rgba(168, 85, 247, 0.12)",
-    opacity: 0.5,
+    opacity: 0.9,
     shadowColor: "#a855f7",
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.4,
@@ -365,8 +365,8 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: "center",
-    marginBottom: 30,
-    marginTop: 20,
+    marginBottom: 10,
+    marginTop: 5,
   },
   title: {
     width: "100%",
@@ -380,14 +380,14 @@ const styles = StyleSheet.create({
     width: "100%",
     fontSize: 16,
     color: "#DEE3E4",
-    marginBottom: 20,
+    marginBottom: 5,
     textAlign: "center",
   },
   scaleButtons: {
     width: "100%",
     flexDirection: "row",
     flexWrap: "wrap",
-    marginBottom: 30,
+    marginBottom: 10,
     gap: 10,
   },
   scaleButton: {
