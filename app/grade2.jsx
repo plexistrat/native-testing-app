@@ -28,7 +28,7 @@ export default function grade1() {
               <View style={styles.titleContainer}>
                 <Text style={styles.title}>
                   For more details go to
-                  <Link href="/listenExamples" style={{ color: "#DEE3E4" }}>
+                  <Link href="/listenExamples" style={{ color: "#4A90E2" }}>
                     <Text> Listen examples</Text>
                   </Link>
                   .
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    backgroundColor: "rgba(99, 101, 241, 0.28)",
     opacity: 0.6,
     shadowColor: "#6366f1",
     shadowOffset: { width: 0, height: 0 },
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     borderRadius: 125,
-    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    backgroundColor: "rgba(169, 85, 247, 0.31)",
     opacity: 0.5,
     shadowColor: "#a855f7",
     shadowOffset: { width: 0, height: 0 },
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     alignItems: "center",
-    borderColor: "#20c997",
+    borderColor: "#4A90E2",
     borderRadius: 20,
     borderWidth: 2,
     marginTop: 30,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#ffffffff",
     marginBottom: 10,
     marginTop: 10,
     textAlign: "center",

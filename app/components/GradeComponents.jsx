@@ -32,9 +32,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#212529",
     borderRadius: 20,
     borderWidth: 2,
-    borderColor: "#20c997",
+    borderColor: "#4A90E2",
     overflow: "hidden",
-    shadowColor: "#20c997",
+    shadowColor: "#a0c1e7ff",
     shadowOffset: {
       width: 0,
       height: 6,

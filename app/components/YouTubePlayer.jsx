@@ -39,20 +39,21 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     marginVertical: 10,
+    opacity: 0.9,
   },
   card: {
     backgroundColor: "rgba(33, 37, 41, 0.4)",
     borderRadius: 10,
     padding: 12,
     borderWidth: 1,
-    borderColor: "rgba(32, 201, 151, 0.15)",
+    borderColor: "rgba(74, 144, 226, 0.45)",
   },
   title: {
     fontSize: 14,
     fontWeight: "600",
     marginBottom: 10,
     textAlign: "center",
-    color: "#20C997",
+    color: "#4A90E2",
   },
   playerWrapper: {
     borderRadius: 8,

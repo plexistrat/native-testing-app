@@ -23,13 +23,13 @@ const StudyMaterial = () => {
           <MaterialCommunityIcons
             name="guitar-electric"
             size={60}
-            color="#20c997"
+            color="#4A90E2"
             style={{ marginBottom: 15 }}
           />
 
           <Text style={styles.title}>Guitar Study Hub</Text>
           <Text style={styles.subtitle}>
-            Your pathway through the guitar grades{" "}
+            Your pathway through the electric guitar grades
           </Text>
 
           <View style={styles.titleUnderline} />
@@ -47,22 +47,21 @@ const StudyMaterial = () => {
           <MaterialCommunityIcons
             name="lightbulb-on-outline"
             size={28}
-            color="#20c997"
+            color="#4A90E2"
             style={styles.bannerIcon}
           />
           <Text style={styles.bannerText}>
             “Small steps daily create unstoppable players.”
           </Text>
         </View>
-        <View>
-          {/* Back Button - fixed bottom-left */}
-          <TouchableOpacity
-            style={styles.backButton}
-            onPress={() => router.back()}
-          >
-            <Text style={styles.backButtonText}>← Back</Text>
-          </TouchableOpacity>
-        </View>
+
+        {/* Back Button */}
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => router.back()}
+        >
+          <Text style={styles.backButtonText}>← Back</Text>
+        </TouchableOpacity>
       </ScrollView>
     </LinearGradient>
   );
@@ -78,27 +77,27 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
     paddingTop: 30,
-    paddingBottom: 100,
+    paddingBottom: 120,
   },
 
   /* --- Orbs --- */
   orb1: {
     position: "absolute",
-    top: 120,
+    top: 110,
     right: -40,
-    width: 180,
-    height: 180,
-    borderRadius: 90,
-    backgroundColor: "rgba(99, 102, 241, 0.18)",
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(74, 144, 226, 0.15)",
   },
   orb2: {
     position: "absolute",
     bottom: 150,
     left: -70,
-    width: 240,
-    height: 240,
-    borderRadius: 120,
-    backgroundColor: "rgba(168, 85, 247, 0.15)",
+    width: 260,
+    height: 260,
+    borderRadius: 130,
+    backgroundColor: "rgba(64, 128, 201, 0.18)",
   },
 
   /* --- Header --- */
@@ -108,29 +107,30 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 40,
+    fontSize: 38,
     fontWeight: "900",
-    color: "#f5f7f8",
-    letterSpacing: 1.5,
-    textShadowColor: "rgba(32, 201, 151, 0.3)",
-    textShadowOffset: { width: 0, height: 4 },
+    color: "#DEE3E4",
+    letterSpacing: 1.4,
+    textShadowColor: "rgba(74, 144, 226, 0.35)",
+    textShadowOffset: { width: 0, height: 3 },
     textShadowRadius: 10,
   },
 
   subtitle: {
     fontSize: 16,
-    color: "#cfd2d3",
+    color: "#BFC4C6",
     marginTop: 6,
     marginBottom: 12,
-    opacity: 0.9,
+    opacity: 0.85,
+    textAlign: "center",
   },
 
   titleUnderline: {
     marginTop: 10,
-    width: 100,
-    height: 4,
+    width: 95,
+    height: 3,
     borderRadius: 2,
-    backgroundColor: "#20c997",
+    backgroundColor: "#4A90E2",
   },
 
   /* --- Cards Container --- */
@@ -143,14 +143,14 @@ const styles = StyleSheet.create({
   /* --- Bottom banner --- */
   bottomBanner: {
     marginTop: 50,
-    backgroundColor: "rgba(33, 37, 41, 0.7)",
-    borderRadius: 14,
+    backgroundColor: "rgba(36, 40, 48, 0.65)",
+    borderRadius: 16,
     paddingVertical: 20,
     paddingHorizontal: 25,
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "#20c997",
+    borderColor: "rgba(74, 144, 226, 0.45)",
   },
 
   bannerIcon: {
@@ -158,25 +158,23 @@ const styles = StyleSheet.create({
   },
 
   bannerText: {
-    color: "#f5f7f8",
+    color: "#DEE3E4",
     fontSize: 15,
     fontWeight: "600",
     flex: 1,
   },
-  backButton: {
-    position: "absolute",
-    bottom: -80,
-    left: -170,
 
+  backButton: {
+    marginTop: 40,
     paddingVertical: 10,
     paddingHorizontal: 18,
     borderRadius: 12,
 
-    backgroundColor: "rgba(32, 201, 151, 0.12)",
+    backgroundColor: "rgba(74, 144, 226, 0.12)",
     borderWidth: 1,
-    borderColor: "rgba(32, 201, 151, 0.3)",
+    borderColor: "rgba(74, 144, 226, 0.35)",
 
-    shadowColor: "#20c997",
+    shadowColor: "#4A90E2",
     shadowOpacity: 0.25,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 6,
@@ -185,6 +183,6 @@ const styles = StyleSheet.create({
   backButtonText: {
     fontSize: 17,
     fontWeight: "700",
-    color: "#20c997",
+    color: "#4A90E2",
   },
 });
