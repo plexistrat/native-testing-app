@@ -325,7 +325,7 @@ function PracticeTip({ icon, title, text }) {
       <MaterialIcons
         name={icon}
         size={26}
-        color="#20c997"
+        color="#4A90E2"
         style={styles.practiceIcon}
       />
       <View style={{ flex: 1 }}>
@@ -339,9 +339,9 @@ function PracticeTip({ icon, title, text }) {
 function DailyItem({ minutes, text }) {
   return (
     <View style={styles.dailyItem}>
-      <MaterialIcons name="timer" size={22} color="#20c997" />
+      <MaterialIcons name="timer" size={22} color="#4A90E2" />
       <Text style={styles.dailyItemText}>
-        <Text style={{ color: "#20c997", fontWeight: "700" }}>
+        <Text style={{ color: "#4A90E2", fontWeight: "700" }}>
           {minutes} min
         </Text>{" "}
         — {text}
@@ -384,7 +384,7 @@ const styles = StyleSheet.create({
     width: "100%",
     fontSize: 28,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginBottom: 10,
     textAlign: "center",
   },
@@ -414,8 +414,8 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   selectedScaleButton: {
-    backgroundColor: "#20c997",
-    shadowColor: "#20c997",
+    backgroundColor: "#4A90E2",
+    shadowColor: "#4A90E2",
     shadowOpacity: 0.4,
     shadowRadius: 6,
   },
@@ -429,13 +429,13 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: "#20c997",
+    borderColor: "#4A90E2",
     padding: 18,
   },
   scaleTitle: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginBottom: 15,
   },
   notesContainer: {
@@ -444,7 +444,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   notesLabel: { color: "#DEE3E4", fontSize: 16 },
-  notesText: { color: "#20c997", fontSize: 16, fontWeight: "600" },
+  notesText: { color: "#4A90E2", fontSize: 16, fontWeight: "600" },
 
   // FRETBOARD
   fretboardContainer: {
@@ -496,7 +496,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  rootNoteDot: { backgroundColor: "#20c997" },
+  rootNoteDot: { backgroundColor: "#006affff" },
   scaleNoteDot: { backgroundColor: "#3498db" },
   noteText: { color: "#ffffff", fontSize: 12, fontWeight: "bold" },
 
@@ -527,7 +527,7 @@ const styles = StyleSheet.create({
   practiceIcon: { marginTop: 4 },
   practiceDescriptionTitle: {
     fontSize: 18,
-    color: "#20c997",
+    color: "#4A90E2",
     fontWeight: "700",
     marginBottom: 4,
   },
@@ -539,13 +539,13 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 12,
     backgroundColor: "rgba(44, 62, 80, 0.85)",
-    borderColor: "#20c997",
+    borderColor: "#4A90E2",
     borderWidth: 1,
   },
   dailyRoutineTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginBottom: 15,
   },
   dailyItem: {
