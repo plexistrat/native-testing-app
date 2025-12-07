@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginBottom: 10,
     textAlign: "center",
   },
@@ -224,8 +224,8 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   selectedScaleButton: {
-    backgroundColor: "#20c997",
-    shadowColor: "#20c997",
+    backgroundColor: "#4A90E2",
+    shadowColor: "#4A90E2",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
   scaleTitle: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginBottom: 10,
   },
   notesText: { color: "#DEE3E4", fontSize: 16 },
@@ -295,8 +295,8 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   rootNoteDot: {
-    backgroundColor: "#20c997",
-    shadowColor: "#20c997",
+    backgroundColor: "#0048ffff",
+    shadowColor: "#4A90E2",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
     shadowRadius: 4,
