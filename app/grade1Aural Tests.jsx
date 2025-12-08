@@ -126,7 +126,7 @@ const Grade1AuralTests = () => {
             <View style={styles.content}>
               {/* Header Section */}
               <View style={styles.headerSection}>
-                <Text style={styles.mainTitle}>🎵 Grade 1 Aural Tests</Text>
+                <Text style={styles.mainTitle}> Grade 1 Aural Tests</Text>
                 <Text style={styles.subtitle}>
                   Complete guide to ear training assessments
                 </Text>

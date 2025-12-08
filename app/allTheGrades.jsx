@@ -7,6 +7,7 @@ import {
   LayoutAnimation,
   Platform,
   UIManager,
+  Image,
 } from "react-native";
 import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
@@ -43,6 +44,11 @@ const AllTheGrades = () => {
 
           <View style={styles.container}>
             {/* Main Title */}
+            <Image
+              source={require("../assets/logo1.png")}
+              style={styles.appLogo}
+              resizeMode="contain"
+            />
             <Text style={styles.mainTitle}>Electric Guitar Grades</Text>
             <Text style={styles.subtitle}>Overview & Skills Breakdown</Text>
 
@@ -191,7 +197,7 @@ const AllTheGrades = () => {
 
 const styles = StyleSheet.create({
   scrollContainer: { flex: 1 },
-  container: { padding: 20, paddingTop: 10 },
+  container: { padding: 10, paddingTop: 0, alignItems: "center" },
 
   /* Background orbs */
   orb1: {
@@ -220,6 +226,10 @@ const styles = StyleSheet.create({
   },
 
   /* Titles */
+  appLogo: {
+    width: 120,
+    height: 120,
+  },
   mainTitle: {
     fontSize: 34,
     fontWeight: "900",

@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    backgroundColor: "rgba(99, 101, 241, 0.33)",
     opacity: 0.6,
     shadowColor: "#6366f1",
     shadowOffset: { width: 0, height: 0 },
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     borderRadius: 125,
-    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    backgroundColor: "rgba(169, 85, 247, 0.34)",
     opacity: 0.5,
     shadowColor: "#a855f7",
     shadowOffset: { width: 0, height: 0 },
@@ -389,16 +389,16 @@ const styles = StyleSheet.create({
 
   // Tips Section
   tipsSection: {
-    backgroundColor: "rgba(76, 175, 80, 0.1)",
+    backgroundColor: "rgba(76, 160, 175, 0.1)",
     padding: 20,
     borderRadius: 15,
     borderWidth: 1,
-    borderColor: "rgba(76, 175, 80, 0.2)",
+    borderColor: "rgba(76, 152, 175, 0.43)",
   },
   tipsTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#4CAF50",
+    color: "#4A90E2",
     marginBottom: 15,
     textAlign: "center",
   },

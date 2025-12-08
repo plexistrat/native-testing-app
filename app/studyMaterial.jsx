@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import GradeCard from "./components/GradeCard";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -20,14 +20,19 @@ const StudyMaterial = () => {
 
         {/* Header */}
         <View style={styles.headerContainer}>
-          <MaterialCommunityIcons
+          {/* <MaterialCommunityIcons
             name="guitar-electric"
             size={60}
             color="#4A90E2"
             style={{ marginBottom: 15 }}
+          /> */}
+          <Image
+            source={require("../assets/logo1.png")}
+            style={styles.appLogo}
+            resizeMode="contain"
           />
 
-          <Text style={styles.title}>Guitar Study Hub</Text>
+          {/* <Text style={styles.title}>Guitar Study Hub</Text> */}
           <Text style={styles.subtitle}>
             Your pathway through the electric guitar grades
           </Text>
@@ -104,6 +109,11 @@ const styles = StyleSheet.create({
   headerContainer: {
     alignItems: "center",
     marginBottom: 50,
+  },
+
+  appLogo: {
+    width: 120,
+    height: 120,
   },
 
   title: {

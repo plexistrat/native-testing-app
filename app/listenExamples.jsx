@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
@@ -20,6 +20,11 @@ const ListenExamples = () => {
 
             <View style={styles.container}>
               {/* TITLE */}
+              <Image
+                source={require("../assets/logo1.png")}
+                style={styles.appLogo}
+                resizeMode="contain"
+              />
               <Text style={styles.title}>🎧 Listening Examples</Text>
 
               {/* INTRO CARD */}
@@ -119,7 +124,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: "rgba(64, 128, 201, 0.12)",
+    backgroundColor: "rgba(64, 128, 201, 0.32)",
     shadowColor: "#4A90E2",
     shadowRadius: 60,
   },
@@ -134,8 +139,13 @@ const styles = StyleSheet.create({
   },
 
   /* TITLE */
+  appLogo: {
+    width: 120,
+    height: 120,
+    marginLeft: 125,
+  },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: "900",
     color: "#DEE3E4",
     textAlign: "center",

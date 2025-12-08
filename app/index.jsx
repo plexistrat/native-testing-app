@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: "rgba(64, 128, 201, 0.11)",
+    backgroundColor: "rgba(126, 64, 201, 0.21)",
     opacity: 0.6,
     shadowColor: "#4A90E2",
     shadowOffset: { width: 0, height: 0 },
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     borderRadius: 125,
-    backgroundColor: "rgba(74, 144, 226, 0.2)",
+    backgroundColor: "rgba(74, 145, 226, 0.31)",
     opacity: 0.5,
     shadowColor: "#4A90E2",
     shadowOffset: { width: 0, height: 0 },
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   linkIcon: {
     fontSize: 24,
     marginRight: 15,
-    // color: "#4A90E2",
+    color: "#4A90E2",
   },
 
   linkTextContainer: {
