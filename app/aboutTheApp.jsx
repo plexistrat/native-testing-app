@@ -101,7 +101,6 @@ export default function About() {
               </View>
             </View>
           </View>
-
           <BackButton />
         </SafeAreaView>
       </ScrollView>
@@ -116,8 +115,6 @@ const styles = StyleSheet.create({
 
   container: {
     alignItems: "center",
-    paddingTop: 30,
-    paddingBottom: 30,
     paddingHorizontal: 22,
   },
 

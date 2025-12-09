@@ -1,7 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
 import { Slot } from "expo-router";
-import { linkTo } from "expo-router/build/global-state/routing";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const _layout = () => {
