@@ -6,6 +6,7 @@ import {
   ScrollView,
   StyleSheet,
   Dimensions,
+  Image,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -271,8 +272,8 @@ const grade2Chords = () => {
               <View style={styles.practiceContainer}>
                 <Text style={styles.practiceTitle}>Chords Practice</Text>
 
-                <Text style={styles.sectionTitle}>
-                  1. Learn the shapes gradually
+                <Text style={styles.description}>
+                  Learn the shapes gradually
                 </Text>
                 <Text style={styles.description}>
                   Try to asosciate the shapes with the chords from grade 1
@@ -302,6 +303,11 @@ const grade2Chords = () => {
               </View>
             </View>
             <BackButton />
+            <Image
+              source={require("../assets/logo1.png")}
+              style={styles.appLogo}
+              resizeMode="contain"
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -324,7 +330,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    backgroundColor: "rgba(99, 101, 241, 0.35)",
     opacity: 0.6,
     shadowColor: "#6366f1",
     shadowOffset: { width: 0, height: 0 },
@@ -338,7 +344,7 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     borderRadius: 125,
-    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    backgroundColor: "rgba(169, 85, 247, 0.33)",
     opacity: 0.5,
     shadowColor: "#a855f7",
     shadowOffset: { width: 0, height: 0 },
@@ -360,20 +366,20 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 18,
     fontWeight: "600",
-    color: "#20c997",
+    color: "#4A90E2",
     textAlign: "center",
     marginBottom: 30,
   },
   practiceTitle: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#DEE3E4",
+    color: "#4A90E2",
     marginBottom: 20,
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#ffffffff",
     marginTop: 15,
     marginBottom: 8,
   },
@@ -385,7 +391,7 @@ const styles = StyleSheet.create({
   },
   tip: {
     fontSize: 14,
-    color: "#20c997",
+    color: "#4A90E2",
     fontStyle: "italic",
     marginBottom: 15,
     lineHeight: 20,
@@ -393,7 +399,7 @@ const styles = StyleSheet.create({
   tipTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginTop: 15,
     marginBottom: 8,
   },
@@ -406,7 +412,7 @@ const styles = StyleSheet.create({
   songListTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#DEE3E4",
+    color: "#4A90E2",
     marginTop: 20,
     marginBottom: 12,
   },
@@ -652,6 +658,14 @@ const styles = StyleSheet.create({
     color: "#2C1810",
     fontSize: 12,
     fontWeight: "bold",
+  },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 1,
+    right: 20,
+    opacity: 0.5,
   },
 });
 

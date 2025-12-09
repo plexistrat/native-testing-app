@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 import YouTubePlayer from "./components/YouTubePlayer";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -101,15 +101,15 @@ const Grade2AuralTests = () => {
   ];
 
   const melodicExamples = [
-    { notes: "C – D – E – D", rhythm: "four quarter notes", number: "1" },
+    { notes: "G – Bb – C  – D", rhythm: "four quarter notes", number: "1" },
     {
-      notes: "G – E – C",
-      rhythm: "half note – quarter – quarter",
+      notes: "G – D – Db - C",
+      rhythm: "four quarter notes",
       number: "2",
     },
     {
-      notes: "C – C – D – E",
-      rhythm: "eighth – eighth – quarter – half",
+      notes: "G – C – Db – D",
+      rhythm: "four quarter notes",
       number: "3",
     },
   ];
@@ -131,7 +131,7 @@ const Grade2AuralTests = () => {
             <View style={styles.content}>
               {/* Header Section */}
               <View style={styles.headerSection}>
-                <Text style={styles.mainTitle}>🎵 Grade 1 Aural Tests</Text>
+                <Text style={styles.mainTitle}>🎵 Grade 2 Aural Tests</Text>
                 <Text style={styles.subtitle}>
                   Complete guide to ear training assessments
                 </Text>
@@ -158,7 +158,10 @@ const Grade2AuralTests = () => {
                     {testSections[0].description}
                   </Text>
                 </View>
-                <YouTubePlayer videoId="H8FB6jAv-xY" title="Clap Back Rhythm" />
+                <YouTubePlayer videoId="PbLhU2EQY5Q" title="Clap Back Rhythm" />
+                <YouTubePlayer videoId="qolZJsSNKa0" title="Clap Back Rhythm" />
+                <YouTubePlayer videoId="QaARVHWHK6A" title="Clap Back Rhythm" />
+                <YouTubePlayer videoId="aDtvto3t-Wk" title="Clap Back Rhythm" />
               </View>
 
               {/* Test 2: Melodic Phrases */}
@@ -192,8 +195,8 @@ const Grade2AuralTests = () => {
                     </Text>
                     <View style={styles.bulletList}>
                       <Text style={styles.bulletItem}>
-                        • Is based on the Grade 1 scales (e.g. E Blues Scale, A
-                        Minor, Pentatonic)
+                        • Is based on the Grade 2 scales (e.g. G Blues Scales, A
+                        natural Minor, B Minor Pentatonic, etc.)
                       </Text>
                       <Text style={styles.bulletItem}>
                         • The phrase starts on the root note
@@ -206,7 +209,7 @@ const Grade2AuralTests = () => {
 
                   <View style={styles.examplesSection}>
                     <Text style={styles.examplesTitle}>
-                      🎵 Melodic Phrase Examples (in C Major):
+                      🎵 Melodic Phrase Examples (in G Blues scale):
                     </Text>
                     {melodicExamples.map((example, index) => (
                       <View key={index} style={styles.exampleCard}>
@@ -222,12 +225,9 @@ const Grade2AuralTests = () => {
                       </View>
                     ))}
                     <YouTubePlayer
-                      videoId="opHgVSe3UFE"
+                      videoId="_adP6KlSUfc"
                       title="More examples of Melodic Phrases"
                     />
-                    <YouTubePlayer videoId="L2UwQYt443E" />
-                    <YouTubePlayer videoId="bcczAsu6VjU" />
-                    <YouTubePlayer videoId="4JR4FJBPfNA" />
                   </View>
 
                   <View style={styles.practiceSection}>
@@ -243,10 +243,7 @@ const Grade2AuralTests = () => {
                         • Use only the notes from all the scales from scale
                         section
                       </Text>
-                      <Text style={styles.practiceItem}>
-                        • Try changing rhythms of the same notes (e.g., play
-                        C–E–G as eighths, then as quarters)
-                      </Text>
+
                       <Text style={styles.practiceItem}>
                         • Practice with a friend or teacher: They play a short
                         melody → you repeat it immediately
@@ -327,7 +324,11 @@ const Grade2AuralTests = () => {
                   </View>
                 </View>
                 <YouTubePlayer
-                  videoId="jFEcyw9Q4yg"
+                  videoId="RU2oE3RIwOw"
+                  title="Keeping Time example 1-2"
+                />
+                <YouTubePlayer
+                  videoId="4EeuCIyQ2KE"
                   title="Keeping Time example 1-2"
                 />
               </View>
@@ -423,7 +424,7 @@ const Grade2AuralTests = () => {
                     </View>
                   </View>
                 </View>
-                <YouTubePlayer videoId="XyLSlkmHOsQ" />
+                <YouTubePlayer videoId="dxqL4XWWft0" title="Pitch Tests" />
               </View>
 
               {/* Test 5: Harmony Test */}
@@ -446,7 +447,7 @@ const Grade2AuralTests = () => {
                 <View style={styles.contentContainer}>
                   <Text style={styles.descriptionText}>
                     The examiner plays a short rhythm guitar progression
-                    (typically 2–4 chords). The candidate listens twice. The
+                    (typically 2 chords). The candidate listens twice. The
                     student must identify the chord types by ear:
                   </Text>
 
@@ -492,13 +493,15 @@ const Grade2AuralTests = () => {
                     </View>
                   </View>
                 </View>
-                <YouTubePlayer videoId="YOEdlketf0c" />
-                <YouTubePlayer videoId="FRWeUm8RHSU" />
-                <YouTubePlayer videoId="Slf1c0gzfCY" />
-                <YouTubePlayer videoId="uETmAHe2oJo" />
+                <YouTubePlayer videoId="uKBCYY60WLE" />
               </View>
             </View>
             <BackButton />
+            <Image
+              source={require("../assets/logo1.png")}
+              style={styles.appLogo}
+              resizeMode="contain"
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -528,7 +531,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    backgroundColor: "rgba(99, 101, 241, 0.35)",
     opacity: 0.6,
     shadowColor: "#6366f1",
     shadowOffset: { width: 0, height: 0 },
@@ -542,7 +545,7 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     borderRadius: 125,
-    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    backgroundColor: "rgba(169, 85, 247, 0.36)",
     opacity: 0.5,
     shadowColor: "#a855f7",
     shadowOffset: { width: 0, height: 0 },
@@ -605,7 +608,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 15,
-    backgroundColor: "#4CAF50",
+    backgroundColor: "#4A90E2",
     alignItems: "center",
     justifyContent: "center",
     marginRight: 12,
@@ -657,7 +660,7 @@ const styles = StyleSheet.create({
   goalTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#4CAF50",
+    color: "#4A90E2",
     marginBottom: 8,
   },
   goalText: {
@@ -904,5 +907,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#FFEBEE",
     fontFamily: "monospace",
+  },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 1,
+    right: 20,
+    opacity: 0.5,
   },
 });

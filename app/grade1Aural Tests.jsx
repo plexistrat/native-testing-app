@@ -238,10 +238,7 @@ const Grade1AuralTests = () => {
                         • Use only the notes from all the scales from scale
                         section
                       </Text>
-                      <Text style={styles.practiceItem}>
-                        • Try changing rhythms of the same notes (e.g., play
-                        C–E–G as eighths, then as quarters)
-                      </Text>
+
                       <Text style={styles.practiceItem}>
                         • Practice with a friend or teacher: They play a short
                         melody → you repeat it immediately

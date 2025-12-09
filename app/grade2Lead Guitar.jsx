@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import YouTubePlayer from "./components/YouTubePlayer";
@@ -141,6 +141,11 @@ const grade2LeadGuitar = () => {
               </View>
             </View>
             <BackButton />
+            <Image
+              source={require("../assets/logo1.png")}
+              style={styles.appLogo}
+              resizeMode="contain"
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -171,7 +176,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: "rgba(99, 102, 241, 0.15)",
+    backgroundColor: "rgba(99, 101, 241, 0.38)",
     opacity: 0.6,
     shadowColor: "#6366f1",
     shadowOffset: { width: 0, height: 0 },
@@ -185,7 +190,7 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     borderRadius: 125,
-    backgroundColor: "rgba(168, 85, 247, 0.12)",
+    backgroundColor: "rgba(169, 85, 247, 0.33)",
     opacity: 0.5,
     shadowColor: "#a855f7",
     shadowOffset: { width: 0, height: 0 },
@@ -213,7 +218,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   link: {
-    backgroundColor: "#20c997",
+    backgroundColor: "#4A90E2",
     paddingVertical: 15,
     paddingHorizontal: 20,
     marginVertical: 8,
@@ -244,7 +249,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginBottom: 20,
     textAlign: "center",
   },
@@ -257,7 +262,7 @@ const styles = StyleSheet.create({
   studyHeader: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginBottom: 8,
   },
   studyText: {
@@ -266,5 +271,13 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     marginBottom: 4,
     opacity: 0.9,
+  },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 1,
+    right: 20,
+    opacity: 0.5,
   },
 });
