@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import GradeComponents from "./components/GradeComponents";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -40,6 +40,11 @@ export default function grade3() {
               </View>
             </View>
             <BackButton />
+            <Image
+              source={require("../assets/logo1.png")}
+              style={styles.appLogo}
+              resizeMode="contain"
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -140,5 +145,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#20c997",
     fontWeight: "600",
+  },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 1,
+    right: 20,
+    opacity: 0.5,
   },
 });

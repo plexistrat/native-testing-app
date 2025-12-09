@@ -173,6 +173,11 @@ const grade1RhythmGuitar = () => {
               </View>
             </View>
             <BackButton />
+            <Image
+              source={require("../assets/logo1.png")}
+              style={styles.appLogo}
+              resizeMode="contain"
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -410,5 +415,13 @@ const styles = StyleSheet.create({
     color: "#E8F5E8",
     lineHeight: 24,
     marginBottom: 8,
+  },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 1,
+    right: 20,
+    opacity: 0.5,
   },
 });

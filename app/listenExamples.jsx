@@ -80,7 +80,7 @@ const ListenExamples = () => {
               {/* CTA */}
               <View style={styles.ctaContainer}>
                 <Text style={styles.ctaSubtitle}>
-                  More examples available on YouTube
+                  More examples available on our YouTube channel
                 </Text>
 
                 <Link
