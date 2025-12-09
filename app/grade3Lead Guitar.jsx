@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import YouTubePlayer from "./components/YouTubePlayer";
 import BackButton from "./components/BackButton";
 
@@ -132,6 +132,11 @@ const grade3LeadGuitar = () => {
           </View>
         </View>
         <BackButton />
+        <Image
+          source={require("../assets/logo1.png")}
+          style={styles.appLogo}
+          resizeMode="contain"
+        />
       </View>
     </ScrollView>
   );
@@ -172,7 +177,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   link: {
-    backgroundColor: "#20c997",
+    backgroundColor: "#209cc9ff",
     paddingVertical: 15,
     paddingHorizontal: 20,
     marginVertical: 8,
@@ -198,12 +203,12 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: "rgba(32, 201, 151, 0.2)",
+    borderColor: "rgba(32, 159, 201, 0.62)",
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginBottom: 20,
     textAlign: "center",
   },
@@ -216,7 +221,7 @@ const styles = StyleSheet.create({
   studyHeader: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginBottom: 8,
   },
   studyText: {
@@ -225,5 +230,12 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     marginBottom: 4,
     opacity: 0.9,
+  },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 1,
+    right: 20,
   },
 });

@@ -6,6 +6,7 @@ import {
   ScrollView,
   StyleSheet,
   Dimensions,
+  Image,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -292,6 +293,11 @@ const grade3Chords = () => {
               </View>
             </View>
             <BackButton />
+            <Image
+              source={require("../assets/logo1.png")}
+              style={styles.appLogo}
+              resizeMode="contain"
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -357,13 +363,13 @@ const styles = StyleSheet.create({
   practiceTitle: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#DEE3E4",
+    color: "#4A90E2",
     marginBottom: 20,
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginTop: 15,
     marginBottom: 8,
   },
@@ -375,7 +381,7 @@ const styles = StyleSheet.create({
   },
   tip: {
     fontSize: 14,
-    color: "#20c997",
+    color: "#4ae2a3ff",
     fontStyle: "italic",
     marginBottom: 15,
     lineHeight: 20,
@@ -383,7 +389,7 @@ const styles = StyleSheet.create({
   tipTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#20c997",
+    color: "#4A90E2",
     marginTop: 15,
     marginBottom: 8,
   },
@@ -396,7 +402,7 @@ const styles = StyleSheet.create({
   songListTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#DEE3E4",
+    color: "#4A90E2",
     marginTop: 20,
     marginBottom: 12,
   },
@@ -642,6 +648,13 @@ const styles = StyleSheet.create({
     color: "#2C1810",
     fontSize: 12,
     fontWeight: "bold",
+  },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 1,
+    right: 20,
   },
 });
 

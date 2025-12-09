@@ -171,6 +171,11 @@ const grade3RhythmGuitar = () => {
           </View>
         </View>
         <BackButton />
+        <Image
+          source={require("../assets/logo1.png")}
+          style={styles.appLogo}
+          resizeMode="contain"
+        />
       </View>
     </ScrollView>
   );
@@ -355,16 +360,16 @@ const styles = StyleSheet.create({
 
   // Tips Section
   tipsSection: {
-    backgroundColor: "rgba(76, 175, 80, 0.1)",
+    backgroundColor: "rgba(76, 175, 160, 0.1)",
     padding: 20,
     borderRadius: 15,
     borderWidth: 1,
-    borderColor: "rgba(76, 175, 80, 0.2)",
+    borderColor: "rgba(76, 167, 175, 0.2)",
   },
   tipsTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#4CAF50",
+    color: "#4A90E2",
     marginBottom: 15,
     textAlign: "center",
   },
@@ -376,5 +381,12 @@ const styles = StyleSheet.create({
     color: "#E8F5E8",
     lineHeight: 24,
     marginBottom: 8,
+  },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 40,
+    right: 20,
   },
 });

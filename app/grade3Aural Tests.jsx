@@ -1,7 +1,9 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 import YouTubePlayer from "./components/YouTubePlayer";
 import BackButton from "./components/BackButton";
+import { LinearGradient } from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Grade3AuralTests = () => {
   const testSections = [
@@ -113,307 +115,375 @@ const Grade3AuralTests = () => {
   ];
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      {/* Header Section */}
-      <View style={styles.headerSection}>
-        <Text style={styles.mainTitle}>🎵 Grade 1 Aural Tests</Text>
-        <Text style={styles.subtitle}>
-          Complete guide to ear training assessments
-        </Text>
-      </View>
-
-      {/* Test 1: Clap Back Rhythm */}
-      <View
-        style={[styles.testSection, { borderLeftColor: testSections[0].color }]}
-      >
-        <View style={styles.sectionHeader}>
-          <View style={styles.numberBadge}>
-            <Text style={styles.numberText}>1</Text>
-          </View>
-          <Text style={styles.sectionIcon}>{testSections[0].icon}</Text>
-          <Text style={styles.sectionTitle}>{testSections[0].title}</Text>
-        </View>
-        <View style={styles.contentContainer}>
-          <Text style={styles.descriptionText}>
-            {testSections[0].description}
-          </Text>
-        </View>
-        <YouTubePlayer
-          videoId="QPR7UQ08mvU"
-          title="Clap Back Rhythm example 1-2-3"
-        />
-      </View>
-
-      {/* Test 2: Melodic Phrases */}
-      <View
-        style={[styles.testSection, { borderLeftColor: testSections[1].color }]}
-      >
-        <View style={styles.sectionHeader}>
-          <View style={styles.numberBadge}>
-            <Text style={styles.numberText}>2</Text>
-          </View>
-          <Text style={styles.sectionIcon}>{testSections[1].icon}</Text>
-          <View style={styles.titleContainer}>
-            <Text style={styles.sectionTitle}>{testSections[1].title}</Text>
-            <Text style={styles.sectionSubtitle}>
-              {testSections[1].subtitle}
-            </Text>
-          </View>
-        </View>
-
-        <View style={styles.contentContainer}>
-          <View style={styles.goalSection}>
-            <Text style={styles.goalTitle}>🎯 Goal of the Test</Text>
-            <Text style={styles.goalText}>
-              To accurately repeat a short melodic phrase played by the
-              examiner, using your instrument. The phrase:
-            </Text>
-            <View style={styles.bulletList}>
-              <Text style={styles.bulletItem}>
-                • Is based on the Grade 2 scales (e.g. G Major, A natural Minor,
-                B Minor Pentatonic)
-              </Text>
-              <Text style={styles.bulletItem}>
-                • The phrase starts on the root note
-              </Text>
-              <Text style={styles.bulletItem}>
-                • Uses simple rhythms – mainly quarter notes, eighth notes, and
-                half notes
+    <LinearGradient
+      colors={["#0f1214", "#1b1e21", "#242830"]}
+      style={{ flex: 1 }}
+    >
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView
+          style={styles.container}
+          showsVerticalScrollIndicator={false}
+        >
+          <View style={styles.wrapper}>
+            <View style={styles.orb1} />
+            <View style={styles.orb2} />
+            {/* Header Section */}
+            <View style={styles.headerSection}>
+              <Text style={styles.mainTitle}>🎵 Grade 3 Aural Tests</Text>
+              <Text style={styles.subtitle}>
+                Complete guide to ear training assessments
               </Text>
             </View>
-          </View>
 
-          <View style={styles.examplesSection}>
-            <YouTubePlayer
-              videoId="AEAX6uY28SI"
-              title="Repetitionof Melodic Phrases example 1-2"
-            />
-            <YouTubePlayer
-              videoId="hglE-c2kjkg"
-              title="Repetitionof Melodic Phrases example 3-4"
-            />
-          </View>
-
-          <View style={styles.practiceSection}>
-            <Text style={styles.practiceTitle}>✅ How to Practice:</Text>
-            <View style={styles.practiceList}>
-              <Text style={styles.practiceItem}>
-                • Listen and repeat short phrases played by a teacher or app
-              </Text>
-              <Text style={styles.practiceItem}>
-                • Use only the notes from all the scales from scale section
-              </Text>
-
-              <Text style={styles.practiceItem}>
-                • Practice with a friend or teacher: They play a short melody →
-                you repeat it immediately
-              </Text>
-              <Text style={styles.practiceItem}>
-                • Record yourself, then listen to check your accuracy
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-
-      {/* Test 3: Keeping Time */}
-      <View
-        style={[styles.testSection, { borderLeftColor: testSections[2].color }]}
-      >
-        <View style={styles.sectionHeader}>
-          <View style={styles.numberBadge}>
-            <Text style={styles.numberText}>3</Text>
-          </View>
-          <Text style={styles.sectionIcon}>{testSections[2].icon}</Text>
-          <View style={styles.titleContainer}>
-            <Text style={styles.sectionTitle}>{testSections[2].title}</Text>
-          </View>
-        </View>
-
-        <View style={styles.contentContainer}>
-          <View style={styles.goalSection}>
-            <Text style={styles.goalTitle}>🎯 Goal:</Text>
-            <Text style={styles.goalText}>
-              To clap the pulse (beat) accurately while a melody is played,
-              showing that you understand the timing of the music.
-            </Text>
-          </View>
-
-          <View style={styles.processSection}>
-            <Text style={styles.processTitle}>🎼 What Happens:</Text>
-            <Text style={styles.processText}>
-              The examiner plays a 4-bar melody twice, in 4/4 or 3/4 time.
-              During the second playing, the student claps the main pulse (on
-              each beat). The first beat of each bar should be slightly
-              accented.
-            </Text>
-          </View>
-
-          <View style={styles.clappingSection}>
-            <Text style={styles.clappingTitle}>✋ How to Clap:</Text>
-            <View style={styles.clappingPattern}>
-              <Text style={styles.patternText}>| 1 2 3 4 |</Text>
-              <Text style={styles.patternDescription}>
-                clap, clap, clap, clap (with a stronger clap on beat 1)
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.practiceSection}>
-            <Text style={styles.practiceTitle}>✅ Tips for Practicing:</Text>
-            <View style={styles.practiceList}>
-              <Text style={styles.practiceItem}>
-                • Use a metronome (start around 60–80 BPM)
-              </Text>
-              <Text style={styles.practiceItem}>
-                • Practice clapping steady beats over simple melodies or even
-                over pop songs
-              </Text>
-              <Text style={styles.practiceItem}>
-                • Always feel the downbeat — it's your anchor!
-              </Text>
-            </View>
-          </View>
-        </View>
-        <YouTubePlayer videoId="Rz25F58bKqE" title="Keeping Time example 1" />
-        <YouTubePlayer videoId="EFhnhQpW4Bk" title="Keeping Time example 2" />
-      </View>
-
-      {/* Test 4: Pitch Test (Intervals) */}
-      <View
-        style={[styles.testSection, { borderLeftColor: testSections[3].color }]}
-      >
-        <View style={styles.sectionHeader}>
-          <View style={styles.numberBadge}>
-            <Text style={styles.numberText}>4</Text>
-          </View>
-          <Text style={styles.sectionIcon}>{testSections[3].icon}</Text>
-          <View style={styles.titleContainer}>
-            <Text style={styles.sectionTitle}>{testSections[3].title}</Text>
-            <Text style={styles.sectionSubtitle}>
-              {testSections[3].subtitle}
-            </Text>
-          </View>
-        </View>
-
-        <View style={styles.contentContainer}>
-          <View style={styles.goalSection}>
-            <Text style={styles.goalTitle}>🎯 Objective:</Text>
-            <Text style={styles.goalText}>
-              To identify and name intervals played by the examiner.
-            </Text>
-          </View>
-
-          <View style={styles.intervalsSection}>
-            <Text style={styles.intervalsTitle}>🎼 Intervals Tested:</Text>
-            <Text style={styles.intervalsDescription}>
-              The examiner plays two notes (either together or separately). The
-              student must name the interval:
-            </Text>
-
-            <View style={styles.intervalsGrid}>
-              {intervals.map((interval, index) => (
-                <View
-                  key={index}
-                  style={[styles.intervalCard, { borderColor: interval.color }]}
-                >
-                  <View
-                    style={[
-                      styles.intervalBadge,
-                      { backgroundColor: interval.color },
-                    ]}
-                  >
-                    <Text style={styles.intervalSymbol}>{interval.symbol}</Text>
-                  </View>
-                  <Text style={styles.intervalName}>{interval.name}</Text>
-                  <Text style={styles.intervalExample}>{interval.example}</Text>
-                  <Text style={styles.intervalSong}>"{interval.song}"</Text>
+            {/* Test 1: Clap Back Rhythm */}
+            <View
+              style={[
+                styles.testSection,
+                { borderLeftColor: testSections[0].color },
+              ]}
+            >
+              <View style={styles.sectionHeader}>
+                <View style={styles.numberBadge}>
+                  <Text style={styles.numberText}>1</Text>
                 </View>
-              ))}
-            </View>
-          </View>
-
-          <View style={styles.practiceSection}>
-            <Text style={styles.practiceTitle}>🎓 Practice Ideas:</Text>
-            <View style={styles.practiceList}>
-              <Text style={styles.practiceItem}>
-                • Play and sing intervals on your own instrument
-              </Text>
-              <Text style={styles.practiceItem}>
-                • Use a piano or app (like Tenuto, Functional Ear Trainer)
-              </Text>
-              <Text style={styles.practiceItem}>
-                • Start by singing the interval from a root note
-              </Text>
-              <Text style={styles.practiceItem}>
-                • Record yourself and quiz later
-              </Text>
-            </View>
-          </View>
-        </View>
-        <YouTubePlayer videoId="6jf85Dzozfo" title="Pitch Test (Intervals)" />
-      </View>
-
-      {/* Test 5: Harmony Test */}
-      <View
-        style={[styles.testSection, { borderLeftColor: testSections[4].color }]}
-      >
-        <View style={styles.sectionHeader}>
-          <View style={styles.numberBadge}>
-            <Text style={styles.numberText}>5</Text>
-          </View>
-          <Text style={styles.sectionIcon}>{testSections[4].icon}</Text>
-          <Text style={styles.sectionTitle}>{testSections[4].title}</Text>
-        </View>
-
-        <View style={styles.contentContainer}>
-          <Text style={styles.descriptionText}>
-            The examiner plays 2 chords, one major and one minor (or the
-            opposite ). The candidate listens twice. The student must identify
-            the chord type by ear:
-          </Text>
-
-          <View style={styles.chordsGrid}>
-            {chordQualities.map((chord, index) => (
-              <View
-                key={index}
-                style={[styles.chordCard, { borderColor: chord.color }]}
-              >
-                <View
-                  style={[styles.chordBadge, { backgroundColor: chord.color }]}
-                >
-                  <Text style={styles.chordType}>{chord.type}</Text>
-                </View>
-                <Text style={styles.chordDescription}>{chord.description}</Text>
+                <Text style={styles.sectionIcon}>{testSections[0].icon}</Text>
+                <Text style={styles.sectionTitle}>{testSections[0].title}</Text>
               </View>
-            ))}
-          </View>
+              <View style={styles.contentContainer}>
+                <Text style={styles.descriptionText}>
+                  {testSections[0].description}
+                </Text>
+              </View>
+              <YouTubePlayer
+                videoId="QPR7UQ08mvU"
+                title="Clap Back Rhythm example 1-2-3"
+              />
+            </View>
 
-          <View style={styles.practiceSection}>
-            <Text style={styles.practiceTitle}>🎓 How to Practice:</Text>
-            <Text style={styles.practiceSubtitle}>
-              Practice progressions like:
-            </Text>
+            {/* Test 2: Melodic Phrases */}
+            <View
+              style={[
+                styles.testSection,
+                { borderLeftColor: testSections[1].color },
+              ]}
+            >
+              <View style={styles.sectionHeader}>
+                <View style={styles.numberBadge}>
+                  <Text style={styles.numberText}>2</Text>
+                </View>
+                <Text style={styles.sectionIcon}>{testSections[1].icon}</Text>
+                <View style={styles.titleContainer}>
+                  <Text style={styles.sectionTitle}>
+                    {testSections[1].title}
+                  </Text>
+                  <Text style={styles.sectionSubtitle}>
+                    {testSections[1].subtitle}
+                  </Text>
+                </View>
+              </View>
 
-            <View style={styles.practiceList}>
-              <Text style={styles.practiceItem}>
-                • Listen to Each Chord Quality characteristics
-              </Text>
-              <Text style={styles.practiceItem}>
-                • Use Ear Training Apps: TonedEar, EarMaster, or Teoria
-              </Text>
-              <Text style={styles.practiceItem}>
-                • Focus on chord recognition modes
-              </Text>
+              <View style={styles.contentContainer}>
+                <View style={styles.goalSection}>
+                  <Text style={styles.goalTitle}>🎯 Goal of the Test</Text>
+                  <Text style={styles.goalText}>
+                    To accurately repeat a short melodic phrase played by the
+                    examiner, using your instrument. The phrase:
+                  </Text>
+                  <View style={styles.bulletList}>
+                    <Text style={styles.bulletItem}>
+                      • Is based on the Grade 3 scales
+                    </Text>
+                    <Text style={styles.bulletItem}>
+                      • The phrase starts on the root note
+                    </Text>
+                    <Text style={styles.bulletItem}>
+                      • Uses simple rhythms – mainly quarter notes, eighth
+                      notes, and half notes
+                    </Text>
+                  </View>
+                </View>
+
+                <View style={styles.examplesSection}>
+                  <YouTubePlayer
+                    videoId="AEAX6uY28SI"
+                    title="Repetition of Melodic Phrases example 1-2"
+                  />
+                  <YouTubePlayer
+                    videoId="hglE-c2kjkg"
+                    title="Repetition of Melodic Phrases example 3-4"
+                  />
+                </View>
+
+                <View style={styles.practiceSection}>
+                  <Text style={styles.practiceTitle}>✅ How to Practice:</Text>
+                  <View style={styles.practiceList}>
+                    <Text style={styles.practiceItem}>
+                      • Listen and repeat short phrases played by a teacher or
+                      app
+                    </Text>
+                    <Text style={styles.practiceItem}>
+                      • Use only the notes from all the scales from scale
+                      section
+                    </Text>
+
+                    <Text style={styles.practiceItem}>
+                      • Practice with a friend or teacher: They play a short
+                      melody → you repeat it immediately
+                    </Text>
+                    <Text style={styles.practiceItem}>
+                      • Record yourself, then listen to check your accuracy
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+
+            {/* Test 3: Keeping Time */}
+            <View
+              style={[
+                styles.testSection,
+                { borderLeftColor: testSections[2].color },
+              ]}
+            >
+              <View style={styles.sectionHeader}>
+                <View style={styles.numberBadge}>
+                  <Text style={styles.numberText}>3</Text>
+                </View>
+                <Text style={styles.sectionIcon}>{testSections[2].icon}</Text>
+                <View style={styles.titleContainer}>
+                  <Text style={styles.sectionTitle}>
+                    {testSections[2].title}
+                  </Text>
+                </View>
+              </View>
+
+              <View style={styles.contentContainer}>
+                <View style={styles.goalSection}>
+                  <Text style={styles.goalTitle}>🎯 Goal:</Text>
+                  <Text style={styles.goalText}>
+                    To clap the pulse (beat) accurately while a melody is
+                    played, showing that you understand the timing of the music.
+                  </Text>
+                </View>
+
+                <View style={styles.processSection}>
+                  <Text style={styles.processTitle}>🎼 What Happens:</Text>
+                  <Text style={styles.processText}>
+                    The examiner plays a 4-bar melody twice, in 4/4, 6/8 or 3/4
+                    time. During the second playing, the student claps the main
+                    pulse (on each beat). The first beat of each bar should be
+                    slightly accented.
+                  </Text>
+                </View>
+
+                <View style={styles.clappingSection}>
+                  <Text style={styles.clappingTitle}>✋ How to Clap:</Text>
+                  <View style={styles.clappingPattern}>
+                    <Text style={styles.patternText}>| 1 2 3 4 |</Text>
+                    <Text style={styles.patternDescription}>
+                      clap, clap, clap, clap (with a stronger clap on beat 1)
+                    </Text>
+                  </View>
+                </View>
+
+                <View style={styles.practiceSection}>
+                  <Text style={styles.practiceTitle}>
+                    ✅ Tips for Practicing:
+                  </Text>
+                  <View style={styles.practiceList}>
+                    <Text style={styles.practiceItem}>
+                      • Use a metronome (start around 60–80 BPM)
+                    </Text>
+                    <Text style={styles.practiceItem}>
+                      • Practice clapping steady beats over simple melodies or
+                      even over pop songs
+                    </Text>
+                    <Text style={styles.practiceItem}>
+                      • Always feel the downbeat — it's your anchor!
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <YouTubePlayer
+                videoId="Rz25F58bKqE"
+                title="Keeping Time example 1"
+              />
+              <YouTubePlayer
+                videoId="EFhnhQpW4Bk"
+                title="Keeping Time example 2"
+              />
+            </View>
+
+            {/* Test 4: Pitch Test (Intervals) */}
+            <View
+              style={[
+                styles.testSection,
+                { borderLeftColor: testSections[3].color },
+              ]}
+            >
+              <View style={styles.sectionHeader}>
+                <View style={styles.numberBadge}>
+                  <Text style={styles.numberText}>4</Text>
+                </View>
+                <Text style={styles.sectionIcon}>{testSections[3].icon}</Text>
+                <View style={styles.titleContainer}>
+                  <Text style={styles.sectionTitle}>
+                    {testSections[3].title}
+                  </Text>
+                  <Text style={styles.sectionSubtitle}>
+                    {testSections[3].subtitle}
+                  </Text>
+                </View>
+              </View>
+
+              <View style={styles.contentContainer}>
+                <View style={styles.goalSection}>
+                  <Text style={styles.goalTitle}>🎯 Objective:</Text>
+                  <Text style={styles.goalText}>
+                    To identify and name intervals played by the examiner.
+                  </Text>
+                </View>
+
+                <View style={styles.intervalsSection}>
+                  <Text style={styles.intervalsTitle}>
+                    🎼 Intervals Tested:
+                  </Text>
+                  <Text style={styles.intervalsDescription}>
+                    The examiner plays two notes (either together or
+                    separately). The student must name the interval:
+                  </Text>
+
+                  <View style={styles.intervalsGrid}>
+                    {intervals.map((interval, index) => (
+                      <View
+                        key={index}
+                        style={[
+                          styles.intervalCard,
+                          { borderColor: interval.color },
+                        ]}
+                      >
+                        <View
+                          style={[
+                            styles.intervalBadge,
+                            { backgroundColor: interval.color },
+                          ]}
+                        >
+                          <Text style={styles.intervalSymbol}>
+                            {interval.symbol}
+                          </Text>
+                        </View>
+                        <Text style={styles.intervalName}>{interval.name}</Text>
+                        <Text style={styles.intervalExample}>
+                          {interval.example}
+                        </Text>
+                        <Text style={styles.intervalSong}>
+                          "{interval.song}"
+                        </Text>
+                      </View>
+                    ))}
+                  </View>
+                </View>
+
+                <View style={styles.practiceSection}>
+                  <Text style={styles.practiceTitle}>🎓 Practice Ideas:</Text>
+                  <View style={styles.practiceList}>
+                    <Text style={styles.practiceItem}>
+                      • Play and sing intervals on your own instrument
+                    </Text>
+                    <Text style={styles.practiceItem}>
+                      • Use a piano or app (like Tenuto, Functional Ear Trainer)
+                    </Text>
+                    <Text style={styles.practiceItem}>
+                      • Start by singing the interval from a root note
+                    </Text>
+                    <Text style={styles.practiceItem}>
+                      • Record yourself and quiz later
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <YouTubePlayer
+                videoId="6jf85Dzozfo"
+                title="Pitch Test (Intervals)"
+              />
+            </View>
+
+            {/* Test 5: Harmony Test */}
+            <View
+              style={[
+                styles.testSection,
+                { borderLeftColor: testSections[4].color },
+              ]}
+            >
+              <View style={styles.sectionHeader}>
+                <View style={styles.numberBadge}>
+                  <Text style={styles.numberText}>5</Text>
+                </View>
+                <Text style={styles.sectionIcon}>{testSections[4].icon}</Text>
+                <Text style={styles.sectionTitle}>{testSections[4].title}</Text>
+              </View>
+
+              <View style={styles.contentContainer}>
+                <Text style={styles.descriptionText}>
+                  The examiner plays 2 chords, one major and one minor (or the
+                  opposite ). The candidate listens twice. The student must
+                  identify the chord type by ear:
+                </Text>
+
+                <View style={styles.chordsGrid}>
+                  {chordQualities.map((chord, index) => (
+                    <View
+                      key={index}
+                      style={[styles.chordCard, { borderColor: chord.color }]}
+                    >
+                      <View
+                        style={[
+                          styles.chordBadge,
+                          { backgroundColor: chord.color },
+                        ]}
+                      >
+                        <Text style={styles.chordType}>{chord.type}</Text>
+                      </View>
+                      <Text style={styles.chordDescription}>
+                        {chord.description}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+
+                <View style={styles.practiceSection}>
+                  <Text style={styles.practiceTitle}>🎓 How to Practice:</Text>
+                  <Text style={styles.practiceSubtitle}>
+                    Practice progressions like:
+                  </Text>
+
+                  <View style={styles.practiceList}>
+                    <Text style={styles.practiceItem}>
+                      • Listen to Each Chord Quality characteristics
+                    </Text>
+                    <Text style={styles.practiceItem}>
+                      • Use Ear Training Apps: TonedEar, EarMaster, or Teoria
+                    </Text>
+                    <Text style={styles.practiceItem}>
+                      • Focus on chord recognition modes
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <YouTubePlayer videoId="tjUgDqJrwMM" title="Harmony Test" />
+            </View>
+            <View style={styles.backButton}>
+              <BackButton />
+              <Image
+                source={require("../assets/logo1.png")}
+                style={styles.appLogo}
+                resizeMode="contain"
+              />
             </View>
           </View>
-        </View>
-        <YouTubePlayer videoId="tjUgDqJrwMM" title="Harmony Test" />
-      </View>
-      <View style={styles.backButton}>
-        <BackButton />
-      </View>
-    </ScrollView>
+        </ScrollView>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 
@@ -425,6 +495,37 @@ const styles = StyleSheet.create({
     backgroundColor: "#212529",
     paddingHorizontal: 20,
     paddingTop: 20,
+  },
+  wrapper: {
+    position: "relative",
+  },
+  orb1: {
+    position: "absolute",
+    top: 100,
+    right: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(99, 101, 241, 0.34)",
+    opacity: 0.6,
+    shadowColor: "#6366f1",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 60,
+  },
+  orb2: {
+    position: "absolute",
+    bottom: 150,
+    left: -80,
+    width: 250,
+    height: 250,
+    borderRadius: 125,
+    backgroundColor: "rgba(169, 85, 247, 0.37)",
+    opacity: 0.5,
+    shadowColor: "#a855f7",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 70,
   },
 
   // Header Styles
@@ -786,5 +887,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
     marginLeft: 5,
+  },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 1,
+    right: 20,
   },
 });

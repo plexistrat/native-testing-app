@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
+  Image,
 } from "react-native";
 import BackButton from "./components/BackButton";
 
@@ -190,6 +191,11 @@ const grade3Arpeggios = () => {
           5. Incorporate arpeggios into improvisation and chord progressions.
         </Text>
         <BackButton />
+        <Image
+          source={require("../assets/logo1.png")}
+          style={styles.appLogo}
+          resizeMode="contain"
+        />
       </View>
     </ScrollView>
   );
@@ -331,11 +337,19 @@ const styles = StyleSheet.create({
   practiceTitle: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#DEE3E4",
+    color: "#4A90E2",
     marginBottom: 20,
   },
   practiceInstructions: { marginBottom: 30 },
   practiceDescription: { fontSize: 16, color: "#DEE3E4", marginBottom: 10 },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 1,
+    right: 20,
+    opacity: 0.5,
+  },
 });
 
 export default grade3Arpeggios;
