@@ -2,37 +2,33 @@
   "expo": {
     "name": "Guitar Study Hub",
     "slug": "guitar-study-hub",
-    "scheme": "guitarstudyhub",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "dark",
+    "userInterfaceStyle": "light",
     "newArchEnabled": true,
-
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0f1214"
+      "backgroundColor": "#000000"
     },
-
     "android": {
       "package": "com.drosos.guitarstudyhub",
-      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#0f1214"
+        "backgroundColor": "#000000"
       },
       "edgeToEdgeEnabled": true
     },
-
-    "ios": {
-      "supportsTablet": true
-    },
-
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-
-    "plugins": ["expo-router", "expo-video"]
+    "plugins": [
+      "expo-router",
+      "expo-video"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "e6bda1c8-3fb5-4038-a76d-c1a4dbc34fa9"
+      }
+    }
   }
 }
