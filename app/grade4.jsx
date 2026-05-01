@@ -1,0 +1,157 @@
+import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import GradeComponents from "./components/GradeComponents";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Link } from "expo-router";
+import BackButton from "./components/BackButton";
+
+export default function grade4() {
+  return (
+    <LinearGradient
+      colors={["#0f1214", "#1b1e21", "#242830"]}
+      style={{ flex: 1 }}
+    >
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView style={styles.scrollContainer}>
+          <View style={styles.wrapper}>
+            {/* Animated background orbs */}
+            <View style={styles.orb1} />
+            <View style={styles.orb2} />
+
+            <View style={styles.container}>
+              <GradeComponents title="Scales" num="4" />
+              <GradeComponents title="Chords" num="4" />
+              <GradeComponents title="Arpeggios" num="4" />
+              <GradeComponents title="Rhythm Guitar" num="4" />
+              <GradeComponents title="Lead Guitar" num="4" />
+              <GradeComponents title="Spoken Tests" num="4" />
+              <GradeComponents title="Aural Tests" num="4" />
+              <View style={styles.titleContainer}>
+                <Text style={styles.title}>
+                  For more details go to
+                  <Link href="/listenExamples" style={{ color: "#4A90E2" }}>
+                    <Text> Listen examples</Text>
+                  </Link>
+                  .
+                </Text>
+                <Text style={styles.title}>
+                  There you can find many audio examples
+                </Text>
+              </View>
+            </View>
+            <BackButton />
+            <Image
+              source={require("../assets/logo1.png")}
+              style={styles.appLogo}
+              resizeMode="contain"
+            />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </LinearGradient>
+  );
+}
+
+const styles = StyleSheet.create({
+  scrollContainer: {
+    flex: 1,
+  },
+  wrapper: {
+    position: "relative",
+  },
+  container: {
+    alignItems: "center",
+    paddingHorizontal: 20,
+    paddingTop: 2,
+    paddingBottom: 2,
+  },
+  // Floating background orbs for depth
+  orb1: {
+    position: "absolute",
+    top: 100,
+    right: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "rgba(99, 101, 241, 0.26)",
+    opacity: 0.6,
+    shadowColor: "#6366f1",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 60,
+  },
+  orb2: {
+    position: "absolute",
+    bottom: 150,
+    left: -80,
+    width: 250,
+    height: 250,
+    borderRadius: 125,
+    backgroundColor: "rgba(169, 85, 247, 0.26)",
+    opacity: 0.5,
+    shadowColor: "#a855f7",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 70,
+  },
+  titleContainer: {
+    alignItems: "center",
+    borderColor: "#4A90E2",
+    borderRadius: 20,
+    borderWidth: 2,
+    marginTop: 10,
+    backgroundColor: "rgba(33, 37, 41, 0.6)",
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#ffffffff",
+    marginBottom: 5,
+    marginTop: 5,
+    textAlign: "center",
+  },
+  chordsContainer: {
+    alignItems: "center",
+    paddingHorizontal: 20,
+    paddingTop: 80,
+    paddingBottom: 40,
+    // minHeight: 1000,
+  },
+  tap1: {
+    fontSize: 16,
+    color: "#DEE3E4",
+    marginRight: 200,
+  },
+  tap2: {
+    width: 100,
+    fontSize: 16,
+    color: "#DEE3E4",
+    marginRight: 250,
+  },
+  backButton: {
+    alignSelf: "flex-start",
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    borderRadius: 10,
+    backgroundColor: "rgba(32, 201, 151, 0.12)",
+    borderWidth: 1,
+    borderColor: "rgba(32, 201, 151, 0.3)",
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 5,
+  },
+
+  backButtonText: {
+    fontSize: 16,
+    color: "#20c997",
+    fontWeight: "600",
+  },
+  appLogo: {
+    width: 80,
+    height: 80,
+    position: "absolute",
+    bottom: 1,
+    right: 20,
+    opacity: 0.5,
+  },
+});
